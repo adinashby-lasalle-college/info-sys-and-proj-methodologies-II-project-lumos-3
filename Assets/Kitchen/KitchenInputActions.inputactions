@@ -1,0 +1,84 @@
+{
+    "name": "KitchenInputActions",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "3d79c475-8e4f-4a52-bfad-4470bf74e8d9",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "06470da1-714c-4e65-80a5-af95109e3155",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Z Axis",
+                    "id": "7e7a852d-35ec-4576-af6e-415e8c65f517",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "581d9e2e-adda-452e-9ad5-88db4ccb48aa",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "232fd5d9-ac51-4494-bf76-d9f39580be73",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "id": "fd26d7b2-26f1-4d9e-b934-77d1806b909e",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "62d0f15d-d0c5-4f6f-824f-fcae6780ff18",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5d5cff0d-65e9-4e80-82b7-ec81b4003831",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
