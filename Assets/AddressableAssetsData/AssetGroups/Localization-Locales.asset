@@ -36,7 +36,7 @@ MonoBehaviour:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ed1b33a8181cad4ab8d06a6aa063a9e
-    m_Address: Chinese (Traditional, Hong Kong SAR China) (zh-HK)
+    m_Address: Chinese (Traditional) (zh-HK)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
