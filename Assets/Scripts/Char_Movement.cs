@@ -15,9 +15,14 @@ public class Char_Movement : MonoBehaviour
     private enum facing_Dir { up,down,left,right }
     facing_Dir current_dir;
 
+    //Visual
+    Char_FacingDir facing_dir_control;
+
+
     void Start()
     {
         rb_player = GetComponent<Rigidbody2D>();
+        facing_dir_control = GetComponent<Char_FacingDir>();
         rb_player.drag = drag;
         current_dir = facing_Dir.right;
     }
@@ -51,35 +56,18 @@ public class Char_Movement : MonoBehaviour
         {
             current_dir = facing_Dir.left;
             Debug.Log(current_dir);
+            facing_dir_control.ChangeCharFacing("Left");
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             current_dir = facing_Dir.right;
             Debug.Log(current_dir);
+            facing_dir_control.ChangeCharFacing("Right");
         }
         else { }
 
-        bool isAnyKeyUp = false;
 
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            isAnyKeyUp = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.S))
-        {
-            isAnyKeyUp = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.A))
-        {
-            isAnyKeyUp = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.D))
-        {
-            isAnyKeyUp = true;
-        }
-        else { }
-
-        if(isAnyKeyUp == true)
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -95,14 +83,16 @@ public class Char_Movement : MonoBehaviour
             {
                 current_dir = facing_Dir.left;
                 Debug.Log(current_dir);
+                facing_dir_control.ChangeCharFacing("Left");
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 current_dir = facing_Dir.right;
                 Debug.Log(current_dir);
+                facing_dir_control.ChangeCharFacing("Right");
             }
-            else { }
         }
+   
     }
 
     void Movement()

@@ -67,6 +67,7 @@
     <Compile Include="Assets\DataPersisence\FileDataHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\IInteractable.cs" />
     <Compile Include="Assets\DataPersisence\Data\GameData.cs" />
+    <Compile Include="Assets\Scripts\Char_FacingDir.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Sauce.cs" />
     <Compile Include="Assets\DataPersisence\DataPersisenceManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ContainerAnimator.cs" />
