@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class Sauce : MonoBehaviour, IInteractable
 {
+    private AnimationPlayer animationPlayer;
+
+    private void Start()
+    {
+        animationPlayer = GetComponentInChildren<AnimationPlayer>();    
+    }
+
     private void OnMouseEnter()
     {
-        //animator.PlayOpenAnimation(this);
+        animationPlayer.TriggerAnimation("MoveUp");
     }
 
     private void OnMouseExit()
     {
-        //animator.PlayCloseAnimation(this);
+        animationPlayer.TriggerAnimation("MoveDown");
     }
 
     public void Interact()
