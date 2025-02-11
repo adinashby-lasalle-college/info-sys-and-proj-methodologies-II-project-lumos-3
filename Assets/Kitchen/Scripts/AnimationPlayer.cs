@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SauceAnimator : MonoBehaviour
+public class AnimationPlayer : MonoBehaviour
 {
     private Animator animator;
 

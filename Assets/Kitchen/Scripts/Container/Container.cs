@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class Container : MonoBehaviour, IInteractable
 {
-    private ContainerAnimator containerAnimator;
+    private AnimationPlayer animationPlayer;
 
     private void Start()
     {
-        containerAnimator = GetComponentInChildren<ContainerAnimator>();
+        animationPlayer = GetComponentInChildren<AnimationPlayer>();
     }
 
     private void OnMouseEnter()
     {
-        containerAnimator.PlayOpenAnimation();
+        animationPlayer.TriggerAnimation("Open");
     }
 
     private void OnMouseExit()
     {
-        containerAnimator.PlayCloseAnimation();
+        animationPlayer.TriggerAnimation("Close");
     }
 
     public void Interact()
