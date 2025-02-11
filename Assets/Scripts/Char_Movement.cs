@@ -12,19 +12,22 @@ public class Char_Movement : MonoBehaviour
     private Vector2 moveInput;
 
     //Player's facing direction
-    private enum facing_Dir { up,down,left,right }
+    private enum facing_Dir { Up,Down,Left,Right }
     facing_Dir current_dir;
 
     //Visual
     Char_FacingDir facing_dir_control;
-
+    GameObject dirArrowObj;
+    Char_DirArrow dirArrow;
 
     void Start()
     {
         rb_player = GetComponent<Rigidbody2D>();
         facing_dir_control = GetComponent<Char_FacingDir>();
+        dirArrowObj = GameObject.Find("Dir_Arrow");
+        dirArrow = dirArrowObj.GetComponent<Char_DirArrow>();
         rb_player.drag = drag;
-        current_dir = facing_Dir.right;
+        current_dir = facing_Dir.Right;
     }
 
     void Update()
@@ -44,23 +47,23 @@ public class Char_Movement : MonoBehaviour
         //temporary**
         if (Input.GetKeyDown(KeyCode.W))
         {
-            current_dir = facing_Dir.up;
+            current_dir = facing_Dir.Up;
             Debug.Log(current_dir);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            current_dir = facing_Dir.down;
+            current_dir = facing_Dir.Down;
             Debug.Log(current_dir);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            current_dir = facing_Dir.left;
+            current_dir = facing_Dir.Left;
             Debug.Log(current_dir);
             facing_dir_control.ChangeCharFacing("Left");
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            current_dir = facing_Dir.right;
+            current_dir = facing_Dir.Right;
             Debug.Log(current_dir);
             facing_dir_control.ChangeCharFacing("Right");
         }
@@ -71,28 +74,29 @@ public class Char_Movement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                current_dir = facing_Dir.up;
+                current_dir = facing_Dir.Up;
                 Debug.Log(current_dir);
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                current_dir = facing_Dir.down;
+                current_dir = facing_Dir.Down;
                 Debug.Log(current_dir);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                current_dir = facing_Dir.left;
+                current_dir = facing_Dir.Left;
                 Debug.Log(current_dir);
                 facing_dir_control.ChangeCharFacing("Left");
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                current_dir = facing_Dir.right;
-                Debug.Log(current_dir);
+                current_dir = facing_Dir.Right;
+                Debug.Log(current_dir); 
                 facing_dir_control.ChangeCharFacing("Right");
             }
         }
-   
+
+        dirArrow.SetArrowActive(current_dir.ToString());
     }
 
     void Movement()
