@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class ContainerAnimator : MonoBehaviour
 {
-    public void PlayOpenAnimation(Container container)
+    private Animator animator;
+
+    private void Start()
     {
-        // Play animation once it's ready to interact
-        Debug.Log("Open the cap of " + container.name);
+        animator = GetComponent<Animator>();
     }
 
-    public void PlayCloseAnimation(Container container)
+    public void PlayOpenAnimation()
     {
-        Debug.Log("Close the cap of " + container.name);
+        animator.SetTrigger("Open");
+    }
+
+    public void PlayCloseAnimation()
+    {
+        animator.SetTrigger("Close");
     }
 }

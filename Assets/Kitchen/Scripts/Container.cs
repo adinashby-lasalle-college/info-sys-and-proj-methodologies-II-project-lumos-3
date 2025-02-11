@@ -2,19 +2,21 @@ using UnityEngine;
 
 public class Container : MonoBehaviour, IInteractable
 {
-    private ContainerAnimator animator;
-    
+    private ContainerAnimator containerAnimator;
 
     private void Start()
     {
-        animator = GetComponent<ContainerAnimator>();
+        containerAnimator = GetComponentInChildren<ContainerAnimator>();
     }
 
-    public void ReadyToInteract()
+    private void OnMouseEnter()
     {
-        // * change cursor icon
+        containerAnimator.PlayOpenAnimation();
+    }
 
-        animator.PlayOpenAnimation(this);
+    private void OnMouseExit()
+    {
+        containerAnimator.PlayCloseAnimation();
     }
 
     public void Interact()
@@ -22,10 +24,5 @@ public class Container : MonoBehaviour, IInteractable
         // * grab an ingredient
 
         Debug.Log("Interacting with " + this.name);
-    }
-
-    public void EndInteract()
-    {
-        animator.PlayCloseAnimation(this);
     }
 }

@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class Sauce : MonoBehaviour, IInteractable
 {
-    public void ReadyToInteract()
+    private void OnMouseEnter()
     {
-        // * play moving up anim
+        //animator.PlayOpenAnimation(this);
+    }
+
+    private void OnMouseExit()
+    {
+        //animator.PlayCloseAnimation(this);
     }
 
     public void Interact()
@@ -12,10 +17,5 @@ public class Sauce : MonoBehaviour, IInteractable
         // * grab an ingredient
 
         Debug.Log("Interacting with " + this.name);
-    }
-
-    public void EndInteract()
-    {
-        // * play moving down anim
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Interactor : MonoBehaviour
@@ -20,13 +19,7 @@ public class Interactor : MonoBehaviour
         inputReader.OnInteractAction += TryInteract;
     }
 
-    private void Update()
-    {
-        DetectObject();
-    }
-
-    // Detect object through mouse pointer
-    private void DetectObject()
+    private void TryInteract(object sender, System.EventArgs e)
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         float distance = 100f;
@@ -36,24 +29,8 @@ public class Interactor : MonoBehaviour
             // If a mouse pointer is on interactable objects, get ready to interact
             if (hit.transform.TryGetComponent(out IInteractable detectedObj))
             {
-                objectToInteract = detectedObj;
-            }
-            else
-            {
-                objectToInteract = null;
+                detectedObj.Interact();
             }
         }
-        else
-        {
-            objectToInteract = null;
-        }
-    }
-
-    private void TryInteract(object sender, System.EventArgs e)
-    {
-        if (objectToInteract != null)
-        {
-            objectToInteract.Interact();
-        }    
     }
 }
