@@ -28,4 +28,9 @@ public class InputReader : MonoBehaviour
     {
         return kitchenInputActions.Camera.Move.ReadValue<float>();
     }
+
+    public Vector2 GetCursorPos()
+    {
+        return kitchenInputActions.Player.Cursor.ReadValue<Vector2>();
+    }
 }

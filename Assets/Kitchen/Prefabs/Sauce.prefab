@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1022362735869213271}
   - component: {fileID: 5114636114787771500}
   - component: {fileID: 3314677149028066214}
-  - component: {fileID: 6006135035693209432}
+  - component: {fileID: 4120927245648354452}
   m_Layer: 3
   m_Name: Mesh
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6006135035693209432
+--- !u!114 &4120927245648354452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3449337469779780324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd076dd565da8f47972235d9514bcdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e1f5455e78c87f43a93281877146436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5146936933451380705
@@ -171,10 +171,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.5
+  m_Height: 2.24
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7569868823381099670
 MonoBehaviour:
   m_ObjectHideFlags: 0

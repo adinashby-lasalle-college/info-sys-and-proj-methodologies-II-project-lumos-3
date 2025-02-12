@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3caeb6adb267cb449a6e56fba69c6fcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2470005698141029382}
   - component: {fileID: 8014201132900754933}
-  - component: {fileID: 8966390599891631749}
+  - component: {fileID: 1130361750846347943}
   m_Layer: 3
   m_Name: Cover
   m_TagString: Untagged
@@ -138,7 +138,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8966390599891631749
+--- !u!114 &1130361750846347943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4777687240950461055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd076dd565da8f47972235d9514bcdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e1f5455e78c87f43a93281877146436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7902046052377456616
@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4c1660cebafc14b87bb02c5bd18ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientSO: {fileID: 0}
+  tempSpawnPos: {fileID: 0}
 --- !u!65 &2356657913018199007
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -216,8 +218,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.45831254, y: 0.14429039, z: 0.46007824}
-  m_Center: {x: 0.0048600286, y: 0.51045597, z: 0.010089159}
+  m_Size: {x: 0.45, y: 0.15, z: 0.45}
+  m_Center: {x: 0.005, y: 0.5, z: 0.01}
 --- !u!1 &8041560638582287975
 GameObject:
   m_ObjectHideFlags: 0

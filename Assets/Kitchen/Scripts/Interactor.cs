@@ -4,10 +4,11 @@ public class Interactor : MonoBehaviour
 {
     public static Interactor Instance { get; private set; }
 
-    [SerializeField] private InputReader inputReader;
     [SerializeField] private LayerMask interactableLayerMask;
 
+    private InputReader inputReader;
     private IInteractable objectToInteract;
+    private Vector2 cursorPos;
 
     private void Awake()
     {
@@ -16,7 +17,14 @@ public class Interactor : MonoBehaviour
 
     private void Start()
     {
+        inputReader = GetComponent<InputReader>();
+
         inputReader.OnInteractAction += TryInteract;
+    }
+
+    private void FixedUpdate()
+    {
+        cursorPos = inputReader.GetCursorPos();
     }
 
     private void TryInteract(object sender, System.EventArgs e)

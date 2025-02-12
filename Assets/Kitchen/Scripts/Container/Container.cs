@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class Container : MonoBehaviour, IInteractable
 {
-    private AnimationPlayer animationPlayer;
+    [SerializeField] private IngredientSO ingredientSO;
+    [SerializeField] private Transform tempSpawnPos; // temp
+
+    private AnimationManager animationPlayer;
 
     private void Start()
     {
-        animationPlayer = GetComponentInChildren<AnimationPlayer>();
+        animationPlayer = GetComponentInChildren<AnimationManager>();
     }
 
     private void OnMouseEnter()
@@ -21,8 +24,11 @@ public class Container : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        // * grab an ingredient
+        Transform ingredient = Instantiate(ingredientSO.prefab, tempSpawnPos);
+        ingredient.localPosition = Vector3.zero;
 
+        // * Attach ingredient to the mouse cursor
+        
         Debug.Log("Interacting with " + this.name);
     }
 }

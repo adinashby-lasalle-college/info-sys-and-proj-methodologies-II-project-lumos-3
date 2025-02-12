@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Sauce : MonoBehaviour, IInteractable
 {
-    private AnimationPlayer animationPlayer;
+    private AnimationManager animationPlayer;
 
     private void Start()
     {
-        animationPlayer = GetComponentInChildren<AnimationPlayer>();    
+        animationPlayer = GetComponentInChildren<AnimationManager>();    
     }
 
     private void OnMouseEnter()
