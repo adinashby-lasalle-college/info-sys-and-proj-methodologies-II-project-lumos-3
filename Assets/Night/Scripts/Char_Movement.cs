@@ -15,17 +15,26 @@ public class Char_Movement : MonoBehaviour
     private enum facing_Dir { Up,Down,Left,Right }
     facing_Dir current_dir;
 
-    //Visual
+
     Char_FacingDir facing_dir_control;
     GameObject dirArrowObj;
     Char_DirArrow dirArrow;
 
-    void Start()
+    //Controller
+    Char_InputTaker inputTaker;
+
+
+    void Awake()
     {
         rb_player = GetComponent<Rigidbody2D>();
         facing_dir_control = GetComponent<Char_FacingDir>();
         dirArrowObj = GameObject.Find("Dir_Arrow");
         dirArrow = dirArrowObj.GetComponent<Char_DirArrow>();
+        inputTaker = GetComponent<Char_InputTaker>();
+    }
+
+    void Start()
+    {
         rb_player.drag = drag;
         current_dir = facing_Dir.Right;
     }
@@ -33,7 +42,7 @@ public class Char_Movement : MonoBehaviour
     void Update()
     {
         //temporary**
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical") * 0.3f).normalized;
+        moveInput = inputTaker.Movement;
         UpdateCurrentDir();
     }
 

@@ -60,18 +60,20 @@
     <Analyzer Include="F:\Unity\2022.3.18f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Char_Movement.cs" />
+    <Compile Include="Assets\Night\Scripts\Char_FacingDir.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\IngredientS\IngredientSO.cs" />
     <Compile Include="Assets\Kitchen\KitchenInputActions.cs" />
-    <Compile Include="Assets\Scripts\Char_DirArrow.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Sauce\Sauce.cs" />
+    <Compile Include="Assets\Night\Scripts\Char_Movement.cs" />
     <Compile Include="Assets\Kitchen\Scripts\CamController.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\Container.cs" />
+    <Compile Include="Assets\Night\Scripts\Char_DirArrow.cs" />
     <Compile Include="Assets\DataPersisence\FileDataHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\IInteractable.cs" />
     <Compile Include="Assets\DataPersisence\Data\GameData.cs" />
-    <Compile Include="Assets\Scripts\Char_FacingDir.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\Sauce.cs" />
     <Compile Include="Assets\DataPersisence\DataPersisenceManager.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\ContainerAnimator.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Container\Container.cs" />
+    <Compile Include="Assets\Night\Scripts\Char_InputTaker.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\AnimationManager.cs" />
     <Compile Include="Assets\DataPersisence\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Kitchen\Scripts\InputReader.cs" />
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />

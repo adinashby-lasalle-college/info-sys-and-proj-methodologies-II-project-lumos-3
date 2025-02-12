@@ -10,9 +10,13 @@ public class Char_DirArrow : MonoBehaviour
     [SerializeField] GameObject ArrowLeft;
     [SerializeField] GameObject ArrowRight;
 
-    private void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void Start()
+    {
         SetArrowActive("Right");
     }
 
