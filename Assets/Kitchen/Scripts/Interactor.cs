@@ -7,8 +7,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask interactableLayerMask;
 
     private InputReader inputReader;
-    private IInteractable objectToInteract;
-    private Vector2 cursorPos;
+    private Ingredient grabbingIngredient;
 
     private void Awake()
     {
@@ -22,29 +21,40 @@ public class Interactor : MonoBehaviour
         inputReader.OnInteractAction += TryInteract;
     }
 
-    private void FixedUpdate()
-    {
-        //cursorPos = Camera.main.WorldToScreenPoint(inputReader.GetCursorPos());
-        //Debug.Log(cursorPos);
-    }
-
     private void TryInteract(object sender, System.EventArgs e)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // Try interact with all interactable objects under mouse cursor
         float distance = 100f;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, distance))
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = distance;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        RaycastHit[] hits;
+        hits = Physics.RaycastAll(Camera.main.transform.position, mousePos, distance);
+
+        for (int i = 0; i < hits.Length; i++)
         {
-            // If a mouse pointer is on interactable objects, get ready to interact
-            if (hit.transform.TryGetComponent(out IInteractable detectedObj))
+            RaycastHit hit = hits[i];
+            if (hit.transform.TryGetComponent(out IInteractable interactableObj))
             {
-                detectedObj.Interact();
+                interactableObj.Interact();
             }
         }
     }
 
-    public Vector2 GetCursorPos()
+    public Ingredient GetGrabbingIngredient()
     {
-        return Camera.main.ScreenToWorldPoint(cursorPos);
+        return grabbingIngredient;
+    }
+
+    public void SetGrabbingIngredient(Ingredient ingredient)
+    {
+        grabbingIngredient = ingredient;
+    }
+
+    public void ClearGrabbingIngredient()
+    {
+        grabbingIngredient = null;
     }
 }

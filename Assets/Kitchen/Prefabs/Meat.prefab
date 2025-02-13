@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7828189143317262246}
   - component: {fileID: -2845443069550357594}
+  - component: {fileID: -6279731376767392022}
+  - component: {fileID: 1644967074421520939}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Untagged
@@ -46,6 +48,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 821a5d47eb3501c448f875fa619bf0ee, type: 2}
+--- !u!114 &-6279731376767392022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281872169450522299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5bbfacd5f85db9488f025d36edb256d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1644967074421520939
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281872169450522299}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
 --- !u!1 &2996734604636556969
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +98,7 @@ GameObject:
   - component: {fileID: 3254557144342432742}
   - component: {fileID: 2659131029422271846}
   - component: {fileID: 6498274470306365483}
-  - component: {fileID: 1328478072826951986}
+  - component: {fileID: 7726137521853449873}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -130,8 +171,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1328478072826951986
-CapsuleCollider:
+--- !u!65 &7726137521853449873
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,8 +189,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}

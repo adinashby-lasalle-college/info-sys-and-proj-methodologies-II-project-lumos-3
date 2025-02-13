@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 1307440404}
   - component: {fileID: 1307440403}
   - component: {fileID: 1307440402}
-  - component: {fileID: 1307440401}
+  - component: {fileID: 1307440405}
   m_Layer: 3
   m_Name: Dishes
   m_TagString: Untagged
@@ -1144,29 +1144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1307440401
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307440400}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1307440402
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1232,6 +1209,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575567477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1307440405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307440400}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1411916228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2470005698141029382, guid: 319254678dfea1f4eb078c9044e74227, type: 3}
@@ -1475,6 +1473,7 @@ GameObject:
   - component: {fileID: 1531960900}
   - component: {fileID: 1531960899}
   - component: {fileID: 1531960898}
+  - component: {fileID: 1531960902}
   m_Layer: 3
   m_Name: Prep Table
   m_TagString: Untagged
@@ -1501,8 +1500,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.15, z: 1}
+  m_Center: {x: 0, y: 0.43, z: 0}
 --- !u!23 &1531960899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1565,9 +1564,23 @@ Transform:
   m_LocalPosition: {x: 0.7371043, y: -1.1568074, z: 0.1356256}
   m_LocalScale: {x: 1.1463, y: 1, z: 1.4383}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1953709906}
   m_Father: {fileID: 502239180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531960902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531960897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1af1f166805f442a2849e015266a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableTopTransform: {fileID: 1953709906}
 --- !u!4 &1567815652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2470005698141029382, guid: 319254678dfea1f4eb078c9044e74227, type: 3}
@@ -2472,6 +2485,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2019874087974441858, guid: 62a1014860b296945aec9133066659d4, type: 3}
   m_PrefabInstance: {fileID: 5793996159854102380}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1953709905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953709906}
+  m_Layer: 3
+  m_Name: Table Top Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953709906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953709905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1531960901}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1978324129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2470005698141029382, guid: 319254678dfea1f4eb078c9044e74227, type: 3}
