@@ -24,7 +24,8 @@ public class Interactor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        cursorPos = inputReader.GetCursorPos();
+        //cursorPos = Camera.main.WorldToScreenPoint(inputReader.GetCursorPos());
+        //Debug.Log(cursorPos);
     }
 
     private void TryInteract(object sender, System.EventArgs e)
@@ -40,5 +41,10 @@ public class Interactor : MonoBehaviour
                 detectedObj.Interact();
             }
         }
+    }
+
+    public Vector2 GetCursorPos()
+    {
+        return Camera.main.ScreenToWorldPoint(cursorPos);
     }
 }

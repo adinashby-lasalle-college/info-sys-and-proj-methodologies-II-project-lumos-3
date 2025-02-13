@@ -6,6 +6,7 @@ public class Container : MonoBehaviour, IInteractable
     [SerializeField] private Transform tempSpawnPos; // temp
 
     private AnimationManager animationPlayer;
+    private Ingredient ingredient;
 
     private void Start()
     {
@@ -24,8 +25,13 @@ public class Container : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Transform ingredient = Instantiate(ingredientSO.prefab, tempSpawnPos);
-        ingredient.localPosition = Vector3.zero;
+        if (ingredient == null)
+        {
+            Transform ingredientTransform = Instantiate(ingredientSO.prefab);
+            ingredientTransform.localPosition = Vector3.zero;
+
+            ingredient = ingredientTransform.GetComponent<Ingredient>();
+        }
 
         // * Attach ingredient to the mouse cursor
         

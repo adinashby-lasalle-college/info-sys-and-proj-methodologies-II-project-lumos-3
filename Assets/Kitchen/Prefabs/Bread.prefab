@@ -114,6 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4493809366682235701}
+  - component: {fileID: 4935745503732742446}
   m_Layer: 0
   m_Name: Bread
   m_TagString: Untagged
@@ -137,3 +138,16 @@ Transform:
   - {fileID: 4931956474237187240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4935745503732742446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014280336612710798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddf1d8dbe77d894b9eb18f423afff2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientSO: {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
