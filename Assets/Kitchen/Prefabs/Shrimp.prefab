@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7039437415854089053}
   - component: {fileID: -4129385392027441874}
+  - component: {fileID: 8044995341397614963}
+  - component: {fileID: 4185592247190056410}
   m_Layer: 0
   m_Name: Shrimp
   m_TagString: Untagged
@@ -46,6 +48,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 95d73f92ce92cff47aead887fcc776b4, type: 2}
+--- !u!114 &8044995341397614963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109525178034858133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5bbfacd5f85db9488f025d36edb256d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &4185592247190056410
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109525178034858133}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
 --- !u!1 &9045482782886786958
 GameObject:
   m_ObjectHideFlags: 0

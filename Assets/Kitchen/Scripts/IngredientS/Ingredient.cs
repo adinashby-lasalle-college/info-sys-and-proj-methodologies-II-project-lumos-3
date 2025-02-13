@@ -1,18 +1,15 @@
-using System.Drawing;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
     [SerializeField] private IngredientSO ingredientSO;
 
+    private Table table; // Table where this ingredient is on
+
     public IngredientSO GetIngredientSO() { return ingredientSO; }
 
-    private void Update()
+    public void SetTable(Table table)
     {
-        Vector3 mousePos = Input.mousePosition;
-
-        mousePos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.nearClipPlane + 1));
-
-        transform.position = mousePos;
+        this.table = table;
     }
 }

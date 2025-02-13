@@ -31,10 +31,8 @@ public class Container : MonoBehaviour, IInteractable
             ingredientTransform.localPosition = Vector3.zero;
 
             ingredient = ingredientTransform.GetComponent<Ingredient>();
-        }
 
-        // * Attach ingredient to the mouse cursor
-        
-        Debug.Log("Interacting with " + this.name);
+            Interactor.Instance.SetGrabbingIngredient(ingredient);
+        }
     }
 }
