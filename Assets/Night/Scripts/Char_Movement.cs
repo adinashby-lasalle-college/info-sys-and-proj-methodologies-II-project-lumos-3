@@ -42,7 +42,7 @@ public class Char_Movement : MonoBehaviour
     void Update()
     {
         //temporary**
-        moveInput = inputTaker.Movement;
+        moveInput = inputTaker.GetMovementValue();
         UpdateCurrentDir();
     }
 
@@ -57,23 +57,19 @@ public class Char_Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             current_dir = facing_Dir.Up;
-            Debug.Log(current_dir);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             current_dir = facing_Dir.Down;
-            Debug.Log(current_dir);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             current_dir = facing_Dir.Left;
-            Debug.Log(current_dir);
             facing_dir_control.ChangeCharFacing("Left");
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             current_dir = facing_Dir.Right;
-            Debug.Log(current_dir);
             facing_dir_control.ChangeCharFacing("Right");
         }
         else { }
@@ -84,23 +80,19 @@ public class Char_Movement : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 current_dir = facing_Dir.Up;
-                Debug.Log(current_dir);
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 current_dir = facing_Dir.Down;
-                Debug.Log(current_dir);
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 current_dir = facing_Dir.Left;
-                Debug.Log(current_dir);
                 facing_dir_control.ChangeCharFacing("Left");
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 current_dir = facing_Dir.Right;
-                Debug.Log(current_dir); 
                 facing_dir_control.ChangeCharFacing("Right");
             }
         }
