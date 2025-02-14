@@ -53,21 +53,20 @@ public class Char_Movement : MonoBehaviour
 
     void UpdateCurrentDir()
     {
-        //temporary**
-        if (Input.GetKeyDown(KeyCode.W))
+        if (inputTaker.IsUpKeyPress())
         {
             current_dir = facing_Dir.Up;
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (inputTaker.IsDownKeyPress())
         {
             current_dir = facing_Dir.Down;
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (inputTaker.IsLeftKeyPress())
         {
             current_dir = facing_Dir.Left;
             facing_dir_control.ChangeCharFacing("Left");
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (inputTaker.IsRightKeyPress())
         {
             current_dir = facing_Dir.Right;
             facing_dir_control.ChangeCharFacing("Right");
@@ -75,22 +74,22 @@ public class Char_Movement : MonoBehaviour
         else { }
 
 
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        if (inputTaker.IsUpKeyPress() || inputTaker.IsDownKeyPress() || inputTaker.IsLeftKeyPress() || inputTaker.IsRightKeyPress())
         {
-            if (Input.GetKey(KeyCode.W))
+            if (inputTaker.IsUpKeyPress())
             {
                 current_dir = facing_Dir.Up;
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (inputTaker.IsDownKeyPress())
             {
                 current_dir = facing_Dir.Down;
             }
-            else if (Input.GetKey(KeyCode.A))
+            else if (inputTaker.IsLeftKeyPress())
             {
                 current_dir = facing_Dir.Left;
                 facing_dir_control.ChangeCharFacing("Left");
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (inputTaker.IsRightKeyPress())
             {
                 current_dir = facing_Dir.Right;
                 facing_dir_control.ChangeCharFacing("Right");

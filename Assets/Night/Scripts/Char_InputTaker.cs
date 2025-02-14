@@ -84,43 +84,72 @@ public class Char_InputTaker : MonoBehaviour
         playerAction.InGame.ChangeDir_Right.Disable();
     }
 
+
+    bool UpKeyPress;
+    bool DownKeyPress;
+    bool LeftKeyPress;
+    bool RightKeyPress;
+
     void OnChangeDir_Up_Press(InputAction.CallbackContext context)
     {
-        Debug.Log("UpP");
+        UpKeyPress = true;
     }
 
     void OnChangeDir_Down_Press(InputAction.CallbackContext context)
     {
-        Debug.Log("DownP");
+        DownKeyPress= true;
     }
 
     void OnChangeDir_Left_Press(InputAction.CallbackContext context)
     {
-        Debug.Log("LeftP");
+        LeftKeyPress= true;
     }
 
     void OnChangeDir_Right_Press(InputAction.CallbackContext context)
     {
-        Debug.Log("RightP");
+        RightKeyPress= true;
     }
 
     void OnChangeDir_Up_Release(InputAction.CallbackContext context)
     {
-        Debug.Log("UpR");
+        UpKeyPress = false;
     }
 
     void OnChangeDir_Down_Release(InputAction.CallbackContext context)
     {
-        Debug.Log("DownR");
+        DownKeyPress = false;
     }
 
     void OnChangeDir_Left_Release(InputAction.CallbackContext context)
     {
-        Debug.Log("LeftR");
+        LeftKeyPress = false;
     }
 
     void OnChangeDir_Right_Release(InputAction.CallbackContext context)
     {
-        Debug.Log("RightR");
+        RightKeyPress = false;
     }
+
+    //Getter
+    public bool IsUpKeyPress()
+    {
+        return UpKeyPress;
+    }
+
+    public bool IsDownKeyPress()
+    {
+        return DownKeyPress;
+    }
+
+    public bool IsLeftKeyPress()
+    {
+        return LeftKeyPress;
+    }
+
+    public bool IsRightKeyPress()
+    {
+        return RightKeyPress;
+    }
+
+
 }
