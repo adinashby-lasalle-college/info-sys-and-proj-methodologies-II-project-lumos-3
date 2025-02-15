@@ -3,10 +3,9 @@ using UnityEngine;
 public class Container : MonoBehaviour, IInteractable
 {
     [SerializeField] private IngredientSO ingredientSO;
-    [SerializeField] private Transform tempSpawnPos; // temp
 
     private AnimationManager animationPlayer;
-    private Ingredient ingredient;
+    private bool isIngredientPicked;
 
     private void Start()
     {
@@ -25,13 +24,12 @@ public class Container : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (ingredient == null)
+        if (!Interactor.Instance.GetGrabbingIngredient())
         {
             Transform ingredientTransform = Instantiate(ingredientSO.prefab);
             ingredientTransform.localPosition = Vector3.zero;
 
-            ingredient = ingredientTransform.GetComponent<Ingredient>();
-
+            Ingredient ingredient = ingredientTransform.GetComponent<Ingredient>();
             Interactor.Instance.SetGrabbingIngredient(ingredient);
         }
     }
