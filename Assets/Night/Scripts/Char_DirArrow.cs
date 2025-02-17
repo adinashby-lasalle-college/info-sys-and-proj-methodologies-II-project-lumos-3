@@ -6,18 +6,23 @@ public class Char_DirArrow : MonoBehaviour
 {
     //Let dirArrow follow player, enable the arrow based on player dirction
     GameObject player;
+    [SerializeField] GameObject ArrowUp;
     [SerializeField] GameObject ArrowDown;
     [SerializeField] GameObject ArrowLeft;
     [SerializeField] GameObject ArrowRight;
 
+    public Vector3 Offset;
+    RectTransform RectTransform;
+
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        RectTransform = GetComponent<RectTransform>();
     }
 
     private void Start()
     {
-        SetArrowActive("Right");
+        //SetArrowActive("Right");
     }
 
     private void Update()
@@ -27,7 +32,9 @@ public class Char_DirArrow : MonoBehaviour
 
     void FollowPlayer()
     {
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(player.transform.position + Offset);
         this.transform.position = player.transform.position;
+        RectTransform.position = screenPoint;
     }
 
     public void SetArrowActive(string Dir)

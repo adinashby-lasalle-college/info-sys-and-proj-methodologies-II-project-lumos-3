@@ -18,7 +18,7 @@ public class Char_Movement : MonoBehaviour
 
     Char_FacingDir facing_dir_control;
     GameObject dirArrowObj;
-    Char_DirArrow dirArrow;
+    //Char_DirArrow dirArrow;
 
     //Controller
     Char_InputTaker inputTaker;
@@ -29,7 +29,7 @@ public class Char_Movement : MonoBehaviour
         rb_player = GetComponent<Rigidbody2D>();
         facing_dir_control = GetComponent<Char_FacingDir>();
         dirArrowObj = GameObject.Find("Dir_Arrow");
-        dirArrow = dirArrowObj.GetComponent<Char_DirArrow>();
+        //dirArrow = dirArrowObj.GetComponent<Char_DirArrow>();
         inputTaker = GetComponent<Char_InputTaker>();
     }
 
@@ -96,7 +96,7 @@ public class Char_Movement : MonoBehaviour
             }
         }
 
-        dirArrow.SetArrowActive(current_dir.ToString());
+        //dirArrow.SetArrowActive(current_dir.ToString());
     }
 
     void Movement()
