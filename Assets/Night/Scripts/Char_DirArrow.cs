@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Char_DirArrow : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class Char_DirArrow : MonoBehaviour
 
     private void Start()
     {
-        //SetArrowActive("Right");
+        
     }
 
     private void Update()
@@ -42,15 +43,19 @@ public class Char_DirArrow : MonoBehaviour
         ResetAllArrow();
         if (Dir == "Left")
         {
-            ArrowLeft.SetActive(true);
+            ArrowLeft.GetComponent<Image>().color = Color.white;
         }
         else if(Dir == "Right")
         {
-            ArrowRight.SetActive(true);
+            ArrowRight.GetComponent<Image>().color = Color.white;
         }
         else if(Dir == "Down")
         {
-            ArrowDown.SetActive(true);
+            ArrowDown.GetComponent<Image>().color = Color.white;
+        }
+        else if (Dir == "Up")
+        {
+            ArrowUp.GetComponent<Image>().color = Color.white;
         }
         else
         {
@@ -58,10 +63,12 @@ public class Char_DirArrow : MonoBehaviour
         }
     }
 
+    const float ColorA = 0.15f;
     void ResetAllArrow()
     {
-        ArrowDown.SetActive(false);
-        ArrowLeft.SetActive(false);
-        ArrowRight.SetActive(false);
+        ArrowUp.GetComponent<Image>().color = new Color(Color.grey.r, Color.grey.g, Color.grey.b, ColorA); 
+        ArrowDown.GetComponent<Image>().color = new Color(Color.grey.r, Color.grey.g, Color.grey.b, ColorA);
+        ArrowLeft.GetComponent<Image>().color = new Color(Color.grey.r, Color.grey.g, Color.grey.b, ColorA);
+        ArrowRight.GetComponent<Image>().color = new Color(Color.grey.r, Color.grey.g, Color.grey.b, ColorA);
     }
 }
