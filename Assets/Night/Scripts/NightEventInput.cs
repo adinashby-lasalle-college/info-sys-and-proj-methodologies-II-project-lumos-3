@@ -73,6 +73,24 @@ namespace PlayerAction_NightEvent
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""46b605e5-4962-4135-aa2a-8660ca849614"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""e75b558e-aa08-4741-bf0a-761691f973d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +192,28 @@ namespace PlayerAction_NightEvent
                     ""action"": ""ChangeDir_Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26cd09b2-f261-4b6a-a796-59d650e03901"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f04152b7-e8a0-4627-a878-234d9f45bd67"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +227,8 @@ namespace PlayerAction_NightEvent
             m_InGame_ChangeDir_Down = m_InGame.FindAction("ChangeDir_Down", throwIfNotFound: true);
             m_InGame_ChangeDir_Left = m_InGame.FindAction("ChangeDir_Left", throwIfNotFound: true);
             m_InGame_ChangeDir_Right = m_InGame.FindAction("ChangeDir_Right", throwIfNotFound: true);
+            m_InGame_PickUp = m_InGame.FindAction("PickUp", throwIfNotFound: true);
+            m_InGame_Throw = m_InGame.FindAction("Throw", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -253,6 +295,8 @@ namespace PlayerAction_NightEvent
         private readonly InputAction m_InGame_ChangeDir_Down;
         private readonly InputAction m_InGame_ChangeDir_Left;
         private readonly InputAction m_InGame_ChangeDir_Right;
+        private readonly InputAction m_InGame_PickUp;
+        private readonly InputAction m_InGame_Throw;
         public struct InGameActions
         {
             private @NightEventInput m_Wrapper;
@@ -262,6 +306,8 @@ namespace PlayerAction_NightEvent
             public InputAction @ChangeDir_Down => m_Wrapper.m_InGame_ChangeDir_Down;
             public InputAction @ChangeDir_Left => m_Wrapper.m_InGame_ChangeDir_Left;
             public InputAction @ChangeDir_Right => m_Wrapper.m_InGame_ChangeDir_Right;
+            public InputAction @PickUp => m_Wrapper.m_InGame_PickUp;
+            public InputAction @Throw => m_Wrapper.m_InGame_Throw;
             public InputActionMap Get() { return m_Wrapper.m_InGame; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -286,6 +332,12 @@ namespace PlayerAction_NightEvent
                 @ChangeDir_Right.started += instance.OnChangeDir_Right;
                 @ChangeDir_Right.performed += instance.OnChangeDir_Right;
                 @ChangeDir_Right.canceled += instance.OnChangeDir_Right;
+                @PickUp.started += instance.OnPickUp;
+                @PickUp.performed += instance.OnPickUp;
+                @PickUp.canceled += instance.OnPickUp;
+                @Throw.started += instance.OnThrow;
+                @Throw.performed += instance.OnThrow;
+                @Throw.canceled += instance.OnThrow;
             }
 
             private void UnregisterCallbacks(IInGameActions instance)
@@ -305,6 +357,12 @@ namespace PlayerAction_NightEvent
                 @ChangeDir_Right.started -= instance.OnChangeDir_Right;
                 @ChangeDir_Right.performed -= instance.OnChangeDir_Right;
                 @ChangeDir_Right.canceled -= instance.OnChangeDir_Right;
+                @PickUp.started -= instance.OnPickUp;
+                @PickUp.performed -= instance.OnPickUp;
+                @PickUp.canceled -= instance.OnPickUp;
+                @Throw.started -= instance.OnThrow;
+                @Throw.performed -= instance.OnThrow;
+                @Throw.canceled -= instance.OnThrow;
             }
 
             public void RemoveCallbacks(IInGameActions instance)
@@ -329,6 +387,8 @@ namespace PlayerAction_NightEvent
             void OnChangeDir_Down(InputAction.CallbackContext context);
             void OnChangeDir_Left(InputAction.CallbackContext context);
             void OnChangeDir_Right(InputAction.CallbackContext context);
+            void OnPickUp(InputAction.CallbackContext context);
+            void OnThrow(InputAction.CallbackContext context);
         }
     }
 }

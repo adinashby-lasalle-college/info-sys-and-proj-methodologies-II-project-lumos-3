@@ -1608,6 +1608,8 @@ MonoBehaviour:
   ArrowDown: {fileID: 2109298163}
   ArrowLeft: {fileID: 163754215}
   ArrowRight: {fileID: 1675067839}
+  ChargeSlider: {fileID: 393628196}
+  ChargingBar: {fileID: 102218310}
   Offset: {x: 1.2, y: 0.8, z: 0}
 --- !u!1 &2109298163
 GameObject:

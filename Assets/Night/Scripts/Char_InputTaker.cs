@@ -7,14 +7,15 @@ using UnityEngine.InputSystem;
 
 public class Char_InputTaker : MonoBehaviour
 {
+    void Awake()
+    {
+        playerAction = new NightEventInput();
+    }
+
+    #region Movement
     Vector2 Movement;
 
     NightEventInput playerAction;
-
-    void Awake()
-    {
-        playerAction= new NightEventInput();
-    }
 
     //Movement Input taker
     private void OnMovement(InputValue value)
@@ -28,33 +29,45 @@ public class Char_InputTaker : MonoBehaviour
         return Movement;
     }
 
+    #endregion
+
+    #region SetUp
+
     //Direction change Input taker
     void OnEnable()
     {
         //Setting key's Perform and Cancel
+        //performed
         playerAction.InGame.ChangeDir_Up.performed += OnChangeDir_Up_Press;
-        playerAction.InGame.ChangeDir_Up.Enable();
 
         playerAction.InGame.ChangeDir_Down.performed += OnChangeDir_Down_Press;
-        playerAction.InGame.ChangeDir_Down.Enable();
 
         playerAction.InGame.ChangeDir_Left.performed += OnChangeDir_Left_Press;
-        playerAction.InGame.ChangeDir_Left.Enable();
 
         playerAction.InGame.ChangeDir_Right.performed += OnChangeDir_Right_Press;
-        playerAction.InGame.ChangeDir_Right.Enable();
 
+        playerAction.InGame.Throw.performed += startCharge;
+
+
+        //canceled
         playerAction.InGame.ChangeDir_Up.canceled += OnChangeDir_Up_Release;
-        playerAction.InGame.ChangeDir_Up.Enable();
 
         playerAction.InGame.ChangeDir_Down.canceled += OnChangeDir_Down_Release;
-        playerAction.InGame.ChangeDir_Down.Enable();
 
         playerAction.InGame.ChangeDir_Left.canceled += OnChangeDir_Left_Release;
-        playerAction.InGame.ChangeDir_Left.Enable();
 
         playerAction.InGame.ChangeDir_Right.canceled += OnChangeDir_Right_Release;
+
+        playerAction.InGame.ChangeDir_Right.canceled += OnChangeDir_Right_Release;
+
+        playerAction.InGame.Throw.canceled += endCharge;
+
+        playerAction.InGame.ChangeDir_Up.Enable();
+        playerAction.InGame.ChangeDir_Down.Enable();
+        playerAction.InGame.ChangeDir_Left.Enable();
         playerAction.InGame.ChangeDir_Right.Enable();
+        playerAction.InGame.ChangeDir_Right.Enable();
+        playerAction.InGame.Throw.Enable();
     }
 
     void OnDisable()
@@ -84,12 +97,20 @@ public class Char_InputTaker : MonoBehaviour
         playerAction.InGame.ChangeDir_Right.Disable();
     }
 
+    private void Start()
+    {
+        IsCharging = false;
+    }
+    #endregion
+
+    #region Direction keys
 
     bool UpKeyPress;
     bool DownKeyPress;
     bool LeftKeyPress;
     bool RightKeyPress;
 
+    //On press
     void OnChangeDir_Up_Press(InputAction.CallbackContext context)
     {
         UpKeyPress = true;
@@ -110,6 +131,9 @@ public class Char_InputTaker : MonoBehaviour
         RightKeyPress= true;
     }
 
+
+
+    //Release
     void OnChangeDir_Up_Release(InputAction.CallbackContext context)
     {
         UpKeyPress = false;
@@ -129,6 +153,8 @@ public class Char_InputTaker : MonoBehaviour
     {
         RightKeyPress = false;
     }
+
+
 
     //Getter
     public bool IsUpKeyPress()
@@ -151,5 +177,48 @@ public class Char_InputTaker : MonoBehaviour
         return RightKeyPress;
     }
 
+    #endregion
 
+    #region Charging 
+
+    const float chargingSpeed = 1.5f;
+    const float MaxCharge = 3;
+    float CurrentCharge;
+    bool IsCharging;
+
+    void startCharge(InputAction.CallbackContext context)
+    {
+        IsCharging = true;
+        CurrentCharge = 0;
+    }
+
+    void endCharge(InputAction.CallbackContext context)
+    {
+        IsCharging = false;
+        CurrentCharge = 0;
+    }
+
+    private void Update()
+    {
+        if (IsCharging && CurrentCharge < MaxCharge)
+        {
+            if(CurrentCharge > MaxCharge)
+            {
+                CurrentCharge = MaxCharge;
+            }
+            CurrentCharge += chargingSpeed * Time.deltaTime;
+        }
+    }
+
+    public float GetCharge()
+    {
+        return CurrentCharge / MaxCharge;
+    }
+
+    public bool IfIsCharging()
+    {
+        return IsCharging;
+    }
+
+    #endregion
 }
