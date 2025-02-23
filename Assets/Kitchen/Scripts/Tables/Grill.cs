@@ -15,7 +15,12 @@ public class Grill : Table, IInteractable
         // Pick up the ingredient on this table
         if (!grabbingIngredient && ingredientOnTable)
         {
-            // * Grab the ingredient on this table
+            // Grab the ingredient on this table
+            interactor.SetGrabbingIngredient(ingredientOnTable);
+
+            grabbingIngredient = interactor.GetGrabbingIngredient();
+            grabbingIngredient.transform.parent = null;
+            grabbingIngredient.GetComponent<CursorFollower>().enabled = true;
 
             ClearTable();
         }
