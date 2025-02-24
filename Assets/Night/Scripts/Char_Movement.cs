@@ -115,4 +115,14 @@ public class Char_Movement : MonoBehaviour
             rb_player.velocity = Vector2.zero;
         }
     }
+
+    public void ReduceSpeed()
+    {
+        maxSpeed = 1;
+    }
+
+    public void BackToNormalSpeed()
+    {
+        maxSpeed = 5;
+    }
 }

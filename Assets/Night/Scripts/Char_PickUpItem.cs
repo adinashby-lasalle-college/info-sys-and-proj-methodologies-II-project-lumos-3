@@ -41,6 +41,8 @@ public class Char_PickUpItem : MonoBehaviour
 
     public GameObject DragTarget()
     {
+        Char_Movement movement = gameObject.GetComponent<Char_Movement>();
+        movement.ReduceSpeed();
         return PickUpTarget;
     }
 }
