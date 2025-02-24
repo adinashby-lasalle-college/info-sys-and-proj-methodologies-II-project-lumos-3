@@ -25,8 +25,8 @@ public class PrepTable : Table, IInteractable
                     Ingredient ingredient = ingredientTransform.GetComponent<Ingredient>();
                     PutIngredient(ingredient);
 
-                    // * Put the sauce bottle back
-                    // * Clear the grabbing object at Interactor
+                    // Put the sauce bottle back
+                    sauce.PutSauceBottleBack();
 
                     break;
 

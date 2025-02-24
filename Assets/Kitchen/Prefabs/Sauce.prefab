@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7816498522618578133}
   - component: {fileID: 63529777306359223}
   - component: {fileID: -7869020750147172956}
+  - component: {fileID: 8616657231975805546}
   m_Layer: 0
   m_Name: Sauce
   m_TagString: Untagged
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 2
+--- !u!114 &8616657231975805546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867112075559477377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddf1d8dbe77d894b9eb18f423afff2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientSO: {fileID: 0}

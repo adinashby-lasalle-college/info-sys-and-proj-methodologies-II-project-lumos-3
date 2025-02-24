@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2143707771866195444}
   - component: {fileID: 1022362735869213271}
   - component: {fileID: 5114636114787771500}
-  - component: {fileID: 3314677149028066214}
-  - component: {fileID: 4120927245648354452}
+  - component: {fileID: 5156257829345442324}
+  - component: {fileID: 7374322629799633170}
   m_Layer: 3
   m_Name: Mesh
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3449337469779780324}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &3314677149028066214
+--- !u!95 &5156257829345442324
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4120927245648354452
+--- !u!114 &7374322629799633170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,9 +127,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2019874087974441858}
-  - component: {fileID: 4579749682244749815}
   - component: {fileID: 7569868823381099670}
   - component: {fileID: 1139039058750898466}
+  - component: {fileID: 7894989238958089657}
   m_Layer: 3
   m_Name: SauceBottle
   m_TagString: Untagged
@@ -153,7 +153,33 @@ Transform:
   - {fileID: 2143707771866195444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &4579749682244749815
+--- !u!114 &7569868823381099670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146936933451380705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9077537f417c56d48a1d1a43799630b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sauceSO: {fileID: 0}
+  originalTransform: {fileID: 0}
+--- !u!114 &1139039058750898466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146936933451380705}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5bbfacd5f85db9488f025d36edb256d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &7894989238958089657
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,27 +202,3 @@ CapsuleCollider:
   m_Height: 2.24
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7569868823381099670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5146936933451380705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9077537f417c56d48a1d1a43799630b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1139039058750898466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5146936933451380705}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5bbfacd5f85db9488f025d36edb256d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
