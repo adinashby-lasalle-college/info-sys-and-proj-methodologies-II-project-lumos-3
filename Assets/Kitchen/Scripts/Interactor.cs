@@ -7,7 +7,9 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask interactableLayerMask;
 
     private InputReader inputReader;
-    private Ingredient grabbingIngredient;
+    private Grabbable grabbingObject;
+
+    public bool IsGrabbing { get; private set; }
 
     private void Awake()
     {
@@ -44,18 +46,20 @@ public class Interactor : MonoBehaviour
         }
     }
 
-    public Ingredient GetGrabbingIngredient()
+    public Grabbable GetGrabbingObject()
     {
-        return grabbingIngredient;
+        return grabbingObject;
     }
 
-    public void SetGrabbingIngredient(Ingredient ingredient)
+    public void SetGrabbingObject(Grabbable grabbableObject)
     {
-        grabbingIngredient = ingredient;
+        grabbingObject = grabbableObject;
+        IsGrabbing = true;
     }
 
-    public void ClearGrabbingIngredient()
+    public void ClearGrabbingObject()
     {
-        grabbingIngredient = null;
+        grabbingObject = null;
+        IsGrabbing = false;
     }
 }

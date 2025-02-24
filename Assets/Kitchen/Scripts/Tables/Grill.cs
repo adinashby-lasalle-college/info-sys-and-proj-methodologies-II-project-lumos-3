@@ -2,25 +2,24 @@ public class Grill : Table, IInteractable
 {
     public void Interact()
     {
-        Ingredient grabbingIngredient = Interactor.Instance.GetGrabbingIngredient();
-
-        // Put an ingredient on this table
-        if (grabbingIngredient && !ingredientOnTable)
+        if (interactor.IsGrabbing)
         {
-            PutIngredient(grabbingIngredient);
+            Grabbable grabbingIngredient = interactor.GetGrabbingObject();
 
-            Interactor.Instance.ClearGrabbingIngredient();
+            if (grabbingIngredient.GetObjectType() == "Ingredient" && !ingredientOnTable)
+            {
+                // Put the ingredient on this table
+                PutIngredient(grabbingIngredient.GetComponent<Ingredient>());
+            }
         }
 
-        // Pick up the ingredient on this table
-        if (!grabbingIngredient && ingredientOnTable)
+        else if (ingredientOnTable)
         {
             // Grab the ingredient on this table
-            interactor.SetGrabbingIngredient(ingredientOnTable);
+            ingredientOnTable.transform.parent = null;
+            ingredientOnTable.GetComponent<CursorFollower>().enabled = true;
 
-            grabbingIngredient = interactor.GetGrabbingIngredient();
-            grabbingIngredient.transform.parent = null;
-            grabbingIngredient.GetComponent<CursorFollower>().enabled = true;
+            interactor.SetGrabbingObject(ingredientOnTable);
 
             ClearTable();
         }

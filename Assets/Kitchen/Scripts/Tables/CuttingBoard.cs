@@ -2,24 +2,24 @@ public class CuttingBoard : Table, IInteractable
 {
     public void Interact()
     {
-        Ingredient grabbingIngredient = interactor.GetGrabbingIngredient();
-
-        if (grabbingIngredient && !ingredientOnTable)
+        if (interactor.IsGrabbing)
         {
-            // Put the ingredient on this table
-            PutIngredient(grabbingIngredient);
+            Grabbable grabbingIngredient = interactor.GetGrabbingObject();
 
-            interactor.ClearGrabbingIngredient();
+            if (grabbingIngredient.GetObjectType() == "Ingredient" && !ingredientOnTable)
+            {
+                // Put the ingredient on this table
+                PutIngredient(grabbingIngredient.GetComponent<Ingredient>());
+            }
         }
 
-        if (!grabbingIngredient && ingredientOnTable)
+        else if (ingredientOnTable)
         {
             // Grab the ingredient on this table
-            interactor.SetGrabbingIngredient(ingredientOnTable);
+            ingredientOnTable.transform.parent = null;
+            ingredientOnTable.GetComponent<CursorFollower>().enabled = true;
 
-            grabbingIngredient = interactor.GetGrabbingIngredient();
-            grabbingIngredient.transform.parent = null;
-            grabbingIngredient.GetComponent<CursorFollower>().enabled = true;
+            interactor.SetGrabbingObject(ingredientOnTable);
 
             ClearTable();
         }

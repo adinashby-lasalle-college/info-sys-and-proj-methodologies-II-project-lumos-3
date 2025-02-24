@@ -5,10 +5,10 @@ public class TrashCan : MonoBehaviour, IInteractable
     public void Interact()
     {
         // Destroy the grabbing ingredient
-        if (Interactor.Instance.GetGrabbingIngredient())
+        if (Interactor.Instance.GetGrabbingObject())
         {
-            Destroy(Interactor.Instance.GetGrabbingIngredient().gameObject);
-            Interactor.Instance.ClearGrabbingIngredient();
+            Destroy(Interactor.Instance.GetGrabbingObject().gameObject);
+            Interactor.Instance.ClearGrabbingObject();
         }
     }
 }

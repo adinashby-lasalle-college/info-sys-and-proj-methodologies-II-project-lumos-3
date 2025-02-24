@@ -16,7 +16,11 @@ public class Table : MonoBehaviour
 
     protected void PutIngredient(Ingredient ingredient)
     {
-        ingredient.GetComponent<CursorFollower>().enabled = false;
+        if (ingredient.GetComponent<CursorFollower>())
+        {
+            ingredient.GetComponent<CursorFollower>().enabled = false;
+        }
+
         ingredient.transform.parent = tableTopTransform;
         ingredient.transform.localPosition = Vector3.zero;
 
@@ -25,6 +29,8 @@ public class Table : MonoBehaviour
 
         ingredient.SetTable(this);
         ingredientOnTable = ingredient;
+
+        interactor.ClearGrabbingObject();
     }
 
     protected void ClearTable()
