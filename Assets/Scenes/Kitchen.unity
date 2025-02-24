@@ -509,8 +509,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.25, z: 1}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!23 &966271407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1562,7 +1562,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.15, z: 1}
-  m_Center: {x: 0, y: 0.43, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!23 &1531960899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1701,12 +1701,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5146936933451380705, guid: 62a1014860b296945aec9133066659d4, type: 3}
       propertyPath: m_Name
-      value: Mustard
+      value: Mustard Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 5871859034952738432, guid: 62a1014860b296945aec9133066659d4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0d9e9aa26f7416d44bd00ad985038438, type: 2}
+    - target: {fileID: 7569868823381099670, guid: 62a1014860b296945aec9133066659d4, type: 3}
+      propertyPath: sauceSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e2f5781f6cd8976429f93776cdff08b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2680,8 +2684,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5146936933451380705, guid: 62a1014860b296945aec9133066659d4, type: 3}
       propertyPath: m_Name
-      value: Pickle Sauce
+      value: Pickle Sauce Bottle
       objectReference: {fileID: 0}
+    - target: {fileID: 7569868823381099670, guid: 62a1014860b296945aec9133066659d4, type: 3}
+      propertyPath: sauceSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e2f5781f6cd8976429f93776cdff08b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2827,12 +2835,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5146936933451380705, guid: 62a1014860b296945aec9133066659d4, type: 3}
       propertyPath: m_Name
-      value: Ketchup
+      value: Ketchup Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 5871859034952738432, guid: 62a1014860b296945aec9133066659d4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 38f844b00f96f7644a21d66901d1742e, type: 2}
+    - target: {fileID: 7569868823381099670, guid: 62a1014860b296945aec9133066659d4, type: 3}
+      propertyPath: sauceSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e2f5781f6cd8976429f93776cdff08b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

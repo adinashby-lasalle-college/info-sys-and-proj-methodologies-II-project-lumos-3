@@ -78,6 +78,7 @@
     <Compile Include="Assets\DataPersisence\DataPersisenceManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\TrashCan.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Table.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Grabbable.cs" />
     <Compile Include="Assets\Night\Scripts\Char_InputTaker.cs" />
     <Compile Include="Assets\Night\Scripts\PickableItem.cs" />
     <Compile Include="Assets\Kitchen\Scripts\AnimationManager.cs" />

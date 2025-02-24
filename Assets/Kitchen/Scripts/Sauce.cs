@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public class Sauce : MonoBehaviour, IInteractable
+public class Sauce : Grabbable, IInteractable
 {
+    [SerializeField] private IngredientSO sauceSO;
+
     private AnimationManager animationPlayer;
 
     private void Start()
@@ -21,8 +23,21 @@ public class Sauce : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        // * grab an ingredient
+        // Grab this sauce bottle
+        if (!Interactor.Instance.IsGrabbing)
+        {
+            GetComponent<CursorFollower>().enabled = true;
+            Interactor.Instance.SetGrabbingObject(this);
+        }
+    }
 
-        Debug.Log("Interacting with " + this.name);
+    public override string GetObjectType()
+    {
+        return "Sauce";
+    }
+
+    public IngredientSO GetIngredientSO()
+    {
+        return sauceSO; 
     }
 }
