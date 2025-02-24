@@ -79,10 +79,12 @@
     <Compile Include="Assets\Kitchen\Scripts\TrashCan.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Table.cs" />
     <Compile Include="Assets\Night\Scripts\Char_InputTaker.cs" />
+    <Compile Include="Assets\Night\Scripts\PickableItem.cs" />
     <Compile Include="Assets\Kitchen\Scripts\AnimationManager.cs" />
     <Compile Include="Assets\DataPersisence\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Kitchen\Scripts\InputReader.cs" />
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />
+    <Compile Include="Assets\Night\Scripts\Char_PickUpItem.cs" />
     <Compile Include="Assets\Night\Scripts\NightEventInput.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\PrepTable.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Interactor.cs" />

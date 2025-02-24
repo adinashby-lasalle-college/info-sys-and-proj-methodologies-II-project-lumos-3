@@ -11,26 +11,6 @@ public class Char_InputTaker : MonoBehaviour
     {
         playerAction = new NightEventInput();
     }
-
-    #region Movement
-    Vector2 Movement;
-
-    NightEventInput playerAction;
-
-    //Movement Input taker
-    private void OnMovement(InputValue value)
-    {
-        Vector2 RawValue = value.Get<Vector2>();
-        Movement = new Vector2(RawValue.x, RawValue.y*0.5f);
-    }
-    //Get Movement
-    public Vector2 GetMovementValue()
-    {
-        return Movement;
-    }
-
-    #endregion
-
     #region SetUp
 
     //Direction change Input taker
@@ -48,6 +28,7 @@ public class Char_InputTaker : MonoBehaviour
 
         playerAction.InGame.Throw.performed += startCharge;
 
+        playerAction.InGame.PickUp.performed += TryPickUp;
 
         //canceled
         playerAction.InGame.ChangeDir_Up.canceled += OnChangeDir_Up_Release;
@@ -68,6 +49,7 @@ public class Char_InputTaker : MonoBehaviour
         playerAction.InGame.ChangeDir_Right.Enable();
         playerAction.InGame.ChangeDir_Right.Enable();
         playerAction.InGame.Throw.Enable();
+        playerAction.InGame.PickUp.Enable();
     }
 
     void OnDisable()
@@ -101,6 +83,25 @@ public class Char_InputTaker : MonoBehaviour
     {
         IsCharging = false;
     }
+    #endregion
+
+    #region Movement
+    Vector2 Movement;
+
+    NightEventInput playerAction;
+
+    //Movement Input taker
+    private void OnMovement(InputValue value)
+    {
+        Vector2 RawValue = value.Get<Vector2>();
+        Movement = new Vector2(RawValue.x, RawValue.y*0.5f);
+    }
+    //Get Movement
+    public Vector2 GetMovementValue()
+    {
+        return Movement;
+    }
+
     #endregion
 
     #region Direction keys
@@ -218,6 +219,21 @@ public class Char_InputTaker : MonoBehaviour
     public bool IfIsCharging()
     {
         return IsCharging;
+    }
+
+    #endregion
+
+    #region PickUp
+
+    void TryPickUp(InputAction.CallbackContext context)
+    {
+        Debug.Log("Pick");
+        Char_PickUpItem char_PickUpItem = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_PickUpItem>();
+        if(char_PickUpItem.IfPickableItemOverLapping())
+        {
+            PickableItem pickableItem = char_PickUpItem.DragTarget().GetComponent<PickableItem>();
+            pickableItem.DragThisItem();
+        }
     }
 
     #endregion
