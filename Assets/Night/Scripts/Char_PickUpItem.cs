@@ -7,10 +7,12 @@ public class Char_PickUpItem : MonoBehaviour
     [SerializeField] Transform DragPos;
     bool isPickableItemOverLapping;
     GameObject PickUpTarget;
+    bool isItemInHand;
 
     private void Start()
     {
         PickUpTarget = null;
+        isItemInHand= false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +45,13 @@ public class Char_PickUpItem : MonoBehaviour
     {
         Char_Movement movement = gameObject.GetComponent<Char_Movement>();
         movement.ReduceSpeed();
+        isItemInHand = true;
+        Debug.Log("Drag");
         return PickUpTarget;
+    }
+
+    public bool IfItemInHand()
+    {
+        return isItemInHand;
     }
 }

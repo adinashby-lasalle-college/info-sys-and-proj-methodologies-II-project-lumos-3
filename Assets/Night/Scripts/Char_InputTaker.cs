@@ -227,10 +227,10 @@ public class Char_InputTaker : MonoBehaviour
 
     void TryPickUp(InputAction.CallbackContext context)
     {
-        Debug.Log("Pick");
         Char_PickUpItem char_PickUpItem = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_PickUpItem>();
-        if(char_PickUpItem.IfPickableItemOverLapping())
+        if (char_PickUpItem.IfPickableItemOverLapping() && char_PickUpItem.IfItemInHand() == false) 
         {
+            Debug.Log("Pick");
             PickableItem pickableItem = char_PickUpItem.DragTarget().GetComponent<PickableItem>();
             pickableItem.DragThisItem();
         }
