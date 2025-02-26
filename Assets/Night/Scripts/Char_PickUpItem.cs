@@ -7,6 +7,7 @@ public class Char_PickUpItem : MonoBehaviour
     [SerializeField] Transform DragPos;
     bool isPickableItemOverLapping;
     GameObject PickUpTarget;
+    GameObject ItemInHand;
     bool isItemInHand;
 
     //UI for Pick up button
@@ -21,9 +22,8 @@ public class Char_PickUpItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PickableItem>() != null)
+        if (collision.gameObject.GetComponentInParent<PickableItem>() != null)
         {
-            Debug.Log("Enter");
             isPickableItemOverLapping = true;
             PickUpTarget = collision.gameObject;
             ui_PickUpButton.ShowPickUpUI();
@@ -32,9 +32,8 @@ public class Char_PickUpItem : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PickableItem>() != null)
+        if (collision.gameObject.GetComponentInParent<PickableItem>() != null)
         {
-            Debug.Log("Exit");
             isPickableItemOverLapping = false;
             PickUpTarget = null;
             ui_PickUpButton.HidePickUpUI();
@@ -48,15 +47,29 @@ public class Char_PickUpItem : MonoBehaviour
 
     public GameObject DragTarget()
     {
-        Char_Movement movement = gameObject.GetComponent<Char_Movement>();
-        movement.ReduceSpeed();
+        gameObject.GetComponent<Char_Movement>().ReduceSpeed();
         isItemInHand = true;
-        Debug.Log("Drag");
+        ItemInHand = PickUpTarget.GetComponentInParent<Rigidbody2D>().gameObject;
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ItemInHand.GetComponent<Collider2D>(), true);
         return PickUpTarget;
     }
 
     public bool IfItemInHand()
     {
         return isItemInHand;
+    }
+
+    public void ThrowItemInHand(float Force)
+    {
+        ItemInHand.GetComponent<PickableItem>().ThrowThisItem(Force);
+        gameObject.GetComponent<Char_Movement>().BackToNormalSpeed();
+        isItemInHand = false;
+        StartCoroutine(SetBackCollider());
+    }
+
+    IEnumerator SetBackCollider()
+    {
+        yield return new WaitForSeconds(1f);
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ItemInHand.GetComponent<Collider2D>(), false);
     }
 }

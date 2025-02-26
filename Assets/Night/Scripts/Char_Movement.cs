@@ -125,4 +125,9 @@ public class Char_Movement : MonoBehaviour
     {
         maxSpeed = 5;
     }
+
+    public string GetCurrentDirection()
+    {
+        return current_dir.ToString();
+    }
 }

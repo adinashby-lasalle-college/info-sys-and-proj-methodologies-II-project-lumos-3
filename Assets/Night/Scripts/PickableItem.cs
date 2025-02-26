@@ -25,37 +25,42 @@ public class PickableItem : MonoBehaviour
         }
     }
 
-    public void ThrowThisItem(string Dir, float Force)
+    public void ThrowThisItem(float Force)
     {
-        float throwForce = 10f * Force;
+        Char_Movement player = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_Movement>();
+        string Dir = player.GetCurrentDirection();
+        float throwForce = 1500f * Force;
+        Debug.Log(throwForce.ToString());
         rb.velocity = Vector2.zero;
         if(Dir == "Up")
         {
-            rb.AddForce(Vector2.up.normalized * throwForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * throwForce);
+            Debug.Log("Up");
         }
         else if(Dir == "Down")
         {
-            rb.AddForce(Vector2.down.normalized * throwForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.down * throwForce);
+            Debug.Log("Down");
         }
         else if(Dir == "Left")
         {
-            rb.AddForce(Vector2.left.normalized * throwForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.left * throwForce);
+            Debug.Log("Left");
         }
         else if(Dir == "Right")
         {
-            rb.AddForce(Vector2.right.normalized * throwForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.right * throwForce);
+            Debug.Log("Right");
         }
         else
         {
 
         }
         IsThisObjectPicking = false;
-        rb.simulated = true;
     }
 
     public void DragThisItem()
     {
-        rb.simulated = false;
         IsThisObjectPicking = true;
     }
 }

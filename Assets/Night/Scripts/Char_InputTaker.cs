@@ -41,7 +41,7 @@ public class Char_InputTaker : MonoBehaviour
 
         playerAction.InGame.ChangeDir_Right.canceled += OnChangeDir_Right_Release;
 
-        playerAction.InGame.Throw.canceled += endCharge;
+        playerAction.InGame.Throw.canceled += ThrowItem;
 
         playerAction.InGame.ChangeDir_Up.Enable();
         playerAction.InGame.ChangeDir_Down.Enable();
@@ -193,12 +193,6 @@ public class Char_InputTaker : MonoBehaviour
         CurrentCharge = 0;
     }
 
-    void endCharge(InputAction.CallbackContext context)
-    {
-        IsCharging = false;
-        CurrentCharge = 0;
-    }
-
     private void Update()
     {
         if (IsCharging && CurrentCharge < MaxCharge)
@@ -231,10 +225,23 @@ public class Char_InputTaker : MonoBehaviour
         if (char_PickUpItem.IfPickableItemOverLapping() && char_PickUpItem.IfItemInHand() == false) 
         {
             Debug.Log("Pick");
-            PickableItem pickableItem = char_PickUpItem.DragTarget().GetComponent<PickableItem>();
+            PickableItem pickableItem = char_PickUpItem.DragTarget().GetComponentInParent<PickableItem>();
             pickableItem.DragThisItem();
         }
     }
 
+    #endregion
+
+    #region Throw
+    void ThrowItem(InputAction.CallbackContext context)
+    {
+        Char_PickUpItem char_PickUpItem = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_PickUpItem>();
+        if (char_PickUpItem.IfItemInHand() == true)
+        {
+            char_PickUpItem.ThrowItemInHand(CurrentCharge);
+            IsCharging = false;
+            CurrentCharge = 0;
+        }
+    }
     #endregion
 }
