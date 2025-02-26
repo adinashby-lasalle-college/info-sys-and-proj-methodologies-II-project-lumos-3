@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Char_DirArrow : MonoBehaviour
+public class UI_DirArrow : FollowUpUI
 {
     //Let dirArrow follow player, enable the arrow based on player dirction
     //Pure Visual 
-    GameObject player;
     Char_InputTaker Input;
     [SerializeField] GameObject ArrowUp;
     [SerializeField] GameObject ArrowDown;
@@ -17,29 +16,21 @@ public class Char_DirArrow : MonoBehaviour
     [SerializeField] Image ChargingBar;
 
     public Vector3 Offset;
-    RectTransform RectTransform;
-
+    public GameObject player;
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Input = player.GetComponent<Char_InputTaker>();
-        RectTransform = GetComponent<RectTransform>();
         ChargingBar.color = Color.green;
+        SetTarget(player.transform,Offset);
     }
 
     private void Update()
     {
-        FollowPlayer();
         UpdateChargeSlider();
     }
 
-    void FollowPlayer()
-    {
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(player.transform.position + Offset);
-        this.transform.position = player.transform.position;
-        RectTransform.position = screenPoint;
-    }
-
+    //Charging for throwing
     void UpdateChargeSlider()
     {
         if(Input.IfIsCharging())
@@ -56,6 +47,7 @@ public class Char_DirArrow : MonoBehaviour
         }
     }
 
+    //Update the Arrow UI when player switch direction
     public void SetArrowActive(string Dir)
     {
         ResetAllArrow();
