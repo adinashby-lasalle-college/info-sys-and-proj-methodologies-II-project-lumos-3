@@ -6,6 +6,7 @@ public class InputReader : MonoBehaviour
     private KitchenInputActions kitchenInputActions;
 
     public event EventHandler OnInteractAction;
+    public event EventHandler OnCutAction;
 
     private void Awake()
     {
@@ -15,9 +16,14 @@ public class InputReader : MonoBehaviour
         kitchenInputActions.Player.Enable();
 
         kitchenInputActions.Player.Interact.performed += TryInteract;
+        kitchenInputActions.Player.Cut.performed += TryCut;
     }
 
-    // * Observer Pattern *
+    private void TryCut(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnCutAction?.Invoke(this, EventArgs.Empty);
+    }
+
     private void TryInteract(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         // If there's at least one listener, invoke the event

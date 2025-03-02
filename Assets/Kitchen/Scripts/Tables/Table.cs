@@ -8,6 +8,7 @@ public class Table : MonoBehaviour
     protected Interactor interactor;
 
     public Ingredient GetIngredient() { return ingredientOnTable; }
+    public Transform GetTableTopTransform() { return tableTopTransform; }
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class Table : MonoBehaviour
         interactor.ClearGrabbingObject();
     }
 
-    protected void ClearTable()
+    public void ClearTable()
     {
         ingredientOnTable.SetTable(null);
         ingredientOnTable = null;

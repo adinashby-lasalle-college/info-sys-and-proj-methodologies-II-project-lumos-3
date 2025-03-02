@@ -25,10 +25,7 @@ public class Container : MonoBehaviour, IInteractable
     {
         if (!Interactor.Instance.IsGrabbing)
         {
-            Transform ingredientTransform = Instantiate(ingredientSO.prefab);
-            ingredientTransform.localPosition = Vector3.zero;
-
-            Ingredient ingredient = ingredientTransform.GetComponent<Ingredient>();
+            Ingredient ingredient = Ingredient.SpawnIngredient(ingredientSO);
             Interactor.Instance.SetGrabbingObject(ingredient);
         }
     }

@@ -17,7 +17,6 @@ public class Sauce : Grabbable, IInteractable
     {
         if (canPlayAnimation)
         {
-            Debug.Log("move up played");
             animationPlayer.TriggerAnimation("MoveUp");
         }
     }
@@ -26,7 +25,6 @@ public class Sauce : Grabbable, IInteractable
     {
         if (canPlayAnimation)
         {
-            Debug.Log("move down played");
             animationPlayer.TriggerAnimation("MoveDown");
         }
     }

@@ -155,6 +155,37 @@ Transform:
   - {fileID: 1572592354}
   m_Father: {fileID: 1902744336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &254416009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254416010}
+  m_Layer: 3
+  m_Name: Cutting Board Top Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &254416010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254416009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 780016274}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &447565102
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +430,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1318163780}
+  - {fileID: 254416010}
   m_Father: {fileID: 1575567477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &780016275
@@ -485,6 +517,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tableTopTransform: {fileID: 1318163780}
+  cuttingBoardTopTransform: {fileID: 254416010}
+  cuttableIngredientSOList:
+  - {fileID: 11400000, guid: 47bd3da6dadcd2145b85223942d15730, type: 2}
+  - {fileID: 11400000, guid: f3905fe0ab4a0954f8a76f1b9bb5a302, type: 2}
+  - {fileID: 11400000, guid: 669d88e854895db4da73e55e1af72f6b, type: 2}
 --- !u!95 &872000606 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8014201132900754933, guid: 319254678dfea1f4eb078c9044e74227, type: 3}

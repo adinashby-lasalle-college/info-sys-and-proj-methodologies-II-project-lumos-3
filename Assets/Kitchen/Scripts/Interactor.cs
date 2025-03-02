@@ -61,9 +61,12 @@ public class Interactor : MonoBehaviour
 
     public void ClearGrabbingObject()
     {
-        grabbingObject.GetComponentInChildren<Collider>().enabled = true;
+        if (grabbingObject)
+        {
+            grabbingObject.GetComponentInChildren<Collider>().enabled = true;
 
-        grabbingObject = null;
-        IsGrabbing = false;
+            grabbingObject = null;
+            IsGrabbing = false;
+        }
     }
 }
