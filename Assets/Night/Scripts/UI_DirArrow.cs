@@ -45,6 +45,10 @@ public class UI_DirArrow : FollowUpUI
                 ChargingBar.color = Color.green;
             }
         }
+        else
+        {
+            ChargeSlider.value = 0;
+        }
     }
 
     //Update the Arrow UI when player switch direction

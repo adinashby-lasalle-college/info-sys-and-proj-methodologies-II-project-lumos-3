@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickableItem : MonoBehaviour
+public class PickableItem : MonoBehaviour, I_PickableObj
 {
     Rigidbody2D rb;
     bool IsThisObjectPicking;
@@ -11,8 +11,6 @@ public class PickableItem : MonoBehaviour
     private void Start()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
-        //IsThisObjectPicking = true;
-        //rb.simulated = false;
         playerDragSpot = GameObject.Find("DragPos").GetComponent<Transform>();
     }
 
@@ -29,7 +27,7 @@ public class PickableItem : MonoBehaviour
     {
         Char_Movement player = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_Movement>();
         string Dir = player.GetCurrentDirection();
-        float throwForce = 1500f * Force;
+        float throwForce = 5000f * Force;
         Debug.Log(throwForce.ToString());
         rb.velocity = Vector2.zero;
         if(Dir == "Up")
