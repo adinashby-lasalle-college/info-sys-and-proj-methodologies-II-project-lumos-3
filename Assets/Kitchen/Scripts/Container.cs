@@ -4,21 +4,21 @@ public class Container : MonoBehaviour, IInteractable
 {
     [SerializeField] private IngredientSO ingredientSO;
 
-    private AnimationManager animationPlayer;
+    private Animator animator;
 
     private void Start()
     {
-        animationPlayer = GetComponentInChildren<AnimationManager>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnMouseEnter()
     {
-        animationPlayer.TriggerAnimation("Open");
+        animator.SetTrigger("Open");
     }
 
     private void OnMouseExit()
     {
-        animationPlayer.TriggerAnimation("Close");
+        animator.SetTrigger("Close");
     }
 
     public void Interact()
