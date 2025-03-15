@@ -25,6 +25,9 @@ public class PrepTable : Table, IInteractable
                     Ingredient ingredient = ingredientTransform.GetComponent<Ingredient>();
                     PutIngredient(ingredient);
 
+                    // Ingredient dropping position will be slightly higher every time
+                    tableTopTransform.localPosition = new Vector3(0, tableTopTransform.localPosition.y + 0.1f, 0);
+
                     // Put the sauce bottle back
                     sauce.PutSauceBottleBack();
 

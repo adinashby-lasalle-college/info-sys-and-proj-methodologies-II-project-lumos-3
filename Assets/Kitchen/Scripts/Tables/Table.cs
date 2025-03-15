@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    [SerializeField] private Transform tableTopTransform;
+    [SerializeField] protected Transform tableTopTransform;
 
     protected Ingredient ingredientOnTable;
     protected Interactor interactor;
@@ -24,9 +24,6 @@ public class Table : MonoBehaviour
 
         ingredient.transform.parent = tableTopTransform;
         ingredient.transform.localPosition = Vector3.zero;
-
-        // Ingredient dropping position will be slightly higher every time
-        tableTopTransform.localPosition = new Vector3(0, tableTopTransform.localPosition.y + 0.1f, 0);
 
         ingredient.SetTable(this);
         ingredientOnTable = ingredient;
