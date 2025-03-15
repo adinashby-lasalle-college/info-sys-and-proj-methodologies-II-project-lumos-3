@@ -26,7 +26,7 @@ public class Table : MonoBehaviour
         ingredient.transform.localPosition = Vector3.zero;
 
         // Ingredient dropping position will be slightly higher every time
-        tableTopTransform.localPosition = new Vector3(0, tableTopTransform.localPosition.y + 0.2f, 0);
+        tableTopTransform.localPosition = new Vector3(0, tableTopTransform.localPosition.y + 0.1f, 0);
 
         ingredient.SetTable(this);
         ingredientOnTable = ingredient;

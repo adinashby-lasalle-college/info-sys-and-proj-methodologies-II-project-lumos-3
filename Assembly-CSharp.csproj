@@ -61,27 +61,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Night\Scripts\Char_FacingDir.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Ingredient\Grabbable.cs" />
     <Compile Include="Assets\Kitchen\KitchenInputActions.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingBoard.cs" />
     <Compile Include="Assets\Kitchen\Scripts\CursorFollower.cs" />
     <Compile Include="Assets\Night\Scripts\FollowUpUI.cs" />
     <Compile Include="Assets\Night\Scripts\Char_Movement.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Grill.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Tables\TrashCan.cs" />
     <Compile Include="Assets\Night\Scripts\UI_DirArrow.cs" />
     <Compile Include="Assets\Kitchen\Scripts\CamController.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\Container.cs" />
     <Compile Include="Assets\DataPersisence\FileDataHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\IInteractable.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Ingredient.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\IngredientSO.cs" />
     <Compile Include="Assets\DataPersisence\Data\GameData.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\Sauce.cs" />
     <Compile Include="Assets\DataPersisence\DataPersisenceManager.cs" />
     <Compile Include="Assets\Night\Scripts\UI_PickUpButton.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\TrashCan.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Tables\Container.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Table.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Ingredient\Sauce.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\CuttableIngredientSO.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\Grabbable.cs" />
     <Compile Include="Assets\Night\Scripts\I_FollowUpUI.cs" />
     <Compile Include="Assets\Night\Scripts\Char_InputTaker.cs" />
     <Compile Include="Assets\Night\Scripts\PickableItem.cs" />
