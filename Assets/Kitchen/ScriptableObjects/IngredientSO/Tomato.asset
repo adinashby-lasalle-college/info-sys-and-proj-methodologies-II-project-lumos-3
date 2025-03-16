@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 8341331536962255764, guid: 5ca170f5afa93d04fa3ef0ca592f1b29, type: 3}
   ingredientName: Tomato
   icon: {fileID: 0}
+  type: 1

@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 5405374913237686454, guid: ea24e64306059304d920cf663f0310ba, type: 3}
   ingredientName: Cabbage
   icon: {fileID: 0}
+  type: 1

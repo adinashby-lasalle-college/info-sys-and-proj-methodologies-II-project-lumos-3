@@ -14,7 +14,7 @@ public class PrepTable : Table, IInteractable
         {
             switch (interactor.GetGrabbingObject().GetObjectType())
             {
-                case "Sauce":
+                case ObjectType.SAUCE:
 
                     Sauce sauce = interactor.GetGrabbingObject().GetComponent<Sauce>();
 
@@ -33,7 +33,7 @@ public class PrepTable : Table, IInteractable
 
                     break;
 
-                case "Ingredient":
+                case ObjectType.INGREDIENT_READY:
 
                     ingredient = interactor.GetGrabbingObject().GetComponent<Ingredient>();
                     PutIngredient(ingredient);

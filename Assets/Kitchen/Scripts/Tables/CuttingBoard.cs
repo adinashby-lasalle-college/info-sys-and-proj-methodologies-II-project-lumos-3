@@ -14,14 +14,10 @@ public class CuttingBoard : Table, IInteractable
         {
             Grabbable grabbingIngredient = interactor.GetGrabbingObject();
 
-            if (grabbingIngredient.GetObjectType() == "Ingredient" && !ingredientOnTable)
+            if (grabbingIngredient.GetObjectType() == ObjectType.CUTTABLE && !ingredientOnTable)
             {
-                // Check if the grabbing ingredient cuttable
-                if (IsCuttable(grabbingIngredient))
-                {
-                    // Put the ingredient on this table
-                    PutIngredient(grabbingIngredient.GetComponent<Ingredient>());
-                }
+                // Put the ingredient on this table
+                PutIngredient(grabbingIngredient.GetComponent<Ingredient>());
             }
         }
 
@@ -91,20 +87,5 @@ public class CuttingBoard : Table, IInteractable
         }
 
         return null;
-    }
-
-    private bool IsCuttable(Grabbable ingredient)
-    {
-        IngredientSO ingredientSO = ingredient.GetComponent<Ingredient>().GetIngredientSO();
-
-        foreach (CuttableIngredientSO cuttableIngredientSO in cuttableIngredientSOList)
-        {
-            if (cuttableIngredientSO.originalIngredient == ingredientSO)
-            {
-                return true;
-            }
-        }
-
-        return false;
     }
 }

@@ -8,9 +8,9 @@ public class Ingredient : Grabbable
 
     public IngredientSO GetIngredientSO() { return ingredientSO; }
 
-    public override string GetObjectType()
+    public override ObjectType GetObjectType()
     {
-        return "Ingredient";
+        return ingredientSO.type;
     }
 
     public void SetTable(Table table)

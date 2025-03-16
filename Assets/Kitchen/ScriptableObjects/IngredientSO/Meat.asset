@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 7184156019602906301, guid: 814d6ec7636ae73409b8f649070b28a4, type: 3}
   ingredientName: Meat
   icon: {fileID: 0}
+  type: 2

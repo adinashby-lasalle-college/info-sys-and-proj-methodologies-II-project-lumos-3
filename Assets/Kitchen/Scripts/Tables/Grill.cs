@@ -6,7 +6,8 @@ public class Grill : Table, IInteractable
         {
             Grabbable grabbingIngredient = interactor.GetGrabbingObject();
 
-            if (grabbingIngredient.GetObjectType() == "Ingredient" && !ingredientOnTable)
+            // Check if the grabbing ingredient cookable
+            if (grabbingIngredient.GetObjectType() == ObjectType.COOKABLE && !ingredientOnTable)
             {
                 // Put the ingredient on this table
                 PutIngredient(grabbingIngredient.GetComponent<Ingredient>());

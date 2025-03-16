@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc6e9930cc2d2a4d92c708d62ccf57a, type: 3}
-  m_Name: Cheese
+  m_Script: {fileID: 11500000, guid: 44793d3eb9d32bb4ebb741a1542bd795, type: 3}
+  m_Name: CuttableCabbage
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2576289490208956830, guid: 0b2dddf6380c1db4baea8ddce54706c8, type: 3}
-  ingredientName: Cheese
-  icon: {fileID: 0}
-  type: 1
+  originalIngredient: {fileID: 11400000, guid: 5d0d3163e24422b4ba305bc6442dc36a, type: 2}
+  slicedIngredient: {fileID: 11400000, guid: 83ae27a9143170a42bb385313e12b494, type: 2}

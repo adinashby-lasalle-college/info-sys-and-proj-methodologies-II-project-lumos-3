@@ -51,9 +51,9 @@ public class Sauce : Grabbable, IInteractable
         animationPlayer.TriggerAnimation("MoveDown");
     }
 
-    public override string GetObjectType()
+    public override ObjectType GetObjectType()
     {
-        return "Sauce";
+        return ObjectType.SAUCE;
     }
 
     public IngredientSO GetIngredientSO()
