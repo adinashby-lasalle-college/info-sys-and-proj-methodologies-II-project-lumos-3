@@ -5,19 +5,19 @@ public class Sauce : Grabbable, IInteractable
     [SerializeField] private IngredientSO sauceSO;
     [SerializeField] private Transform originalTransform;
 
-    private AnimationManager animationPlayer;
+    private Animator animator;
     private bool canPlayAnimation = true;
 
     private void Start()
     {
-        animationPlayer = GetComponentInChildren<AnimationManager>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnMouseEnter()
     {
         if (canPlayAnimation)
         {
-            animationPlayer.TriggerAnimation("MoveUp");
+            animator.SetTrigger("MoveUp");
         }
     }
 
@@ -25,7 +25,7 @@ public class Sauce : Grabbable, IInteractable
     {
         if (canPlayAnimation)
         {
-            animationPlayer.TriggerAnimation("MoveDown");
+            animator.SetTrigger("MoveDown");
         }
     }
 
@@ -48,7 +48,7 @@ public class Sauce : Grabbable, IInteractable
 
         transform.position = originalTransform.position;
 
-        animationPlayer.TriggerAnimation("MoveDown");
+        animator.SetTrigger("MoveDown");
     }
 
     public override ObjectType GetObjectType()

@@ -4,9 +4,10 @@ public class CuttingBoard : Table, IInteractable
 {
     [SerializeField] private Transform cuttingBoardTopTransform;
     [SerializeField] private CuttableIngredientSO[] cuttableIngredientSOList;
+    [SerializeField] private CuttingEffectManager cuttingEffectManager;
 
-    private int sliceCount;
-    private int sliceMaxCount = 3;
+    private float sliceCount;
+    private float sliceMaxCount = 3f;
 
     public void Interact()
     {
@@ -40,13 +41,15 @@ public class CuttingBoard : Table, IInteractable
 
                 sliceCount = 0;
             }
+
+            cuttingEffectManager.UpdateEffect(sliceCount, sliceMaxCount);
         }
     }
 
     private void Cut()
     {
         sliceCount++;
-        
+
         if (sliceCount >= sliceMaxCount)
         {
             // Get sliced version ingredient
