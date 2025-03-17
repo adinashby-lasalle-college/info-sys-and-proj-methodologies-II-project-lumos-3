@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 616ea814fbe177f488b6695555cb681f
+guid: 9d90b4c849d8fd6478c2d62c3846f0bb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,28 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DarkGreyPlastic
-    second: {fileID: 2100000, guid: 6b745b6d0e12acd46bf7c2366a96ff76, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grill
-    second: {fileID: 2100000, guid: 60335b7ee5c4fee46b87e81e2a2b0d91, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MidiumGreyPlastic
-    second: {fileID: 2100000, guid: dd0554242a81a58458b3c6f31bf75bc4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Steel
-    second: {fileID: 2100000, guid: 4348a962b1ae63c458ac9db01958b9ea, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WhiteGreyPlastic
-    second: {fileID: 2100000, guid: 2ea75ef5d7b538c4b82f24099bc7c889, type: 2}
+      name: FoodContainer_UVColoured
+    second: {fileID: 2100000, guid: 0aadc343e006e954fb785eadc8dbd6cc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
