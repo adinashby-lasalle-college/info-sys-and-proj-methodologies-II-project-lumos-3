@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6b929fd627923c488c330fe70fe3f8a
+guid: 2691d5211126dc94bbb3ec42ee7f5620
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DarkGreyPlastic
-    second: {fileID: 2100000, guid: 6b745b6d0e12acd46bf7c2366a96ff76, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MidiumGreyPlastic
-    second: {fileID: 2100000, guid: dd0554242a81a58458b3c6f31bf75bc4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WhiteGreyPlastic
-    second: {fileID: 2100000, guid: 2ea75ef5d7b538c4b82f24099bc7c889, type: 2}
+      name: finalColourUV
+    second: {fileID: 2100000, guid: 006319da1d6b3424c80c90bbf52e442d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

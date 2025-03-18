@@ -99,6 +99,7 @@
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />
     <Compile Include="Assets\Night\Scripts\I_PickableObj.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\Paper.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\KitchenSFXManager.cs" />
     <Compile Include="Assets\Night\Scripts\NightEventInput.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\PrepTable.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_Movement.cs" />
