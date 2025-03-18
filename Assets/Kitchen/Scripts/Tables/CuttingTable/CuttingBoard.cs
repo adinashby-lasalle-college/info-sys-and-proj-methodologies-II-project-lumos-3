@@ -4,7 +4,6 @@ public class CuttingBoard : Table, IInteractable
 {
     [SerializeField] private Transform cuttingBoardTopTransform;
     [SerializeField] private CuttableIngredientSO[] cuttableIngredientSOList;
-    [SerializeField] private CuttingEffectManager cuttingEffectManager;
 
     private float sliceCount;
     private float sliceMaxCount = 3f;
@@ -15,9 +14,10 @@ public class CuttingBoard : Table, IInteractable
         {
             Grabbable grabbingIngredient = interactor.GetGrabbingObject();
 
+            // If the grabbing object is cuttable,
             if (grabbingIngredient.GetObjectType() == ObjectType.CUTTABLE && !ingredientOnTable)
             {
-                // Put the ingredient on this table
+                // Put it on this table
                 PutIngredient(grabbingIngredient.GetComponent<Ingredient>());
             }
         }
@@ -42,7 +42,8 @@ public class CuttingBoard : Table, IInteractable
                 sliceCount = 0;
             }
 
-            cuttingEffectManager.UpdateEffect(sliceCount, sliceMaxCount);
+            // Update UI & play SFX
+            CuttingEffectManager.GetInstance().UpdateEffect(sliceCount, sliceMaxCount);
         }
     }
 
