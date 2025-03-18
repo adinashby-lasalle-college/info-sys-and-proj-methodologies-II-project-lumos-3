@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141f449ed14168243af3f195c4b70302, type: 3}
+  m_Name: GogiBurgerSO
+  m_EditorClassIdentifier: 
+  ingredientSOList:
+  - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
+  - {fileID: 11400000, guid: 821a5d47eb3501c448f875fa619bf0ee, type: 2}
+  - {fileID: 11400000, guid: e2f5781f6cd8976429f93776cdff08b0, type: 2}
+  - {fileID: 11400000, guid: 821a5d47eb3501c448f875fa619bf0ee, type: 2}
+  - {fileID: 11400000, guid: 821a5d47eb3501c448f875fa619bf0ee, type: 2}
+  - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
+  recipeName: Gogi Burger
