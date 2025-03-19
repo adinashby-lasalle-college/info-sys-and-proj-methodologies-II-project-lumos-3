@@ -79,9 +79,11 @@ public class Char_InputTaker : MonoBehaviour
         playerAction.InGame.ChangeDir_Right.Disable();
     }
 
+    Char_PickUpItem char_PickUpItem;
     private void Start()
     {
         IsCharging = false;
+        char_PickUpItem = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_PickUpItem>();
     }
     #endregion
 
@@ -189,8 +191,11 @@ public class Char_InputTaker : MonoBehaviour
 
     void startCharge(InputAction.CallbackContext context)
     {
-        IsCharging = true;
-        CurrentCharge = 0;
+        if(char_PickUpItem.IfItemInHand() == true)
+        {
+            IsCharging = true;
+            CurrentCharge = 0;
+        }
     }
 
     private void Update()
@@ -221,7 +226,6 @@ public class Char_InputTaker : MonoBehaviour
 
     void TryPickUp(InputAction.CallbackContext context)
     {
-        Char_PickUpItem char_PickUpItem = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_PickUpItem>();
         if (char_PickUpItem.IfPickableItemOverLapping() && char_PickUpItem.IfItemInHand() == false) 
         {
             Debug.Log("Pick");

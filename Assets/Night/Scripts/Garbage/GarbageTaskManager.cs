@@ -7,6 +7,7 @@ public class GarbageTaskManager : MonoBehaviour
     List<GameObject> garbages;
     int garbageNumber;
     GarbageFactory garbageFactory;
+    [SerializeField] Transform spawnPoint;
 
     private static GarbageTaskManager _instance;
 
@@ -25,7 +26,8 @@ public class GarbageTaskManager : MonoBehaviour
 
     private void Start()
     {
-        garbageFactory = new GarbageFactory();
+        garbages= new List<GameObject>();
+        garbageFactory = GetComponent<GarbageFactory>();
         GenerateGarbage();
     }
 
@@ -34,9 +36,12 @@ public class GarbageTaskManager : MonoBehaviour
         garbageNumber = Random.Range(3, 6);
         for (int i = 0; i < garbageNumber; i++)
         {
-            I_Garbage newGarbage = garbageFactory.GetRandomGarbage();
-            GameObject garbageObj = newGarbage.GetGarbage();
-            garbages.Add(garbageObj);
+            I_Garbage garbage = garbageFactory.GetRandomGarbage(spawnPoint.position);
+        }
+
+        foreach (var item in garbages)
+        {
+            Debug.Log(item.name);
         }
     }
 
