@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Box : MonoBehaviour, I_Garbage
 {
-    public GameObject BoxGameObj;
+    [SerializeField] GameObject BoxGameObj;
 
     public GameObject GetGarbage()
     {

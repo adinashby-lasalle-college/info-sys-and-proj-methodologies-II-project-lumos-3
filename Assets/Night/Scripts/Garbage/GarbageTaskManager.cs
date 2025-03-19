@@ -31,12 +31,14 @@ public class GarbageTaskManager : MonoBehaviour
         GenerateGarbage();
     }
 
+
+    //Generate Garbage
     void GenerateGarbage()
     {
         garbageNumber = Random.Range(3, 6);
         for (int i = 0; i < garbageNumber; i++)
         {
-            I_Garbage garbage = garbageFactory.GetRandomGarbage(spawnPoint.position);
+            GameObject garbage = garbageFactory.GetRandomGarbage(spawnPoint.position, Quaternion.identity);
         }
 
         foreach (var item in garbages)

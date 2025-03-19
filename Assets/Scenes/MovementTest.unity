@@ -2060,6 +2060,9 @@ GameObject:
   - component: {fileID: 1373262242}
   - component: {fileID: 1373262241}
   - component: {fileID: 1373262245}
+  - component: {fileID: 1373262248}
+  - component: {fileID: 1373262247}
+  - component: {fileID: 1373262246}
   m_Layer: 0
   m_Name: GarbageGenerator
   m_TagString: Untagged
@@ -2107,9 +2110,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbf4a534d08a0a4cb4ce08776861225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garbageBagPrefab: {fileID: 4560304459345961480, guid: 53d2336c7d1d47f468dda989b39fccb8, type: 3}
-  boxPrefab: {fileID: 5432022363846195426, guid: 4486e0619a5cc904d815e03e9245fcd7, type: 3}
-  paperPrefab: {fileID: 2018168275776971946, guid: 1d21630d743aab64cb299b5a997da933, type: 3}
+--- !u!114 &1373262246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373262239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0029f9eb2022948b76de9cae52a87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoxGameObj: {fileID: 4560304459345961480, guid: 53d2336c7d1d47f468dda989b39fccb8, type: 3}
+--- !u!114 &1373262247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373262239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd54f3286d119494b815b3ca06ac1d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BagGameObj: {fileID: 5432022363846195426, guid: 4486e0619a5cc904d815e03e9245fcd7, type: 3}
+--- !u!114 &1373262248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373262239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec24efc72c6b1be4d90ec941c30c8ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PaperGameObj: {fileID: 2018168275776971946, guid: 1d21630d743aab64cb299b5a997da933, type: 3}
 --- !u!1 &1387411598
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GarbageBag : MonoBehaviour,I_Garbage
 {
-    public GameObject BagGameObj;
+    [SerializeField] GameObject BagGameObj;
 
     public GameObject GetGarbage()
     {

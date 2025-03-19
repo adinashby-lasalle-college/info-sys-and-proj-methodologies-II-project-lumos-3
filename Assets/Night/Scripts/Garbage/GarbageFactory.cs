@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class GarbageFactory : MonoBehaviour 
 {
-    public GameObject garbageBagPrefab;
-    public GameObject boxPrefab;
-    public GameObject paperPrefab;
-
-    public I_Garbage GetRandomGarbage(Vector3 spawnPosition)
+    //Factory to Grab random garbage Gameobject from and I_Garbage and Instantiate it
+    public GameObject GetRandomGarbage(Vector3 spawnPosition, Quaternion rotation)
     {
-        int GarbageIndex = Random.Range(0, 3);
-        GameObject obj;
+        int garbageIndex = Random.Range(0, 3);
+        I_Garbage garbage;
 
-        if (GarbageIndex == 0)
+        if (garbageIndex == 0)
         {
-            obj = Instantiate(garbageBagPrefab, spawnPosition, Quaternion.identity);
+            garbage = gameObject.GetComponent<GarbageBag>();
         }
-        else if (GarbageIndex == 1)
+        else if (garbageIndex == 1)
         {
-            obj = Instantiate(boxPrefab, spawnPosition, Quaternion.identity);
+            garbage = gameObject.GetComponent<Box>();
         }
         else
         {
-            obj = Instantiate(paperPrefab, spawnPosition, Quaternion.identity);
+            garbage = gameObject.GetComponent<Paper>();
         }
 
-        return obj.GetComponent<I_Garbage>();
+        //Instantiate
+        return Instantiate(garbage.GetGarbage(), spawnPosition, rotation);
     }
 }
