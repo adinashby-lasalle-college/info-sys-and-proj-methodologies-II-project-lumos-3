@@ -7,9 +7,6 @@ public class Table : MonoBehaviour
     protected Ingredient ingredientOnTable;
     protected Interactor interactor;
 
-    public Ingredient GetIngredient() { return ingredientOnTable; }
-    public Transform GetTableTopTransform() { return tableTopTransform; }
-
     private void Start()
     {
         interactor = Interactor.Instance;

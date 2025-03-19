@@ -61,11 +61,11 @@ public class CuttingBoard : Table, IInteractable
 
             // Put sliced ingredient on this cutting board
             Ingredient slicedIngredient = Ingredient.SpawnIngredient(slicedIngredientSO);
-            PutOnCuttingBoard(slicedIngredient);
+            PutSlicedIngredient(slicedIngredient);
         }
     }
 
-    private void PutOnCuttingBoard(Ingredient slicedIngredient)
+    private void PutSlicedIngredient(Ingredient slicedIngredient)
     {
         if (slicedIngredient.GetComponent<CursorFollower>())
         {
