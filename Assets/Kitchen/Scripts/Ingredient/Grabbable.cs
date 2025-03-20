@@ -10,5 +10,6 @@ public enum ObjectType
     INGREDIENT_READY,
     CUTTABLE,
     COOKABLE,
-    SAUCE
+    SAUCE,
+    GARBAGE
 }

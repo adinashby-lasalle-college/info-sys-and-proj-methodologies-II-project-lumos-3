@@ -54,7 +54,7 @@ public class CuttingBoard : Table, IInteractable
         if (sliceCount >= sliceMaxCount)
         {
             // Get sliced version ingredient
-            IngredientSO slicedIngredientSO = GetSlicedIngredient(ingredientOnTable.GetIngredientSO());
+            IngredientSO slicedIngredientSO = GetSlicedIngredientSO(ingredientOnTable.GetIngredientSO());
 
             // Destroy the original ingredient
             ingredientOnTable.DestroySelf();
@@ -79,7 +79,7 @@ public class CuttingBoard : Table, IInteractable
         ingredientOnTable = slicedIngredient;
     }
 
-    private IngredientSO GetSlicedIngredient(IngredientSO ingredient)
+    private IngredientSO GetSlicedIngredientSO(IngredientSO ingredient)
     {
         // Find sliced version of the ingredient
         foreach (CuttableIngredientSO cuttableIngredientSO in cuttableIngredientSOList)

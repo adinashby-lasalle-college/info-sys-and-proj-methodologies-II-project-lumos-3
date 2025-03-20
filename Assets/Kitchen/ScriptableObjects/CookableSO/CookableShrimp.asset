@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc6e9930cc2d2a4d92c708d62ccf57a, type: 3}
-  m_Name: Meat
+  m_Script: {fileID: 11500000, guid: 584125086371e9247ad4f535a835839a, type: 3}
+  m_Name: CookableShrimp
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7184156019602906301, guid: 814d6ec7636ae73409b8f649070b28a4, type: 3}
-  ingredientName: Meat
-  icon: {fileID: 0}
-  type: 2
+  rawIngredient: {fileID: 0}
+  cookedIngredient: {fileID: 0}
+  burntIngredient: {fileID: 0}

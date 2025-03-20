@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8154037120709998153}
   - component: {fileID: 787272772047775668}
   m_Layer: 0
-  m_Name: default
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc5eaade9b20b3748a35287e107c6944, type: 2}
+  - {fileID: 2100000, guid: a78df298defe66548a02f2963f9c4152, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3685978423509255412}
   - component: {fileID: 460204834109970592}
   m_Layer: 0
-  m_Name: Meat
+  m_Name: Burnt Meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddf1d8dbe77d894b9eb18f423afff2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientSO: {fileID: 11400000, guid: 821a5d47eb3501c448f875fa619bf0ee, type: 2}
+  ingredientSO: {fileID: 11400000, guid: 39f20c90d527e7e4db0cd114a933afe1, type: 2}
 --- !u!114 &3685978423509255412
 MonoBehaviour:
   m_ObjectHideFlags: 0
