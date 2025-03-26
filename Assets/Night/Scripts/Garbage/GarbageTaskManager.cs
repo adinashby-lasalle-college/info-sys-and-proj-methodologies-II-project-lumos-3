@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GarbageTaskManager : MonoBehaviour
 {
@@ -45,11 +46,22 @@ public class GarbageTaskManager : MonoBehaviour
         {
             Debug.Log(item.name);
         }
+        UpdateGarbageNumUI();
     }
 
-    public int GetGarbageNumber()
+    //Update UI
+    [SerializeField] TextMeshProUGUI garbageNumUI;
+    void UpdateGarbageNumUI()
     {
-        return garbageNumber; 
+        garbageNumUI.text = garbageNumber.ToString();
+    }
+
+
+    //For other class
+    public void DeliverGarbage()
+    {
+        garbageNumber--;
+        UpdateGarbageNumUI();
     }
 
     

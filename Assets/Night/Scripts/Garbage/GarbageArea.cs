@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GarbageArea : MonoBehaviour
 {
+    [SerializeField] GarbageTaskManager taskManager;
+    
     public void DeliverGarbage()
     {
-        //Deliver Garbage and +1 in UI
+        //Deliver Garbage and -1 in UI
         Debug.Log("Deliver Garbage");
+        taskManager.DeliverGarbage();
+        
     }
 }
