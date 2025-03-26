@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4863574390635985702}
   - component: {fileID: 9063955222459809833}
   - component: {fileID: 5372815425577747222}
-  - component: {fileID: 8479833193800695560}
+  - component: {fileID: -7299281760272766711}
   m_Layer: 0
   m_Name: GarbageBag
   m_TagString: Untagged
@@ -160,7 +160,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8479833193800695560
+--- !u!114 &-7299281760272766711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4560304459345961480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db6c723c01b2ae46b8f73ebe837a229, type: 3}
+  m_Script: {fileID: 11500000, guid: 4da17b3504fc9d945b73d9bce592c9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerDragSpot: {fileID: 0}

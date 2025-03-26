@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GarbageArea : MonoBehaviour
+{
+    public void DeliverGarbage()
+    {
+        //Deliver Garbage and +1 in UI
+        Debug.Log("Deliver Garbage");
+    }
+}
