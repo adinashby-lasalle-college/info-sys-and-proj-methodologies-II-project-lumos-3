@@ -1505,6 +1505,7 @@ GameObject:
   - component: {fileID: 1027057376}
   - component: {fileID: 1027057378}
   - component: {fileID: 1027057379}
+  - component: {fileID: 1027057380}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1566,6 +1567,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ced044f025a0049821dde231aac370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1027057380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027057375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a3b78b15d684040a4b918dd4e58b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeListSO: {fileID: 11400000, guid: 7c3186d49dfb75a4580c5a430a5596be, type: 2}
 --- !u!1001 &1045598483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3662,6 +3676,7 @@ GameObject:
   - component: {fileID: 1780046888}
   - component: {fileID: 1780046887}
   - component: {fileID: 1780046886}
+  - component: {fileID: 1780046889}
   m_Layer: 3
   m_Name: Bell
   m_TagString: Untagged
@@ -3706,7 +3721,7 @@ CapsuleCollider:
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1780046887
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3757,6 +3772,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780046884}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1780046889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780046884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881ec0a8b8822a8438743f6f9029cb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeManager: {fileID: 1027057380}
+  prepTable: {fileID: 1531960902}
 --- !u!1001 &1780346825
 PrefabInstance:
   m_ObjectHideFlags: 0

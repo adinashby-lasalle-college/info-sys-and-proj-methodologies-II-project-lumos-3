@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PrepTable : Table, IInteractable
 {
+    public List<IngredientSO> ingredientSOList { get; private set; }
+
     private void Start()
     {
+        ingredientSOList = new List<IngredientSO>();
         interactor = Interactor.Instance;
     }
 
@@ -31,6 +35,9 @@ public class PrepTable : Table, IInteractable
                     // Put the sauce bottle back
                     sauce.PutSauceBottleBack();
 
+                    // Add it to the ingredient list
+                    ingredientSOList.Add(ingredient.GetIngredientSO());
+
                     break;
 
                 case ObjectType.INGREDIENT_READY:
@@ -41,15 +48,11 @@ public class PrepTable : Table, IInteractable
                     // Ingredient dropping position will be slightly higher every time
                     tableTopTransform.localPosition = new Vector3(0, tableTopTransform.localPosition.y + 0.1f, 0);
 
+                    // Add it to the ingredient list
+                    ingredientSOList.Add(ingredient.GetIngredientSO());
+
                     break;
             }
-        }
-
-        if (!interactor.IsGrabbing && ingredientOnTable)
-        {
-            // * Grab the ingredient on this table
-            
-            ClearTable();
         }
     }
 }

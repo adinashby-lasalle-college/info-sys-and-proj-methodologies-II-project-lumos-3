@@ -65,6 +65,7 @@
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\CuttingProgressionUIManager.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\Box.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Grabbable.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\Bell.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\CursorFollower.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\CookableIngredientSO.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_FacingDir.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Kitchen\Scripts\Tables\TrashCan.cs" />
     <Compile Include="Assets\Night\Scripts\UI_DirArrow.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\CuttingEffectManager.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\RecipeManager.cs" />
     <Compile Include="Assets\DataPersisence\FileDataHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Ingredient.cs" />
     <Compile Include="Assets\Kitchen\Input\KitchenInputActions.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\DataPersisence\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\IEffectManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\KitchenSFXManager.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\RecipeListSO.cs" />
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />
     <Compile Include="Assets\Night\Scripts\I_PickableObj.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\Paper.cs" />

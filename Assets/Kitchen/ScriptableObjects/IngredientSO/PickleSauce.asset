@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 3584695511753992379, guid: 24ade26be11dea9428fd42167f3bad6b, type: 3}
   ingredientName: Pickle Sauce
   icon: {fileID: 0}
+  type: 3
