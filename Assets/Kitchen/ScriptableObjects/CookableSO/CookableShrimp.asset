@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584125086371e9247ad4f535a835839a, type: 3}
   m_Name: CookableShrimp
   m_EditorClassIdentifier: 
-  rawIngredient: {fileID: 0}
-  cookedIngredient: {fileID: 0}
-  burntIngredient: {fileID: 0}
+  rawIngredient: {fileID: 11400000, guid: 95d73f92ce92cff47aead887fcc776b4, type: 2}
+  cookedIngredient: {fileID: 11400000, guid: 9c11a3805508d5348af056d8ff99d9f6, type: 2}
+  burntIngredient: {fileID: 11400000, guid: 41c4173903d4b724cbe0e2a86ca087f4, type: 2}

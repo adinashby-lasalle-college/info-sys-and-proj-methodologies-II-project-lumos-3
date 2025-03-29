@@ -211,6 +211,7 @@ MonoBehaviour:
   tableTopTransform: {fileID: 1646979676}
   cookableIngredientSOList:
   - {fileID: 11400000, guid: a99ace309cbca454a9cd397252acc2fd, type: 2}
+  - {fileID: 11400000, guid: 0fd0fa3bc8c437248a2cdbf3bc7b1eed, type: 2}
 --- !u!65 &138481819
 BoxCollider:
   m_ObjectHideFlags: 0

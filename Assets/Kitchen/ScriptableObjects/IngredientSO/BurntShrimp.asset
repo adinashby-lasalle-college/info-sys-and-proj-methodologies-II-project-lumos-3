@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cc6e9930cc2d2a4d92c708d62ccf57a, type: 3}
-  m_Name: Shrimp
+  m_Name: BurntShrimp
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7039437415854089053, guid: 97c3bbae02db9d642865279443ed3051, type: 3}
-  ingredientName: Shrimp
+  prefab: {fileID: 7039437415854089053, guid: fd3490c5f6494fc4eaf4cc33f1aba3d4, type: 3}
+  ingredientName: Burnt Shrimp
   icon: {fileID: 0}
-  type: 2
+  type: 4

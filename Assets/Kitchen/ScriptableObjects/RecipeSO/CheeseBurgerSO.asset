@@ -15,7 +15,7 @@ MonoBehaviour:
   ingredientSOList:
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   - {fileID: 11400000, guid: e2f5781f6cd8976429f93776cdff08b0, type: 2}
-  - {fileID: 11400000, guid: 821a5d47eb3501c448f875fa619bf0ee, type: 2}
-  - {fileID: 11400000, guid: a6e42af82b3d9ab4ba4574c30c4aa9c0, type: 2}
+  - {fileID: 11400000, guid: a6cbcc47e95b3584abc5db09db0f9bd7, type: 2}
+  - {fileID: 11400000, guid: 06ad090a3b0ccd344be36a7c5bc5c59c, type: 2}
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   recipeName: Cheese Burger
