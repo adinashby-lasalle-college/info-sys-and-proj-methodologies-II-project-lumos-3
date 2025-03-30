@@ -15,7 +15,7 @@ MonoBehaviour:
   ingredientSOList:
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   - {fileID: 11400000, guid: 11496089167c8d644b6563b0f0d5be30, type: 2}
-  - {fileID: 11400000, guid: 95d73f92ce92cff47aead887fcc776b4, type: 2}
+  - {fileID: 11400000, guid: 9c11a3805508d5348af056d8ff99d9f6, type: 2}
   - {fileID: 11400000, guid: 06ad090a3b0ccd344be36a7c5bc5c59c, type: 2}
   - {fileID: 11400000, guid: 6bc2e4ecb11b1ce448e540b70256e674, type: 2}
   - {fileID: 11400000, guid: 042017c4a9710244b9463218ddda22d1, type: 2}

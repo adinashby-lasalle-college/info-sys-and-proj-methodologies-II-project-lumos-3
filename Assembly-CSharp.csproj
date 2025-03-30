@@ -66,6 +66,7 @@
     <Compile Include="Assets\Night\Scripts\Garbage\Box.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Grabbable.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\Bell.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\PriceHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\CursorFollower.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\CookableIngredientSO.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageArea.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Night\Scripts\UI_DirArrow.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\PickableGarbage.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\CuttingEffectManager.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\LowPriceHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\RecipeManager.cs" />
     <Compile Include="Assets\DataPersisence\FileDataHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Ingredient.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageTaskManager.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_PickUpItem.cs" />
     <Compile Include="Assets\Night\Scripts\PickableItem.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\HighPriceHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\CuttingBoard.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_InputTaker.cs" />
     <Compile Include="Assets\DataPersisence\SerializableTypes\SerializableDictionary.cs" />
@@ -107,10 +110,13 @@
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />
     <Compile Include="Assets\Night\Scripts\I_PickableObj.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\Paper.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\MiddlePriceHandler.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\PriceManager.cs" />
     <Compile Include="Assets\Night\Scripts\NightEventInput.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\PrepTable.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_Movement.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageFactory.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

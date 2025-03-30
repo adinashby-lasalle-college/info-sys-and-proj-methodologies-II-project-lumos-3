@@ -21,5 +21,8 @@ public class RecipeManager : MonoBehaviour
         {
             Debug.Log(ingredientSO.name);
         }
+
+        // Start timer
+        CookingTimer.Instance.StartTimer();
     }
 }

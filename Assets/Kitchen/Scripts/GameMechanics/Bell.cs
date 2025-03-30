@@ -27,8 +27,22 @@ public class Bell : MonoBehaviour, IInteractable
             }
 
             Debug.Log("recipe matches");
+
             // * Calculate price
+            CookingTimer.Instance.StopTimer();
+            PriceManager.Instance.CalculatePrice(CookingTimer.Instance.CookTime);
+
             // * Serve
+
+            recipeManager.GenerateRecipe();
         }
+        else
+        {
+            Debug.Log("fail");
+            // * Game Over
+            return;
+        }
+
+        prepTable.ClearPrepTable();
     }
 }

@@ -55,4 +55,16 @@ public class PrepTable : Table, IInteractable
             }
         }
     }
+
+    public void ClearPrepTable()
+    {
+        ClearTable();
+        
+        for (int i = 0; i < tableTopTransform.childCount; i++)
+        {
+            Destroy(tableTopTransform.GetChild(i).gameObject);
+        }
+
+        ingredientSOList.Clear();
+    }
 }
