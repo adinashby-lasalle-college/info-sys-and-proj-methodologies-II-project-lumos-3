@@ -40,7 +40,6 @@ public class Bell : MonoBehaviour, IInteractable
         {
             Debug.Log("fail");
             // * Game Over
-            return;
         }
 
         prepTable.ClearPrepTable();

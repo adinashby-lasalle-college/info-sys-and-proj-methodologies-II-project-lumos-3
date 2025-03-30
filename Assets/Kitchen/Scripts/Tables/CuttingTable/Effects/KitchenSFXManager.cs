@@ -12,7 +12,7 @@ public class KitchenSFXManager : MonoBehaviour, IEffectManager
         {
             foreach (AudioClip clip in audioClips)
             {
-                if (clip.name == "SFX_Cutting")
+                if (clip.name == "CuttingSound")
                 {
                     audioSource.clip = clip;
                     audioSource.Play();

@@ -79,7 +79,6 @@
     <Compile Include="Assets\Night\Scripts\Garbage\PickableGarbage.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\CuttingEffectManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\LowPriceHandler.cs" />
-    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\RecipeManager.cs" />
     <Compile Include="Assets\DataPersisence\FileDataHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Ingredient.cs" />
     <Compile Include="Assets\Kitchen\Input\KitchenInputActions.cs" />
@@ -99,6 +98,7 @@
     <Compile Include="Assets\Night\Scripts\I_FollowUpUI.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageTaskManager.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_PickUpItem.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Recipe\RecipeUIManager.cs" />
     <Compile Include="Assets\Night\Scripts\PickableItem.cs" />
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\HighPriceHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\CuttingBoard.cs" />
@@ -116,6 +116,7 @@
     <Compile Include="Assets\Kitchen\Scripts\Tables\PrepTable.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_Movement.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageFactory.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Recipe\RecipeManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimer.cs" />
   </ItemGroup>
   <ItemGroup>
