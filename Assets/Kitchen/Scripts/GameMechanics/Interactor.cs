@@ -53,6 +53,8 @@ public class Interactor : MonoBehaviour
 
     public void SetGrabbingObject(Grabbable grabbableObject)
     {
+        ClearGrabbingObject();
+
         grabbingObject = grabbableObject;
         IsGrabbing = true;
 

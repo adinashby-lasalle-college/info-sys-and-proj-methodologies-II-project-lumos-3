@@ -30,7 +30,10 @@ public class Table : MonoBehaviour
 
     public void ClearTable()
     {
-        ingredientOnTable.SetTable(null);
-        ingredientOnTable = null;
+        if (ingredientOnTable)
+        {
+            ingredientOnTable.SetTable(null);
+            ingredientOnTable = null;
+        }
     }
 }

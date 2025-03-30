@@ -60,9 +60,13 @@ public class PrepTable : Table, IInteractable
     {
         ClearTable();
         
-        for (int i = 0; i < tableTopTransform.childCount; i++)
+        // If there's something on the prep table, clear
+        if (tableTopTransform.childCount > 0)
         {
-            Destroy(tableTopTransform.GetChild(i).gameObject);
+            for (int i = 0; i < tableTopTransform.childCount; i++)
+            {
+                Destroy(tableTopTransform.GetChild(i).gameObject);
+            }
         }
 
         ingredientSOList.Clear();

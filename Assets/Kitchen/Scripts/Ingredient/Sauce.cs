@@ -39,6 +39,20 @@ public class Sauce : Grabbable, IInteractable
 
             Interactor.Instance.SetGrabbingObject(this);
         }
+
+        // If player is already grabbing a sauce bottle, replace the sauce bottle
+        else if (Interactor.Instance.GetGrabbingObject().GetObjectType() == ObjectType.SAUCE)
+        {
+            // Put the grabbing sauce bottle back
+            Sauce grabbingSauce = Interactor.Instance.GetGrabbingObject().GetComponent<Sauce>();
+            grabbingSauce.PutSauceBottleBack();
+
+            // Grab a new sauce bottle
+            GetComponent<CursorFollower>().enabled = true;
+            canPlayAnimation = false;
+
+            Interactor.Instance.SetGrabbingObject(this);
+        }
     }
 
     public void PutSauceBottleBack()
