@@ -28,11 +28,11 @@ public class Bell : MonoBehaviour, IInteractable
 
             Debug.Log("recipe matches");
 
-            // * Calculate price
+            // Stop timer
             CookingTimer.Instance.StopTimer();
-            PriceManager.Instance.CalculatePrice(CookingTimer.Instance.CookTime);
 
-            // * Serve
+            // Calculate burger price & add
+            MoneyManager.Instance.AddMoney(PriceManager.Instance.CalculatePrice(CookingTimer.Instance.CookTime));
 
             recipeManager.GenerateRecipe();
         }

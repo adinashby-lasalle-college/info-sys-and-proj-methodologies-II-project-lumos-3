@@ -1,14 +1,10 @@
-using UnityEngine;
-
 public class HighPriceHandler : PriceHandler
 {
-    private float highPriceTimeLimit = 15f;
-
     public override void HandleRequest(float cookTime)
     {
-        if (cookTime < highPriceTimeLimit)
+        if (cookTime < PriceManager.Instance.GetHighPriceTimeLimit())
         {
-            Debug.Log("price: 15$");
+            PriceManager.Instance.SetPrice(PriceManager.Instance.GetHighPrice());
         }
         else if (nextHandler)
         {

@@ -17,12 +17,6 @@ public class RecipeManager : MonoBehaviour
     {
         CurrRecipe = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
 
-        //Debug.Log("Recipe: ");
-        //foreach (IngredientSO ingredientSO in CurrRecipe.ingredientSOList)
-        //{
-        //    Debug.Log(ingredientSO.name);
-        //}
-
         recipeUIManager.UpdateRecipeUI(CurrRecipe);
 
         // Start timer

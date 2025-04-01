@@ -1,14 +1,10 @@
-using UnityEngine;
-
 public class MiddlePriceHandler : PriceHandler
 {
-    private float middlePriceTimeLimit = 25f;
-
     public override void HandleRequest(float cookTime)
     {
-        if (cookTime < middlePriceTimeLimit)
+        if (cookTime < PriceManager.Instance.GetMiddlePriceTimeLimit())
         {
-            Debug.Log("price: 10$");
+            PriceManager.Instance.SetPrice(PriceManager.Instance.GetMiddlePrice());
         }
         else if (nextHandler)
         {

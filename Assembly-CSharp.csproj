@@ -89,6 +89,7 @@
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\Interactor.cs" />
     <Compile Include="Assets\Night\Scripts\UI_PickUpButton.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Container.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\MoneyManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\IInteractable.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Table.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CamController.cs" />
@@ -96,6 +97,8 @@
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\InputReader.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\CuttableIngredientSO.cs" />
     <Compile Include="Assets\Night\Scripts\AI\Npcs\Movement_NPC.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimerUIManager.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\FacingCamera.cs" />
     <Compile Include="Assets\Night\Scripts\I_FollowUpUI.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageTaskManager.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_PickUpItem.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\HighPriceHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\CuttingBoard.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_InputTaker.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\MoneyUIManager.cs" />
     <Compile Include="Assets\DataPersisence\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\IEffectManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\KitchenSFXManager.cs" />
@@ -1076,12 +1080,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
