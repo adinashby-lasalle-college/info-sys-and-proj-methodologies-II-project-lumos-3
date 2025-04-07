@@ -4,11 +4,20 @@ public class TrashCan : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
+        Grabbable grabbingObject = Interactor.Instance.GetGrabbingObject();
+
         // Destroy the grabbing ingredient
-        if (Interactor.Instance.GetGrabbingObject())
+        if (grabbingObject)
         {
-            Destroy(Interactor.Instance.GetGrabbingObject().gameObject);
-            Interactor.Instance.ClearGrabbingObject();
+            if (grabbingObject.GetObjectType() == ObjectType.SAUCE)
+            {
+                grabbingObject.GetComponent<Sauce>().PutSauceBottleBack();
+            }
+            else
+            {
+                Destroy(Interactor.Instance.GetGrabbingObject().gameObject);
+                Interactor.Instance.ClearGrabbingObject();
+            }    
         }
     }
 }

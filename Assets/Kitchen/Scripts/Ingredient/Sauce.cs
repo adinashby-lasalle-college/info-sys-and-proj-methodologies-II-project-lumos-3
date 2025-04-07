@@ -58,6 +58,7 @@ public class Sauce : Grabbable, IInteractable
     public void PutSauceBottleBack()
     {
         GetComponent<CursorFollower>().enabled = false;
+        GetComponentInChildren<Collider>().enabled = true;
         canPlayAnimation = true;
 
         transform.position = originalTransform.position;
