@@ -91,6 +91,7 @@
     <Compile Include="Assets\Kitchen\Scripts\Tables\Container.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\MoneyManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\IInteractable.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\DayTimeTimerUIManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Table.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CamController.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Sauce.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimerUIManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\FacingCamera.cs" />
     <Compile Include="Assets\Night\Scripts\I_FollowUpUI.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\DayTimeTimer.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageTaskManager.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_PickUpItem.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Recipe\RecipeUIManager.cs" />
