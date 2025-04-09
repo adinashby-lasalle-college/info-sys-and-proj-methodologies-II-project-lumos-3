@@ -8,6 +8,7 @@ public class DayTimeTimer : MonoBehaviour
     private float timer;
     private float timeForMinuteIncreasement = 1f;
     private string amPm = "AM";
+
     public event Action<int, int, string> OnTimeChanged;
 
     private int currHour;
@@ -43,10 +44,11 @@ public class DayTimeTimer : MonoBehaviour
                     currHour = 1;
                 }
 
-                if (currHour >= endHour && amPm == "PM")
+                if (currHour == endHour && amPm == "PM")
                 {
-                    // * turn on the summary scene
-                    Debug.Log("daytime ends");
+                    StartCoroutine(SceneTransitionEffectManager.Instance.OpenSumUpPage());
+                    
+                    // * play sound effect
                 }
             }
 
