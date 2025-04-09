@@ -73,6 +73,7 @@
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageArea.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_FacingDir.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\I_Garbage.cs" />
+    <Compile Include="Assets\Night\Scripts\AI\Npcs\NPCDetector.cs" />
     <Compile Include="Assets\Night\Scripts\FollowUpUI.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Grill.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\TrashCan.cs" />
@@ -109,14 +110,18 @@
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\HighPriceHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\CuttingBoard.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_InputTaker.cs" />
+    <Compile Include="Assets\Night\Scripts\AI\Npcs\I_NPC_State.cs" />
     <Compile Include="Assets\DataPersisence\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\IEffectManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\Effects\KitchenSFXManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\Money\MoneyUIManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\RecipeListSO.cs" />
+    <Compile Include="Assets\Night\Scripts\AI\Npcs\RunState.cs" />
+    <Compile Include="Assets\Night\Scripts\AI\Npcs\NPCController.cs" />
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />
     <Compile Include="Assets\Night\Scripts\I_PickableObj.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\Paper.cs" />
+    <Compile Include="Assets\Night\Scripts\AI\Npcs\PatrolState.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\DayTimeTimer\DayTimeTimerUIManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\MiddlePriceHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\PriceManager.cs" />

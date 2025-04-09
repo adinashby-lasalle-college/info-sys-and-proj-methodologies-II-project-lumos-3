@@ -25,7 +25,18 @@ public class Movement_NPC : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (isWalking)
+        if (detecting)
+        {
+            agent.ResetPath();
+            if (timer >= detectingDuration)
+            {
+                timer = 0f;
+                isWalking = true;
+                detecting = false;
+                agent.ResetPath(); // Stop moving
+            }
+        }
+        else if (isWalking)
         {
             if (timer >= moveDuration)
             {
@@ -45,6 +56,7 @@ public class Movement_NPC : MonoBehaviour
         }
     }
 
+    //Randomly moving
     void ChooseNewDestination()
     {
         Vector3 randomDirection = Random.insideUnitSphere * walkRadius;
@@ -54,6 +66,12 @@ public class Movement_NPC : MonoBehaviour
         if (NavMesh.SamplePosition(randomDirection, out hit, walkRadius, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
+
         }
     }
+
+    //Detect Player
+    public bool detecting;
+    float detectingDuration = 5f;
+
 }
