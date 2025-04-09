@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Movement_NPC : MonoBehaviour
 {
     NavMeshAgent agent;
-    [SerializeField] float moveDuration = 5f;
-    [SerializeField] float idleDuration = 5f;
-    [SerializeField] float walkRadius = 10f;
+    public float moveDuration = 5f;
+    public float idleDuration = 5f;
+    public float walkRadius = 10f;
 
     float timer = 0f;
     bool isWalking = true;
@@ -16,6 +17,7 @@ public class Movement_NPC : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        stateController = GetComponent<NPCController>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         ChooseNewDestination();
@@ -25,24 +27,25 @@ public class Movement_NPC : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (detecting)
+        if (isWalking)
         {
-            agent.ResetPath();
-            if (timer >= detectingDuration)
+            if (!disturbing)
             {
-                timer = 0f;
-                isWalking = true;
-                detecting = false;
-                agent.ResetPath(); // Stop moving
+                if (timer >= moveDuration || detecting)
+                {
+                    timer = 0f;
+                    isWalking = false;
+                    agent.ResetPath(); // Stop moving
+                }
             }
-        }
-        else if (isWalking)
-        {
-            if (timer >= moveDuration)
+            else
             {
-                timer = 0f;
-                isWalking = false;
-                agent.ResetPath(); // Stop moving
+                if (timer >= moveDuration)
+                {
+                    timer = 0f;
+                    isWalking = false;
+                    agent.ResetPath(); // Stop moving
+                }
             }
         }
         else
@@ -72,6 +75,28 @@ public class Movement_NPC : MonoBehaviour
 
     //Detect Player
     public bool detecting;
-    float detectingDuration = 5f;
+    [SerializeField] float detectingDuration = 5f;
 
+    //Disturb
+    bool disturbing = false;
+    NPCController stateController;
+
+    public void DisturbNPC()
+    {
+        disturbing = true;
+        stateController.currentState.SwitchState(stateController);
+        idleDuration = stateController.D_IdleDur;
+        moveDuration = stateController.D_MoveDur;
+        walkRadius = stateController.D_MoveRadius;
+    }
+
+    public void KnockDownNPC()
+    {
+        
+    }
+
+    void NPCAwake()
+    {
+        disturbing = false;
+    }
 }

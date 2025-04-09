@@ -9,8 +9,14 @@ public class NPCController : MonoBehaviour
     public NavMeshAgent agent;
     public float patrolSpeed = 1f;
     public float runSpeed = 2f;
+    public float IdleDur = 5f;
+    public float D_IdleDur = 1f;
+    public float MoveDur = 5f;
+    public float D_MoveDur = 3f;
+    public float MoveRadius = 10f;
+    public float D_MoveRadius = 15f;
 
-    private I_NPC_State currentState;
+    public I_NPC_State currentState;
 
     private void Start()
     {

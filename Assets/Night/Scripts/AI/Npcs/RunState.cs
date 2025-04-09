@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RunState : I_NPC_State
+public class RunState : MonoBehaviour, I_NPC_State
 {
+
     public void Enter(NPCController npc)
     {
         npc.agent.speed = npc.runSpeed;
