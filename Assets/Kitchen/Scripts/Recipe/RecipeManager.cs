@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class RecipeManager : MonoBehaviour
@@ -5,19 +7,24 @@ public class RecipeManager : MonoBehaviour
     [SerializeField] private RecipeListSO recipeListSO;
     [SerializeField] private RecipeUIManager recipeUIManager;
 
+    private float coolTime = 3f; // cooltime to generate new recipe
+
+    public event Action<RecipeSO> OnRecipeGenerated;
+
     public RecipeSO CurrRecipe { get; private set; }
 
     private void Start()
     {
-        // ** INSTANT CODE
-        GenerateRecipe();
+        StartCoroutine(GenerateRecipe());
     }
 
-    public void GenerateRecipe()
+    public IEnumerator GenerateRecipe()
     {
-        CurrRecipe = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
+        yield return new WaitForSeconds(coolTime);
 
-        recipeUIManager.UpdateRecipeUI(CurrRecipe);
+        CurrRecipe = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
+
+        OnRecipeGenerated?.Invoke(CurrRecipe);
 
         // Start timer
         CookingTimer.Instance.StartTimer();

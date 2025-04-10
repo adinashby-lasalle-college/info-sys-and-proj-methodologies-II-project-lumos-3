@@ -6,7 +6,7 @@ public class DayTimeTimer : MonoBehaviour
     private int startHour = 9;
     private int endHour = 10; // PM
     private float timer;
-    private float timeForMinuteIncreasement = 1f;
+    private float timeForMinuteIncreasement = 1.5f;
     private string amPm = "AM";
 
     public event Action<int, int, string> OnTimeChanged;

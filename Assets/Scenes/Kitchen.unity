@@ -175,6 +175,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: {fileID: 1098338109}
   recipeText: {fileID: 1817746136}
+  recipeManager: {fileID: 695197060}
+  animator: {fileID: 1482389153}
+  bell: {fileID: 1780046889}
 --- !u!4 &47284868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ff53457c9e71b841bd91e0f9bb3285f, type: 3}
@@ -220,8 +223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: -1}
-  m_SizeDelta: {x: 305, y: 80}
+  m_AnchoredPosition: {x: 110, y: -3.9}
+  m_SizeDelta: {x: 249.5, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89505325
 MonoBehaviour:
@@ -236,14 +239,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+  m_Color: {r: 0.21509439, g: 0.21509439, b: 0.21509439, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -823094541, guid: 92939deaebc4ac34581722a2b1c29fdd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f405634090f8b5142b2cbca0c3b139a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1280,6 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486804229}
   - component: {fileID: 486804230}
+  - component: {fileID: 486804231}
   m_Layer: 5
   m_Name: Cooking Timer UI
   m_TagString: Untagged
@@ -1305,7 +1309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -290, y: -8}
+  m_AnchoredPosition: {x: -73, y: 118}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &486804230
@@ -1320,7 +1324,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431d6c5eacbb84b44adcaddef98bd197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 486804231}
   bar: {fileID: 1760717968}
+--- !u!95 &486804231
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486804228}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2358696b01709724da4effcb76f46c24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &502239179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &536330879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3254,7 +3280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: recipe name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4981,6 +5007,7 @@ GameObject:
   - component: {fileID: 1482389152}
   - component: {fileID: 1482389151}
   - component: {fileID: 1482389150}
+  - component: {fileID: 1482389153}
   m_Layer: 5
   m_Name: Mini Recipe Button
   m_TagString: Untagged
@@ -5004,7 +5031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -890, y: 331}
+  m_AnchoredPosition: {x: -1064.8, y: 331}
   m_SizeDelta: {x: 120, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1482389150
@@ -5101,6 +5128,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482389148}
   m_CullTransparentMesh: 1
+--- !u!95 &1482389153
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482389148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64fb238bb36f45d409f68f04eb497284, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1482453275
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,6 +5253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 987935645}
+  - {fileID: 1780046885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484433065
@@ -5377,7 +5426,6 @@ Transform:
   m_Children:
   - {fileID: 1953709906}
   - {fileID: 1143573328}
-  - {fileID: 1780046885}
   m_Father: {fileID: 502239180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1531960902
@@ -5450,7 +5498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 260, y: -10}
+  m_AnchoredPosition: {x: 1431, y: -10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1549759259
@@ -5465,6 +5513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff393ba4085a10c43ab309f0cce96140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyManager: {fileID: 414465645}
   moneyText: {fileID: 1889990419}
 --- !u!1001 &1572592353
 PrefabInstance:
@@ -6600,11 +6649,11 @@ Transform:
   m_GameObject: {fileID: 1780046884}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23000002, y: 1.138, z: 0.51}
-  m_LocalScale: {x: 0.23903006, y: 0.05, z: 0.23903006}
+  m_LocalPosition: {x: 0.3, y: 1.7, z: 0.1}
+  m_LocalScale: {x: 0.23903006, y: 0.32899943, z: 0.027905408}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1531960901}
+  m_Father: {fileID: 1482453279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1780046886
 CapsuleCollider:
@@ -7265,7 +7314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 0}
+  m_AnchoredPosition: {x: -35.1, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854234398
@@ -8222,9 +8271,9 @@ RectTransform:
   - {fileID: 122104956}
   - {fileID: 1215430773}
   - {fileID: 536330879}
+  - {fileID: 486804229}
   - {fileID: 40446700}
   - {fileID: 1549759258}
-  - {fileID: 486804229}
   - {fileID: 883538309}
   - {fileID: 424777396}
   - {fileID: 261745163}
@@ -8412,7 +8461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2063610357
 RectTransform:
   m_ObjectHideFlags: 0

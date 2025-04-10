@@ -6,6 +6,7 @@ public class CookingTimer : MonoBehaviour
     public static CookingTimer Instance { get; private set; }
 
     private bool isTimerActive = false;
+    private float timerSpeed = 0.7f;
 
     public event Action OnCookingTimerStart;
 
@@ -17,14 +18,20 @@ public class CookingTimer : MonoBehaviour
     {
         Instance = this;
 
+        TimerTime = 0f;
         TimerMax = 35f;
+    }
+
+    private void Start()
+    {
+        Bell.Instance.OnServed += StopTimer;
     }
 
     private void FixedUpdate()
     {
         if (isTimerActive)
         {
-            TimerTime += Time.deltaTime;
+            TimerTime += Time.deltaTime * timerSpeed;
         }
     }
 
@@ -35,7 +42,7 @@ public class CookingTimer : MonoBehaviour
         OnCookingTimerStart?.Invoke();
     }
 
-    public void StopTimer()
+    public void StopTimer(int price)
     {
         isTimerActive = false;
 

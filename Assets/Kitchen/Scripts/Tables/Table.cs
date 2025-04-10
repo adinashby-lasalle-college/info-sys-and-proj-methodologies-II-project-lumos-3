@@ -4,8 +4,14 @@ public class Table : MonoBehaviour
 {
     [SerializeField] protected Transform tableTopTransform;
 
+    private Vector3 originalTopPos; // original table top position;
     protected Ingredient ingredientOnTable;
     protected Interactor interactor;
+
+    private void Awake()
+    {
+        originalTopPos = tableTopTransform.localPosition;
+    }
 
     private void Start()
     {
@@ -34,6 +40,8 @@ public class Table : MonoBehaviour
         {
             ingredientOnTable.SetTable(null);
             ingredientOnTable = null;
+
+            tableTopTransform.localPosition = originalTopPos;
         }
     }
 }

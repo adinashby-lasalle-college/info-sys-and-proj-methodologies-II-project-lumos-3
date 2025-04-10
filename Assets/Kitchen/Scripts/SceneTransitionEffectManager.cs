@@ -21,6 +21,8 @@ public class SceneTransitionEffectManager : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        blackImage.gameObject.SetActive(true);
+
         for (float a = 0; a < fadeDuration; a += Time.deltaTime)
         {
             blackImage.color = new Color(black.r, black.g, black.b, a);

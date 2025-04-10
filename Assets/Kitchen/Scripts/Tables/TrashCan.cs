@@ -16,8 +16,9 @@ public class TrashCan : MonoBehaviour, IInteractable
             else
             {
                 Destroy(Interactor.Instance.GetGrabbingObject().gameObject);
-                Interactor.Instance.ClearGrabbingObject();
-            }    
+            }
+
+            Interactor.Instance.ClearGrabbingObject();
         }
     }
 }

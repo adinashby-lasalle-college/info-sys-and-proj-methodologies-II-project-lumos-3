@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class MoneyUIManager : MonoBehaviour
 {
+    [SerializeField] private MoneyManager moneyManager;
     [SerializeField] private TextMeshProUGUI moneyText;
 
     void Start()
     {
-        MoneyManager.Instance.OnMoneyModified += UpdateUI;
+        moneyManager.OnMoneyModified += UpdateUI;
     }
 
     private void UpdateUI(int money)

@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class MoneyManager : MonoBehaviour
 {
-    public static MoneyManager Instance { get; private set; }
     public int CurrMoney { get; private set; }
 
     public event Action<int> OnMoneyModified;
 
     private void Start()
     {
-        Instance = this;
+        Bell.Instance.OnServed += AddMoney;
     }
 
     public void AddMoney(int amount)

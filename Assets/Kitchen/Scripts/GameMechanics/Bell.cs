@@ -1,9 +1,19 @@
+using System;
 using UnityEngine;
 
 public class Bell : MonoBehaviour, IInteractable
 {
     [SerializeField] private RecipeManager recipeManager;
     [SerializeField] private PrepTable prepTable;
+
+    public static Bell Instance { get; private set; }
+
+    public event Action<int> OnServed;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void Interact()
     {
@@ -28,13 +38,11 @@ public class Bell : MonoBehaviour, IInteractable
 
             Debug.Log("recipe matches");
 
-            // Stop timer
-            CookingTimer.Instance.StopTimer();
+            // Served
+            OnServed?.Invoke(PriceManager.Instance.CalculatePrice(CookingTimer.Instance.CookTime));
 
-            // Calculate burger price & add
-            MoneyManager.Instance.AddMoney(PriceManager.Instance.CalculatePrice(CookingTimer.Instance.CookTime));
-
-            recipeManager.GenerateRecipe();
+            // Generate new recipe
+            StartCoroutine(recipeManager.GenerateRecipe());
         }
         else
         {
