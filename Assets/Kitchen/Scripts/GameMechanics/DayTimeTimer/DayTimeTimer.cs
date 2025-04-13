@@ -10,6 +10,7 @@ public class DayTimeTimer : MonoBehaviour
     private string amPm = "AM";
 
     public event Action<int, int, string> OnTimeChanged;
+    public event Action OnDayEnd;
 
     private int currHour;
     private int currMinute;
@@ -47,8 +48,10 @@ public class DayTimeTimer : MonoBehaviour
                 if (currHour == endHour && amPm == "PM")
                 {
                     StartCoroutine(SceneTransitionEffectManager.Instance.OpenSumUpPage());
-                    
+
                     // * play sound effect
+
+                    OnDayEnd?.Invoke();
                 }
             }
 

@@ -20,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ff0bfc78bcc2444d826afecf10da8aa, type: 2}
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   recipeName: Helei Burger
+  additionalPrice: 6

@@ -20,14 +20,14 @@ public class CookingTimerUIManager : MonoBehaviour
     {
         if (isActive)
         {
-            bar.fillAmount = CookingTimer.Instance.TimerTime / CookingTimer.Instance.TimerMax;
+            bar.fillAmount = CookingTimer.Instance.CookTime / CookingTimer.Instance.TimerMax;
 
-            if (CookingTimer.Instance.TimerTime >= PriceManager.Instance.GetHighPriceTimeLimit())
+            if (CookingTimer.Instance.CookTime >= PriceManager.Instance.GetHighPriceTimeLimit())
             {
                 bar.color = Color.yellow;
             }
 
-            if (CookingTimer.Instance.TimerTime >= PriceManager.Instance.GetMiddlePriceTimeLimit())
+            if (CookingTimer.Instance.CookTime >= PriceManager.Instance.GetMiddlePriceTimeLimit())
             {
                 bar.color = Color.red;
             }

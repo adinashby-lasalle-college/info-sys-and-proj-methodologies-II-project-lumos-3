@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e2f5781f6cd8976429f93776cdff08b0, type: 2}
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   recipeName: Vege Burger
+  additionalPrice: 5

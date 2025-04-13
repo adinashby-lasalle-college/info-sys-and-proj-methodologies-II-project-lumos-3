@@ -10,15 +10,14 @@ public class CookingTimer : MonoBehaviour
 
     public event Action OnCookingTimerStart;
 
-    public float TimerTime { get; private set; } // Current timer time
-    public float CookTime { get; private set; } // Total cook time
+    public float CookTime { get; private set; } // Current timer time
     public float TimerMax { get; private set; }
 
     private void Awake()
     {
         Instance = this;
 
-        TimerTime = 0f;
+        CookTime = 0f;
         TimerMax = 35f;
     }
 
@@ -31,7 +30,7 @@ public class CookingTimer : MonoBehaviour
     {
         if (isTimerActive)
         {
-            TimerTime += Time.deltaTime * timerSpeed;
+            CookTime += Time.deltaTime * timerSpeed;
         }
     }
 
@@ -45,8 +44,6 @@ public class CookingTimer : MonoBehaviour
     public void StopTimer(int price)
     {
         isTimerActive = false;
-
-        CookTime = TimerTime;
-        TimerTime = 0f;
+        CookTime = 0f;
     }
 }

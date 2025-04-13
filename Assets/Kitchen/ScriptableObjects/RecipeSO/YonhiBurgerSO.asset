@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 83ae27a9143170a42bb385313e12b494, type: 2}
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   recipeName: Yonhi Burger
+  additionalPrice: 7

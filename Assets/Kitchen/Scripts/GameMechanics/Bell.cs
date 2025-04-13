@@ -33,13 +33,9 @@ public class Bell : MonoBehaviour, IInteractable
             {
                 if (recipeManager.CurrRecipe.ingredientSOList[i] != prepTable.ingredientSOList[i])
                 {
-                    Debug.Log("fail");
-                    // * Game Over
-                    return;
+                    GameManager.Instance.GameOver();
                 }
             }
-
-            Debug.Log("recipe matches");
 
             // Served
             OnServed?.Invoke(PriceManager.Instance.CalculatePrice(CookingTimer.Instance.CookTime));

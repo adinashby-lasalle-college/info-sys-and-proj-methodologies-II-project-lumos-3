@@ -19,3 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06ad090a3b0ccd344be36a7c5bc5c59c, type: 2}
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   recipeName: Cheese Burger
+  additionalPrice: 4

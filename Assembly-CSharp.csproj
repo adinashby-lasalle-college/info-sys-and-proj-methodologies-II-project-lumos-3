@@ -118,6 +118,7 @@
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\RecipeListSO.cs" />
     <Compile Include="Assets\Night\Scripts\AI\Npcs\RunState.cs" />
     <Compile Include="Assets\Night\Scripts\AI\Npcs\NPCController.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\DailySumUpUIManager.cs" />
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />
     <Compile Include="Assets\Night\Scripts\I_PickableObj.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\GameManager.cs" />

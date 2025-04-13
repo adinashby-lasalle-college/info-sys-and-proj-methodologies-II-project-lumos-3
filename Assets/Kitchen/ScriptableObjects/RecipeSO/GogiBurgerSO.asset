@@ -20,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6cbcc47e95b3584abc5db09db0f9bd7, type: 2}
   - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
   recipeName: Gogi Burger
+  additionalPrice: 7

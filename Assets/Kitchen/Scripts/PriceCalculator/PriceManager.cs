@@ -4,6 +4,8 @@ public class PriceManager : MonoBehaviour
 {
     public static PriceManager Instance { get; private set; }
 
+    [SerializeField] RecipeManager recipeManager;
+
     private PriceHandler highPriceHandler;
     private PriceHandler middlePriceHandler;
     private PriceHandler lowPriceHandler;
@@ -15,7 +17,7 @@ public class PriceManager : MonoBehaviour
     private int middlePrice = 10;
     private int lowPrice = 5;
 
-    private int price;
+    private int price; // Price based on cooking time
 
     private void Awake()
     {
@@ -35,8 +37,9 @@ public class PriceManager : MonoBehaviour
     public int CalculatePrice(float cookTime)
     {
         highPriceHandler.HandleRequest(cookTime);
+        int totalPrice = price + recipeManager.CurrRecipe.additionalPrice;
 
-        return price;
+        return totalPrice;
     }
 
     public void SetPrice(int price)
