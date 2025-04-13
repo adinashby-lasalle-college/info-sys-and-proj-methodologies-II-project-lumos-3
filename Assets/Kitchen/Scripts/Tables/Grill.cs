@@ -71,9 +71,9 @@ public class Grill : Table, IInteractable
 
     public void Interact()
     {
-        if (interactor.IsGrabbing)
+        if (Interactor.Instance.IsGrabbing)
         {
-            Grabbable grabbingIngredient = interactor.GetGrabbingObject();
+            Grabbable grabbingIngredient = Interactor.Instance.GetGrabbingObject();
 
             // Check if the grabbing ingredient cookable
             if (grabbingIngredient.GetObjectType() == ObjectType.COOKABLE && !ingredientOnTable)
@@ -89,7 +89,7 @@ public class Grill : Table, IInteractable
             ingredientOnTable.transform.parent = null;
             ingredientOnTable.GetComponent<CursorFollower>().enabled = true;
 
-            interactor.SetGrabbingObject(ingredientOnTable);
+            Interactor.Instance.SetGrabbingObject(ingredientOnTable);
 
             ClearTable();
 

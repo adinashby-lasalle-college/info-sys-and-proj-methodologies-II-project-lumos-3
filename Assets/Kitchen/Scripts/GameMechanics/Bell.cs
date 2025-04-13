@@ -12,7 +12,10 @@ public class Bell : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        Instance = this;
+        if (!Instance)
+        {
+            Instance = this;
+        }
     }
 
     public void Interact()
@@ -46,8 +49,8 @@ public class Bell : MonoBehaviour, IInteractable
         }
         else
         {
-            Debug.Log("fail");
-            // * Game Over
+            // If the recipe served is wrong, game over
+            GameManager.Instance.GameOver();
         }
 
         prepTable.ClearPrepTable();

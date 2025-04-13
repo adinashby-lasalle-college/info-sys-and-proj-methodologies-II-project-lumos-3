@@ -10,9 +10,9 @@ public class CuttingBoard : Table, IInteractable
 
     public void Interact()
     {
-        if (interactor.IsGrabbing)
+        if (Interactor.Instance.IsGrabbing)
         {
-            Grabbable grabbingIngredient = interactor.GetGrabbingObject();
+            Grabbable grabbingIngredient = Interactor.Instance.GetGrabbingObject();
 
             // If the grabbing object is cuttable,
             if (grabbingIngredient.GetObjectType() == ObjectType.CUTTABLE && !ingredientOnTable)
@@ -35,7 +35,7 @@ public class CuttingBoard : Table, IInteractable
                 ingredientOnTable.transform.parent = null;
                 ingredientOnTable.GetComponent<CursorFollower>().enabled = true;
 
-                interactor.SetGrabbingObject(ingredientOnTable);
+                Interactor.Instance.SetGrabbingObject(ingredientOnTable);
 
                 ClearTable();
 

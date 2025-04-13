@@ -120,6 +120,7 @@
     <Compile Include="Assets\Night\Scripts\AI\Npcs\NPCController.cs" />
     <Compile Include="Assets\DataPersisence\IDataPersisence.cs" />
     <Compile Include="Assets\Night\Scripts\I_PickableObj.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\GameManager.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\Paper.cs" />
     <Compile Include="Assets\Night\Scripts\AI\Npcs\PatrolState.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\DayTimeTimer\DayTimeTimerUIManager.cs" />

@@ -6,16 +6,10 @@ public class Table : MonoBehaviour
 
     private Vector3 originalTopPos; // original table top position;
     protected Ingredient ingredientOnTable;
-    protected Interactor interactor;
 
     private void Awake()
     {
         originalTopPos = tableTopTransform.localPosition;
-    }
-
-    private void Start()
-    {
-        interactor = Interactor.Instance;
     }
 
     protected void PutIngredient(Ingredient ingredient)
@@ -31,7 +25,7 @@ public class Table : MonoBehaviour
         ingredient.SetTable(this);
         ingredientOnTable = ingredient;
 
-        interactor.ClearGrabbingObject();
+        Interactor.Instance.ClearGrabbingObject();
     }
 
     public void ClearTable()

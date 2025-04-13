@@ -64,6 +64,8 @@ public class Sauce : Grabbable, IInteractable
         transform.position = originalTransform.position;
 
         animator.SetTrigger("MoveDown");
+
+        Interactor.Instance.ClearGrabbingObject();
     }
 
     public override ObjectType GetObjectType()

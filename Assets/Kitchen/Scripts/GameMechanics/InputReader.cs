@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
+    public static InputReader Instance { get; private set; }
+
     private KitchenInputActions kitchenInputActions;
 
     public event EventHandler OnInteractAction;
@@ -10,6 +12,11 @@ public class InputReader : MonoBehaviour
 
     private void Awake()
     {
+        if (!Instance)
+        {
+            Instance = this;
+        }
+
         kitchenInputActions = new KitchenInputActions();
 
         kitchenInputActions.Camera.Enable();

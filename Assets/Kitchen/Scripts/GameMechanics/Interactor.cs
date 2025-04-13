@@ -6,21 +6,21 @@ public class Interactor : MonoBehaviour
 
     [SerializeField] private LayerMask interactableLayerMask;
 
-    private InputReader inputReader;
     private Grabbable grabbingObject;
 
     public bool IsGrabbing { get; private set; }
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void Start()
     {
-        inputReader = GetComponent<InputReader>();
-
-        inputReader.OnInteractAction += TryInteract;
+        InputReader.Instance.OnInteractAction += TryInteract;
     }
 
     private void TryInteract(object sender, System.EventArgs e)
