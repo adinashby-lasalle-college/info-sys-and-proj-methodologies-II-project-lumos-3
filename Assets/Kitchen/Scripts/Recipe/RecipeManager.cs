@@ -6,6 +6,7 @@ public class RecipeManager : MonoBehaviour
 {
     [SerializeField] private RecipeListSO recipeListSO;
     [SerializeField] private RecipeUIManager recipeUIManager;
+    [SerializeField] private CookingTimer cookingTimer;
 
     private float coolTime = 3f; // cooltime to generate new recipe
 
@@ -27,6 +28,6 @@ public class RecipeManager : MonoBehaviour
         OnRecipeGenerated?.Invoke(CurrRecipe);
 
         // Start timer
-        CookingTimer.Instance.StartTimer();
+        cookingTimer.StartTimer();
     }
 }

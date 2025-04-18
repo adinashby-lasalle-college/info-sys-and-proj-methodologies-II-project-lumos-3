@@ -3,31 +3,40 @@ using UnityEngine.UI;
 
 public class CookingTimerUIManager : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] private PriceManager priceManager;
+    [SerializeField] private CookingTimer cookingTimer;
+    [SerializeField] private Bell bell;
+    [SerializeField] private Animator animator;
     [SerializeField] private Image bar;
 
     private bool isActive = false;
 
     private void Start()
     {
-        CookingTimer.Instance.OnCookingTimerStart += SetCookingTimerUIActive;
-        Bell.Instance.OnServed += HideCookingTimerUI;
+        cookingTimer.OnCookingTimerStart += SetCookingTimerUIActive;
+        bell.OnServed += HideCookingTimerUI;
 
         bar.fillAmount = 0;
+    }
+
+    private void OnDisable()
+    {
+        cookingTimer.OnCookingTimerStart -= SetCookingTimerUIActive;
+        bell.OnServed -= HideCookingTimerUI;
     }
 
     private void FixedUpdate()
     {
         if (isActive)
         {
-            bar.fillAmount = CookingTimer.Instance.CookTime / CookingTimer.Instance.TimerMax;
+            bar.fillAmount = cookingTimer.CookTime / cookingTimer.TimerMax;
 
-            if (CookingTimer.Instance.CookTime >= PriceManager.Instance.GetHighPriceTimeLimit())
+            if (cookingTimer.CookTime >= priceManager.GetHighPriceTimeLimit())
             {
                 bar.color = Color.yellow;
             }
 
-            if (CookingTimer.Instance.CookTime >= PriceManager.Instance.GetMiddlePriceTimeLimit())
+            if (cookingTimer.CookTime >= priceManager.GetMiddlePriceTimeLimit())
             {
                 bar.color = Color.red;
             }
@@ -43,7 +52,7 @@ public class CookingTimerUIManager : MonoBehaviour
         bar.color = Color.green;
     }
 
-    private void HideCookingTimerUI(int price)
+    private void HideCookingTimerUI()
     {
         animator.SetTrigger("Served");
     }

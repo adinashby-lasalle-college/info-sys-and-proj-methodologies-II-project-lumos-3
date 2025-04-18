@@ -3,23 +3,31 @@ using UnityEngine;
 
 public class MoneyManager : MonoBehaviour
 {
+    public static MoneyManager Instance { get; private set; }
+
     public int OriginalMoney { get; private set; }
     public int EarnedMoney { get; private set; } // money earned today
     public int TotalMoney { get; private set; }
 
     public event Action<int> OnMoneyModified;
 
-    private void Start()
+    private void Awake()
     {
-        Bell.Instance.OnServed += AddMoney;
+        if (!Instance)
+        {
+            Instance = this;
 
-        OriginalMoney = TotalMoney;
-        EarnedMoney = 0;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    private void OnDisable()
+    private void Start()
     {
-        Bell.Instance.OnServed -= AddMoney;
+        RefreshMoneyInfo();
     }
 
     public void AddMoney(int amount)
@@ -38,6 +46,12 @@ public class MoneyManager : MonoBehaviour
         {
             TotalMoney = 0;
         }
+    }
+
+    public void RefreshMoneyInfo()
+    {
+        OriginalMoney = TotalMoney;
+        EarnedMoney = 0;
 
         OnMoneyModified?.Invoke(TotalMoney);
     }

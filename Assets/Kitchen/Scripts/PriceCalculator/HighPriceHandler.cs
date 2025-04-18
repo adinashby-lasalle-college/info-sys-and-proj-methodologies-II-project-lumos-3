@@ -2,9 +2,9 @@ public class HighPriceHandler : PriceHandler
 {
     public override void HandleRequest(float cookTime)
     {
-        if (cookTime < PriceManager.Instance.GetHighPriceTimeLimit())
+        if (cookTime < priceManager.GetHighPriceTimeLimit())
         {
-            PriceManager.Instance.SetPrice(PriceManager.Instance.GetHighPrice());
+            priceManager.SetPrice(priceManager.GetHighPrice());
         }
         else if (nextHandler)
         {

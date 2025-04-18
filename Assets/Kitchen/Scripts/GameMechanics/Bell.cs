@@ -3,20 +3,12 @@ using UnityEngine;
 
 public class Bell : MonoBehaviour, IInteractable
 {
+    [SerializeField] private PriceManager priceManager;
     [SerializeField] private RecipeManager recipeManager;
+    [SerializeField] private CookingTimer cookingTimer;
     [SerializeField] private PrepTable prepTable;
 
-    public static Bell Instance { get; private set; }
-
-    public event Action<int> OnServed;
-
-    private void Awake()
-    {
-        if (!Instance)
-        {
-            Instance = this;
-        }
-    }
+    public event Action OnServed;
 
     public void Interact()
     {
@@ -28,7 +20,6 @@ public class Bell : MonoBehaviour, IInteractable
         // Check if the ingredient counts are the same
         if (recipeManager.CurrRecipe.ingredientSOList.Count == prepTable.ingredientSOList.Count)
         {
-            // ** Order for CurrRecipe should be the opposite
             for (int i = 0; i < prepTable.ingredientSOList.Count; i++)
             {
                 if (recipeManager.CurrRecipe.ingredientSOList[i] != prepTable.ingredientSOList[i])
@@ -38,7 +29,8 @@ public class Bell : MonoBehaviour, IInteractable
             }
 
             // Served
-            OnServed?.Invoke(PriceManager.Instance.CalculatePrice(CookingTimer.Instance.CookTime));
+            OnServed?.Invoke();
+            MoneyManager.Instance.AddMoney(priceManager.CalculatePrice(cookingTimer.CookTime));
 
             // Generate new recipe
             StartCoroutine(recipeManager.GenerateRecipe());

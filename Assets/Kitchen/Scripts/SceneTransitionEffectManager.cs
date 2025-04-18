@@ -27,6 +27,11 @@ public class SceneTransitionEffectManager : MonoBehaviour
         GameManager.Instance.OnGameOver += OpenGameOverUI;
     }
 
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameOver -= OpenGameOverUI;
+    }
+
     private IEnumerator FadeIn(float fadeAlpha)
     {
         blackImage.gameObject.SetActive(true);

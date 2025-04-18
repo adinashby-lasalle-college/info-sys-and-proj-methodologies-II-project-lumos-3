@@ -27,7 +27,7 @@ public class RecipeUIManager : MonoBehaviour
         animator.SetTrigger("RecipeGenerated");
     }
 
-    private void ClearRecipeUI(int price)
+    private void ClearRecipeUI()
     {
         recipeName.text = "";
         recipeText.text = "";

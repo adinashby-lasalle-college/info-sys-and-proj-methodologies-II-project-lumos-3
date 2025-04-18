@@ -2,9 +2,9 @@ public class MiddlePriceHandler : PriceHandler
 {
     public override void HandleRequest(float cookTime)
     {
-        if (cookTime < PriceManager.Instance.GetMiddlePriceTimeLimit())
+        if (cookTime < priceManager.GetMiddlePriceTimeLimit())
         {
-            PriceManager.Instance.SetPrice(PriceManager.Instance.GetMiddlePrice());
+            priceManager.SetPrice(priceManager.GetMiddlePrice());
         }
         else if (nextHandler)
         {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CookingTimer : MonoBehaviour
 {
-    public static CookingTimer Instance { get; private set; }
+    [SerializeField] private Bell bell;
 
     private bool isTimerActive = false;
     private float timerSpeed = 0.7f;
@@ -13,17 +13,17 @@ public class CookingTimer : MonoBehaviour
     public float CookTime { get; private set; } // Current timer time
     public float TimerMax { get; private set; }
 
-    private void Awake()
-    {
-        Instance = this;
-
-        CookTime = 0f;
-        TimerMax = 35f;
-    }
-
     private void Start()
     {
-        Bell.Instance.OnServed += StopTimer;
+        CookTime = 0f;
+        TimerMax = 35f;
+
+        bell.OnServed += StopTimer;
+    }
+
+    private void OnDisable()
+    {
+        bell.OnServed -= StopTimer;
     }
 
     private void FixedUpdate()
@@ -41,7 +41,7 @@ public class CookingTimer : MonoBehaviour
         OnCookingTimerStart?.Invoke();
     }
 
-    public void StopTimer(int price)
+    public void StopTimer()
     {
         isTimerActive = false;
         CookTime = 0f;

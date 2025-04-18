@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PriceManager : MonoBehaviour
 {
-    public static PriceManager Instance { get; private set; }
-
     [SerializeField] RecipeManager recipeManager;
 
     private PriceHandler highPriceHandler;
@@ -18,11 +16,6 @@ public class PriceManager : MonoBehaviour
     private int lowPrice = 5;
 
     private int price; // Price based on cooking time
-
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     private void Start()
     {

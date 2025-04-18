@@ -12,15 +12,20 @@ public class Interactor : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (!Instance)
         {
             Instance = this;
-        }
+        }       
     }
 
     private void Start()
     {
         InputReader.Instance.OnInteractAction += TryInteract;
+    }
+
+    private void OnDisable()
+    {
+        InputReader.Instance.OnInteractAction -= TryInteract;
     }
 
     private void TryInteract(object sender, System.EventArgs e)
