@@ -17,28 +17,32 @@ public class Bell : MonoBehaviour, IInteractable
 
     public void Serve()
     {
-        // Check if the ingredient counts are the same
-        if (recipeManager.CurrRecipe.ingredientSOList.Count == prepTable.ingredientSOList.Count)
+        // If there's any ingredient on the prep table
+        if (prepTable.ingredientSOList.Count > 0)
         {
-            for (int i = 0; i < prepTable.ingredientSOList.Count; i++)
+            // Check if the ingredient counts are the same
+            if (recipeManager.CurrRecipe.ingredientSOList.Count == prepTable.ingredientSOList.Count)
             {
-                if (recipeManager.CurrRecipe.ingredientSOList[i] != prepTable.ingredientSOList[i])
+                for (int i = 0; i < prepTable.ingredientSOList.Count; i++)
                 {
-                    GameManager.Instance.GameOver();
+                    if (recipeManager.CurrRecipe.ingredientSOList[i] != prepTable.ingredientSOList[i])
+                    {
+                        GameManager.Instance.GameOver();
+                    }
                 }
+
+                // Served
+                OnServed?.Invoke();
+                MoneyManager.Instance.AddMoney(priceManager.CalculatePrice(cookingTimer.CookTime));
+
+                // Generate new recipe
+                StartCoroutine(recipeManager.GenerateRecipe());
             }
-
-            // Served
-            OnServed?.Invoke();
-            MoneyManager.Instance.AddMoney(priceManager.CalculatePrice(cookingTimer.CookTime));
-
-            // Generate new recipe
-            StartCoroutine(recipeManager.GenerateRecipe());
-        }
-        else
-        {
-            // If the recipe served is wrong, game over
-            GameManager.Instance.GameOver();
+            else
+            {
+                // If the recipe served is wrong, game over
+                GameManager.Instance.GameOver();
+            }
         }
 
         prepTable.ClearPrepTable();
