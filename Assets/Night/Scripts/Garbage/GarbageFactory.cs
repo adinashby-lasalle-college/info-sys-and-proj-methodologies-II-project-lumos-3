@@ -23,7 +23,10 @@ public class GarbageFactory : MonoBehaviour
             garbage = gameObject.GetComponent<Paper>();
         }
 
+        Vector2 randomOffset = Random.insideUnitCircle * 1f;
+        Vector3 finalPosition = spawnPosition + new Vector3(randomOffset.x, randomOffset.y, 0);
+
         //Instantiate
-        return Instantiate(garbage.GetGarbage(), spawnPosition, rotation);
+        return Instantiate(garbage.GetGarbage(), finalPosition, rotation);
     }
 }
