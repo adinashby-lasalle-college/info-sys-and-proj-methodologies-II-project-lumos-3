@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 7816498522618578133, guid: bab627f891e28c440a457ac3ef34e6c5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9bf137fc28366694d9668f80cac6e55d, type: 2}
+      objectReference: {fileID: 2100000, guid: bce10cb45c2545f48a0b7817ac0a51eb, type: 2}
     - target: {fileID: 8867112075559477377, guid: bab627f891e28c440a457ac3ef34e6c5, type: 3}
       propertyPath: m_Name
       value: PickleSauce

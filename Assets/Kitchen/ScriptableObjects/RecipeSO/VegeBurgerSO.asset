@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: VegeBurgerSO
   m_EditorClassIdentifier: 
   ingredientSOList:
-  - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
+  - {fileID: 11400000, guid: 5d3cf1d755f4cc640a14530cbbca5ce1, type: 2}
   - {fileID: 11400000, guid: 83ae27a9143170a42bb385313e12b494, type: 2}
   - {fileID: 11400000, guid: 6bc2e4ecb11b1ce448e540b70256e674, type: 2}
   - {fileID: 11400000, guid: 042017c4a9710244b9463218ddda22d1, type: 2}

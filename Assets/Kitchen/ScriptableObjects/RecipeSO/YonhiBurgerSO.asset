@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: YonhiBurgerSO
   m_EditorClassIdentifier: 
   ingredientSOList:
-  - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
+  - {fileID: 11400000, guid: 5d3cf1d755f4cc640a14530cbbca5ce1, type: 2}
   - {fileID: 11400000, guid: 11496089167c8d644b6563b0f0d5be30, type: 2}
   - {fileID: 11400000, guid: 9c11a3805508d5348af056d8ff99d9f6, type: 2}
   - {fileID: 11400000, guid: 06ad090a3b0ccd344be36a7c5bc5c59c, type: 2}

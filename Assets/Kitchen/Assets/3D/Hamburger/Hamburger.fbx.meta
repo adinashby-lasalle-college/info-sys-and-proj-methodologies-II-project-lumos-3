@@ -3,7 +3,52 @@ guid: 36db68e9eedc3014ca70b3139a657894
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Liquid Domain Material.001
+    second: {fileID: 2100000, guid: 08a7c0b46290e2246a390166e64902bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Liquid Domain Material.002
+    second: {fileID: 2100000, guid: 46f1b340e5b863942a5029bbbe92bec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0411\u0443\u043B\u043E\u0447\u043A\u0430 Base Color"
+    second: {fileID: 2100000, guid: 178d6a4979c0bc646a725ce7540b54f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041A\u043E\u0442\u043B\u0435\u0442\u0430 Base Color"
+    second: {fileID: 2100000, guid: a5c69312bdf82bc4ca581039767c3bb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041B\u0443\u043A Base Color"
+    second: {fileID: 2100000, guid: 2280dc5f3097b7c4691628b26a2b6fc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041F\u0438\u043A\u0443\u043B\u0438 Base Color"
+    second: {fileID: 2100000, guid: dfa7872292e4e074b946dc432dced4c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041F\u043E\u043C\u0438\u0434\u043E\u0440 Base Color"
+    second: {fileID: 2100000, guid: 0188bc07927e15749ae778ff1adae55b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0421\u0430\u043B\u0430\u0442 Base Color"
+    second: {fileID: 2100000, guid: ef6117f6c44479e4394ffd763c333ff1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0421\u044B\u0440 Base Color"
+    second: {fileID: 2100000, guid: 6a16213468a22994cb9e0a2d64fdf022, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +135,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.099999994
+    globalScale: 10
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
