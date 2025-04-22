@@ -6,36 +6,38 @@ public class Grill : Table, IInteractable
 
     private State currState = State.IDLE;
 
-    private float cookTime = 0f;
-    private float doneTime = 2f;
-    private float burntTime = 4f;
+    public float CookTime { get; private set; } = 0f;
+    public float DoneTime { get; private set; } = 2f;
+    public float BurntTime { get; private set; } = 2f;
 
     private void FixedUpdate()
     {
+        // If a cookable ingredient is on the grill, start cooking
         if (ingredientOnTable)
         {
             switch (currState)
             {
                 case State.IDLE:
                     {
-                        // If a cookable ingredient is on the grill, start cooking
-                        cookTime = 0f;
+                        CookTime = 0f;
                         currState = State.COOKING;
                         break;
                     }
 
                 case State.COOKING:
                     {
-                        cookTime += Time.deltaTime;
+                        CookTime += Time.deltaTime;
 
                         // When it's cooked, switch the raw ingredient to the cooked version
-                        if (cookTime >= doneTime)
+                        if (CookTime >= DoneTime)
                         {
                             IngredientSO cookedMeatSO = GetCookedIngredientSO(ingredientOnTable.GetIngredientSO());
                             ingredientOnTable.DestroySelf();
 
                             Ingredient cookedMeat = Ingredient.SpawnIngredient(cookedMeatSO);
                             SwitchIngredient(cookedMeat);
+
+                            CookTime = 0f;
 
                             currState = State.COOKED;
                         }
@@ -45,9 +47,9 @@ public class Grill : Table, IInteractable
 
                 case State.COOKED:
                     {
-                        cookTime += Time.deltaTime;
+                        CookTime += Time.deltaTime;
 
-                        if (cookTime >= burntTime)
+                        if (CookTime >= BurntTime)
                         {
                             IngredientSO burntMeatSO = GetBurntIngredientSO(ingredientOnTable.GetIngredientSO());
                             ingredientOnTable.DestroySelf();
@@ -139,7 +141,12 @@ public class Grill : Table, IInteractable
         return null;
     }
 
-    enum State
+    public State GetCurrState()
+    {
+        return currState;
+    }
+
+    public enum State
     {
         IDLE,
         COOKING,
