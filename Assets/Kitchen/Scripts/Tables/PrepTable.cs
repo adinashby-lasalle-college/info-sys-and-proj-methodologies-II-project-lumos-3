@@ -40,6 +40,7 @@ public class PrepTable : Table, IInteractable
                     break;
 
                 case ObjectType.INGREDIENT_READY:
+                case ObjectType.BUN:
 
                     ingredient = Interactor.Instance.GetGrabbingObject().GetComponent<Ingredient>();
                     PutIngredient(ingredient);

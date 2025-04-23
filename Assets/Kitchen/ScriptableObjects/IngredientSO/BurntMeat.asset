@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7184156019602906301, guid: 3f515b78a42437948ab8bc6326687e7a, type: 3}
   ingredientName: Burnt Meat
-  icon: {fileID: 0}
-  type: 4
+  type: 5

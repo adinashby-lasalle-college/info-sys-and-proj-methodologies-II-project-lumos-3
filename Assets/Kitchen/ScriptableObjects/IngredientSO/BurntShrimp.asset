@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7039437415854089053, guid: fd3490c5f6494fc4eaf4cc33f1aba3d4, type: 3}
   ingredientName: Burnt Shrimp
-  icon: {fileID: 0}
-  type: 4
+  type: 5

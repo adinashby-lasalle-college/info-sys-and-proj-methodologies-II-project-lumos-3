@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Container : MonoBehaviour, IInteractable
 {
-    [SerializeField] private IngredientSO ingredientSO;
+    [SerializeField] protected IngredientSO ingredientSO;
 
     private Animator animator;
 
@@ -25,6 +25,11 @@ public class Container : MonoBehaviour, IInteractable
     {
         if (!Interactor.Instance.IsGrabbing)
         {
+            if (ingredientSO.type == ObjectType.BUN)
+            {
+                GetComponent<BunContainer>().SwitchBun();
+            }
+
             Ingredient ingredient = Ingredient.SpawnIngredient(ingredientSO);
             Interactor.Instance.SetGrabbingObject(ingredient);
         }

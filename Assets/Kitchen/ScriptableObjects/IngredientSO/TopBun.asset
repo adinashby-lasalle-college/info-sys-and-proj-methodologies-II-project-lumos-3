@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TopBun
   m_EditorClassIdentifier: 
   prefab: {fileID: 4493809366682235701, guid: a24bbdf41e9cc1547a87085d0b4d13a8, type: 3}
-  ingredientName: Top Bun
-  type: 0
+  ingredientName: Bun
+  type: 1

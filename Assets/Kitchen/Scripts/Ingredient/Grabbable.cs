@@ -8,6 +8,7 @@ public abstract class Grabbable : MonoBehaviour
 public enum ObjectType
 {
     INGREDIENT_READY,
+    BUN,
     CUTTABLE,
     COOKABLE,
     SAUCE,

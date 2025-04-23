@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8031502374033470292, guid: c358211faed10b74fb79c7d72d8f6cf7, type: 3}
   ingredientName: Mustard
-  icon: {fileID: 0}
-  type: 3
+  type: 4

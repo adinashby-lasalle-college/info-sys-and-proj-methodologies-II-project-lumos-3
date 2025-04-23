@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7039437415854089053, guid: 97c3bbae02db9d642865279443ed3051, type: 3}
   ingredientName: Raw Shrimp
-  icon: {fileID: 0}
-  type: 2
+  type: 3
