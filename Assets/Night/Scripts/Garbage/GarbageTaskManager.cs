@@ -15,14 +15,7 @@ public class GarbageTaskManager : MonoBehaviour
     // Public property to access the singleton instance
     public static GarbageTaskManager Instance
     {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = new GarbageTaskManager();
-            }
-            return _instance;
-        }
+        get { return _instance; }
     }
 
     private void Start()

@@ -17,11 +17,12 @@ public class NPCController : MonoBehaviour
     public float D_MoveRadius = 15f;
 
     public I_NPC_State currentState;
+    [SerializeField] PatrolState patrolState;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();   
-        SetState(new PatrolState());
+        SetState(gameObject.GetComponent<PatrolState>());
     }
 
     public void SetState(I_NPC_State newState)

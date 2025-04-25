@@ -27,7 +27,7 @@ public class PickableItem : MonoBehaviour, I_PickableObj
     {
         Char_Movement player = GameObject.FindGameObjectWithTag("Player").GetComponent<Char_Movement>();
         string Dir = player.GetCurrentDirection();
-        float throwForce = 5000f * Force;
+        float throwForce = 10000f * Force;
         Debug.Log(throwForce.ToString());
         rb.velocity = Vector2.zero;
         if(Dir == "Up")
