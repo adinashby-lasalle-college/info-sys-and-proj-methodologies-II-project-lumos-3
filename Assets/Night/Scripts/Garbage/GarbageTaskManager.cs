@@ -10,14 +10,6 @@ public class GarbageTaskManager : MonoBehaviour
     GarbageFactory garbageFactory;
     [SerializeField] Transform spawnPoint;
 
-    private static GarbageTaskManager _instance;
-
-    // Public property to access the singleton instance
-    public static GarbageTaskManager Instance
-    {
-        get { return _instance; }
-    }
-
     private void Start()
     {
         garbages= new List<GameObject>();
