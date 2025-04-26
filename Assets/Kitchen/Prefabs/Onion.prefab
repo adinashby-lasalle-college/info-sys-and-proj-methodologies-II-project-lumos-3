@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: ecaa93e70db11d443a2a45c77d329b71, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 735b3cf6d58186f4f8b6c7216a3c7756, type: 2}
     - target: {fileID: 919132149155446097, guid: ecaa93e70db11d443a2a45c77d329b71, type: 3}
       propertyPath: m_Name
       value: Red_onion_SF
