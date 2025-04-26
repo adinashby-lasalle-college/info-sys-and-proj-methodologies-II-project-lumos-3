@@ -69,7 +69,7 @@ public class Char_PickUpItem : MonoBehaviour
 
     IEnumerator SetBackCollider()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         if(ItemInHand != null)
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ItemInHand.GetComponent<Collider2D>(), false);

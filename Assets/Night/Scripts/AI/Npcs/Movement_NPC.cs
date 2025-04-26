@@ -13,6 +13,7 @@ public class Movement_NPC : MonoBehaviour
 
     float timer = 0f;
     bool isWalking = true;
+    private Vector3 targetScale;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Movement_NPC : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * 5f);
 
         if (isWalking)
         {
@@ -70,6 +72,14 @@ public class Movement_NPC : MonoBehaviour
         {
             agent.SetDestination(hit.position);
 
+            if (hit.position.x > transform.position.x)
+            {
+                targetScale = new Vector3(1, 1, 1);  // Face right
+            }
+            else
+            {
+                targetScale = new Vector3(-1, 1, 1); // Face left
+            }
         }
     }
 
@@ -90,13 +100,4 @@ public class Movement_NPC : MonoBehaviour
         walkRadius = stateController.D_MoveRadius;
     }
 
-    public void KnockDownNPC()
-    {
-        
-    }
-
-    void NPCAwake()
-    {
-        disturbing = false;
-    }
 }
