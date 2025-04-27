@@ -6,7 +6,7 @@ public class CuttingProgressionUIManager : MonoBehaviour, IEffectManager
 {
     [SerializeField] Image bar;
 
-    public void PlayEffect(float sliceCount, float maxCount)
+    public void PlayCuttingEffect(float sliceCount, float maxCount)
     {
         bar.fillAmount = sliceCount / maxCount;
     }

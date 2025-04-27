@@ -19,7 +19,7 @@ public class CuttingEffectManager : MonoBehaviour
     {
         foreach (IEffectManager effectManager in effectManagers)
         {
-            effectManager.PlayEffect(sliceCount, maxCount);
+            effectManager.PlayCuttingEffect(sliceCount, maxCount);
         }
     }
 }

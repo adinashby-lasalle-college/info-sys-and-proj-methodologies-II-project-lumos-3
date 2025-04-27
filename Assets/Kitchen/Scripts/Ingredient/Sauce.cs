@@ -38,6 +38,8 @@ public class Sauce : Grabbable, IInteractable
             canPlayAnimation = false;
 
             Interactor.Instance.SetGrabbingObject(this);
+
+            KitchenSFXManager.Instance.PlayPickingUpSound();
         }
 
         // If player is already grabbing a sauce bottle, replace the sauce bottle

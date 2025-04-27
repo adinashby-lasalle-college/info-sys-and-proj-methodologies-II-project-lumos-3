@@ -60,7 +60,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.18f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\DataResetor.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\Grill\GrillTimerUIManager.cs" />
     <Compile Include="Assets\MainMenu\SceneLoader.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageBag.cs" />
@@ -105,11 +104,13 @@
     <Compile Include="Assets\Night\Scripts\AI\Npcs\Movement_NPC.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\FacingCamera.cs" />
     <Compile Include="Assets\Night\Scripts\I_FollowUpUI.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\GameMechanics\DataResetter.cs" />
     <Compile Include="Assets\Night\Scripts\Garbage\GarbageTaskManager.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_PickUpItem.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Recipe\RecipeUIManager.cs" />
     <Compile Include="Assets\Night\Scripts\PickableItem.cs" />
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\HighPriceHandler.cs" />
+    <Compile Include="Assets\Kitchen\Scripts\Tables\Grill\GrillSfxManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Tables\CuttingTable\CuttingBoard.cs" />
     <Compile Include="Assets\Night\Scripts\Char\Char_InputTaker.cs" />
     <Compile Include="Assets\Night\Scripts\AI\Npcs\I_NPC_State.cs" />

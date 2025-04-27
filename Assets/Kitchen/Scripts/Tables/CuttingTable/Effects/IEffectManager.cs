@@ -1,4 +1,4 @@
 interface IEffectManager
 {
-    void PlayEffect(float sliceCount, float maxCount);
+    void PlayCuttingEffect(float sliceCount, float maxCount);
 }

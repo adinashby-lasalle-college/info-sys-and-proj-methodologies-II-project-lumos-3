@@ -25,11 +25,6 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        RefreshMoneyInfo();
-    }
-
     public void AddMoney(int amount)
     {
         TotalMoney += amount;
@@ -46,13 +41,13 @@ public class MoneyManager : MonoBehaviour
         {
             TotalMoney = 0;
         }
+
+        OnMoneyModified?.Invoke(TotalMoney);
     }
 
     public void RefreshMoneyInfo()
     {
         OriginalMoney = TotalMoney;
         EarnedMoney = 0;
-
-        OnMoneyModified?.Invoke(TotalMoney);
     }
 }

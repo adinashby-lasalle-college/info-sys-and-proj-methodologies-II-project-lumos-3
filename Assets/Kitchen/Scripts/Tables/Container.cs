@@ -32,6 +32,8 @@ public class Container : MonoBehaviour, IInteractable
 
             Ingredient ingredient = Ingredient.SpawnIngredient(ingredientSO);
             Interactor.Instance.SetGrabbingObject(ingredient);
+
+            KitchenSFXManager.Instance.PlayPickingUpSound();
         }
     }
 }

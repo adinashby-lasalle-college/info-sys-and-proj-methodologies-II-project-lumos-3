@@ -28,6 +28,8 @@ public class PrepTable : Table, IInteractable
                     Ingredient ingredient = ingredientTransform.GetComponent<Ingredient>();
                     PutIngredient(ingredient);
 
+                    KitchenSFXManager.Instance.PlayPuttingSound();
+
                     // Ingredient dropping position will be slightly higher every time
                     tableTopTransform.localPosition = new Vector3(0, tableTopTransform.localPosition.y + 0.1f, 0);
 
@@ -44,6 +46,8 @@ public class PrepTable : Table, IInteractable
 
                     ingredient = Interactor.Instance.GetGrabbingObject().GetComponent<Ingredient>();
                     PutIngredient(ingredient);
+
+                    KitchenSFXManager.Instance.PlayPuttingSound();
 
                     // Ingredient dropping position will be slightly higher every time
                     tableTopTransform.localPosition = new Vector3(0, tableTopTransform.localPosition.y + 0.1f, 0);

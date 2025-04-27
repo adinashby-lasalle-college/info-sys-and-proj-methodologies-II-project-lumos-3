@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Grill : Table, IInteractable
@@ -82,6 +83,7 @@ public class Grill : Table, IInteractable
             {
                 // Put the ingredient on this table
                 PutIngredient(grabbingIngredient.GetComponent<Ingredient>());
+                KitchenSFXManager.Instance.PlayFireSound();
             }
         }
 
@@ -94,6 +96,7 @@ public class Grill : Table, IInteractable
             Interactor.Instance.SetGrabbingObject(ingredientOnTable);
 
             ClearTable();
+            KitchenSFXManager.Instance.StopFireSound();
 
             currState = State.IDLE;
         }
