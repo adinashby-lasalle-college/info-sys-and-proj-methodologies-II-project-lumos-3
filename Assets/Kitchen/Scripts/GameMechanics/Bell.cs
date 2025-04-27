@@ -31,9 +31,10 @@ public class Bell : MonoBehaviour, IInteractable
                     }
                 }
 
+                MoneyManager.Instance.AddMoney(priceManager.CalculatePrice(cookingTimer.CookTime));
+
                 // Served
                 OnServed?.Invoke();
-                MoneyManager.Instance.AddMoney(priceManager.CalculatePrice(cookingTimer.CookTime));
 
                 // Generate new recipe
                 StartCoroutine(recipeManager.GenerateRecipe());

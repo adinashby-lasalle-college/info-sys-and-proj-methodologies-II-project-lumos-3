@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PriceManager : MonoBehaviour
 {
     [SerializeField] RecipeManager recipeManager;
+    [SerializeField] CookingTimer cookingTimer;
 
     private PriceHandler highPriceHandler;
     private PriceHandler middlePriceHandler;
