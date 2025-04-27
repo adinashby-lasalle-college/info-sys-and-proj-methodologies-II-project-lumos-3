@@ -85,7 +85,6 @@ public class Movement_NPC : MonoBehaviour
 
     //Detect Player
     public bool detecting;
-    [SerializeField] float detectingDuration = 5f;
 
     //Disturb
     bool disturbing = false;

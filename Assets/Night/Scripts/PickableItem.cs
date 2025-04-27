@@ -5,8 +5,8 @@ using UnityEngine;
 public class PickableItem : MonoBehaviour, I_PickableObj
 {
     Rigidbody2D rb;
-    bool IsThisObjectPicking;
-    [SerializeField] Transform playerDragSpot;
+    public bool IsThisObjectPicking;
+    [SerializeField] Transform playerDragSpot;   
 
     private void Start()
     {

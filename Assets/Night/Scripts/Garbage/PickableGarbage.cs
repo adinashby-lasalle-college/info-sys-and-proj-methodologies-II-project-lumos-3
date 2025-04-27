@@ -4,31 +4,45 @@ using UnityEngine;
 
 public class PickableGarbage : PickableItem
 {
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        //Garbage area
-        if (other.GetComponent<GarbageArea>() != null)
+        if(!IsThisObjectPicking)
         {
-            if(gameObject.tag == "Garbage")
+            //Garbage area
+            if (other.GetComponent<GarbageArea>() != null)
             {
-                other.GetComponent<GarbageArea>().DeliverGarbage();
+                if (gameObject.tag == "Garbage")
+                {
+                    other.GetComponent<GarbageArea>().DeliverGarbage();
+                }
+                if (gameObject.tag == "Human")
+                {
+                    Debug.Log("Drop person into garbage");
+                }
+                Destroy(this.gameObject);
             }
-            if (gameObject.tag == "Human")
-            {
-                Debug.Log("Drop person into garbage");
-            }
-            Destroy(this.gameObject);
-        }
 
-        //Kitchen
-        if (other.GetComponent<GarbageArea>() != null)
-        {
-            if (gameObject.tag == "Human")
+            //Kitchen
+            if (other.GetComponent<TruckArea>() != null)
             {
-                Debug.Log("Drop person into kitchen");
+                if (gameObject.tag == "Human")
+                {
+                    Debug.Log("Drop person into kitchen");
+                }
+                Destroy(this.gameObject);
             }
-            Destroy(this.gameObject);
+
+            //Stun NPC
+            if (other.GetComponent<NPChitbox>() != null)
+            {
+                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                if (rb != null && rb.velocity.magnitude > 1f)
+                {
+                    other.GetComponent<NPChitbox>().Stun();
+                }
+            }
         }
+        
     }
 }

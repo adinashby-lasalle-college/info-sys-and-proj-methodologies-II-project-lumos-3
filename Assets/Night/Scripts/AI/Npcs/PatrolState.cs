@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PatrolState : MonoBehaviour, I_NPC_State
 {
+    RunState runState;
+
+    private void Start()
+    {
+        runState = GetComponent<RunState>();
+    }
 
     public void Enter(NPCController npc)
     {
@@ -12,6 +18,6 @@ public class PatrolState : MonoBehaviour, I_NPC_State
 
     public void SwitchState(NPCController npc)
     {
-        npc.SetState(new RunState());
+        npc.SetState(runState);
     }
 }
