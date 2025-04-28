@@ -6,8 +6,10 @@ public class KitchenSFXManager : MonoBehaviour, IEffectManager
     public static KitchenSFXManager Instance { get; private set; }
 
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioSource fireAudioSource; // only for fire sfx (to play/stop easily)
     [SerializeField] private AudioClip[] audioClips;
+    [SerializeField] private AudioSource bgmAudioSource;
+
+    private AudioSource fireAudioSource;
 
     private void Awake()
     {
@@ -47,12 +49,14 @@ public class KitchenSFXManager : MonoBehaviour, IEffectManager
 
     public void PlayFireSound()
     {
-        fireAudioSource.Play();
+        fireAudioSource = Instantiate(audioSource, this.transform);
+        fireAudioSource.PlayOneShot(FindClip("FireLoop"));
     }
 
     public void StopFireSound()
     {
         fireAudioSource.Stop();
+        Destroy(fireAudioSource.gameObject);
     }
 
     public void PlayPuttingSound()
@@ -63,6 +67,21 @@ public class KitchenSFXManager : MonoBehaviour, IEffectManager
     public void PlayPickingUpSound()
     {
         PlaySFX(FindClip("PickUp"));
+    }
+
+    public void PlayTickingSound()
+    {
+        PlaySFX(FindClip("Ticking"));
+    }
+
+    public void PlayDayEndSound()
+    {
+        PlaySFX(FindClip("DayEnd"));
+    }
+
+    public void TurnOffBgm()
+    {
+        bgmAudioSource.Stop();
     }
 
     private AudioClip FindClip(string name)

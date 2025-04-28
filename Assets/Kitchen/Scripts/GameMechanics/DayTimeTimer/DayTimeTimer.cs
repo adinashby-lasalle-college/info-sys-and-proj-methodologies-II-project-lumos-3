@@ -5,10 +5,10 @@ public class DayTimeTimer : MonoBehaviour
 {
     public static DayTimeTimer Instance { get; private set; }
 
-    private int startHour = 9;
-    private int endHour = 10; // PM
+    private static int startHour = 9;
+    private static int endHour = 10; // PM
     private float timer;
-    private float timeForMinuteIncreasement = 1f;
+    private float timeForMinuteIncreasement = 0.1f;
 
     public int CurrDay { get; private set; }
 
@@ -38,7 +38,7 @@ public class DayTimeTimer : MonoBehaviour
         Initiation();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         // DEBUG
         if (Input.GetKeyDown(KeyCode.M))
@@ -72,9 +72,7 @@ public class DayTimeTimer : MonoBehaviour
 
                     if (currHour == endHour && amPm == "PM")
                     {
-                        StartCoroutine(SceneTransitionEffectManager.Instance.OpenSumUpPage());
-
-                        // * play sound effect
+                        KitchenSFXManager.Instance.PlayDayEndSound();
 
                         OnDayEnd?.Invoke();
                         OnDayChanged?.Invoke(++CurrDay);
