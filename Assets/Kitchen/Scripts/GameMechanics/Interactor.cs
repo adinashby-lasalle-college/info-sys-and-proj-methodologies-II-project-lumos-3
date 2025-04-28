@@ -7,9 +7,10 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask interactableLayerMask;
 
     private Grabbable grabbingObject;
+    private bool CanInteract = true;
 
     public bool IsGrabbing { get; private set; }
-
+    
     private void Awake()
     {
         if (!Instance)
@@ -30,25 +31,28 @@ public class Interactor : MonoBehaviour
 
     private void TryInteract(object sender, System.EventArgs e)
     {
-        // Try interact with all interactable objects under mouse cursor
-        float distance = 100f;
-
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = distance;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-        RaycastHit[] hits;
-        hits = Physics.RaycastAll(Camera.main.transform.position, mousePos, distance);
-
-        for (int i = 0; i < hits.Length; i++)
+        if (CanInteract)
         {
-            RaycastHit hit = hits[i];
+            // Try interact with all interactable objects under mouse cursor
+            float distance = 100f;
 
-            if (hit.transform.TryGetComponent(out IInteractable interactableObj))
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = distance;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+            RaycastHit[] hits;
+            hits = Physics.RaycastAll(Camera.main.transform.position, mousePos, distance);
+
+            for (int i = 0; i < hits.Length; i++)
             {
-                interactableObj.Interact();
+                RaycastHit hit = hits[i];
+
+                if (hit.transform.TryGetComponent(out IInteractable interactableObj))
+                {
+                    interactableObj.Interact();
+                }
             }
-        }
+        }       
     }
 
     public Grabbable GetGrabbingObject()
@@ -75,5 +79,10 @@ public class Interactor : MonoBehaviour
             grabbingObject = null;
             IsGrabbing = false;
         }
+    }
+
+    public void BlockInteract()
+    {
+        CanInteract = false;
     }
 }

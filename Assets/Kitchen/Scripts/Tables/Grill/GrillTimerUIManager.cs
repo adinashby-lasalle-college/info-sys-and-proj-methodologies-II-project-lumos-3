@@ -20,7 +20,7 @@ public class GrillTimerUIManager : MonoBehaviour
                 break;
 
             case Grill.State.COOKED:
-                bar.color = Color.red;
+                bar.color = Color.yellow;
                 bar.fillAmount = grill.CookTime / grill.BurntTime;
                 break;
         } 

@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        KitchenSFXManager.Instance.TurnOffBgm();
+        Interactor.Instance.BlockInteract();
         OnGameOver?.Invoke();
     }
 }
