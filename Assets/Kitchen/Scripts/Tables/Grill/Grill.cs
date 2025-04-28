@@ -1,9 +1,9 @@
-using System;
 using UnityEngine;
 
 public class Grill : Table, IInteractable
 {
     [SerializeField] CookableIngredientSO[] cookableIngredientSOList;
+    [SerializeField] ParticleSystem smokeParticle;
 
     private State currState = State.IDLE;
 
@@ -83,7 +83,11 @@ public class Grill : Table, IInteractable
             {
                 // Put the ingredient on this table
                 PutIngredient(grabbingIngredient.GetComponent<Ingredient>());
+
+                // SFX
                 KitchenSFXManager.Instance.PlayFireSound();
+                // VFX
+                smokeParticle.Play();
             }
         }
 
@@ -96,7 +100,11 @@ public class Grill : Table, IInteractable
             Interactor.Instance.SetGrabbingObject(ingredientOnTable);
 
             ClearTable();
+
+            // SFX
             KitchenSFXManager.Instance.StopFireSound();
+            // VFX
+            smokeParticle.Stop();
 
             currState = State.IDLE;
         }

@@ -22,11 +22,15 @@ public class KitchenSFXManager : MonoBehaviour, IEffectManager
     private void Start()
     {
         MoneyManager.Instance.OnMoneyModified += PlayMoneySound;
+        GameManager.Instance.OnGameOver += TurnOffBgm;
+        GameManager.Instance.OnGameOver += PlayGameOverSound;
     }
 
     private void OnDisable()
     {
         MoneyManager.Instance.OnMoneyModified -= PlayMoneySound;
+        GameManager.Instance.OnGameOver -= TurnOffBgm;
+        GameManager.Instance.OnGameOver -= PlayGameOverSound;
     }
 
     public void PlayCuttingEffect(float sliceCount, float maxCount)
@@ -69,14 +73,19 @@ public class KitchenSFXManager : MonoBehaviour, IEffectManager
         PlaySFX(FindClip("PickUp"));
     }
 
-    public void PlayTickingSound()
+    public void PlayGameOverSound()
     {
-        PlaySFX(FindClip("Ticking"));
+        PlaySFX(FindClip("GameOver"));
     }
 
     public void PlayDayEndSound()
     {
         PlaySFX(FindClip("DayEnd"));
+    }
+
+    public void PlayThrowSound()
+    {
+        PlaySFX(FindClip("Throw"));
     }
 
     public void TurnOffBgm()

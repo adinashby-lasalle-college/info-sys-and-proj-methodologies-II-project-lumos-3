@@ -8,7 +8,7 @@ public class DayTimeTimer : MonoBehaviour
     private static int startHour = 9;
     private static int endHour = 10; // PM
     private float timer;
-    private float timeForMinuteIncreasement = 0.1f;
+    private float timeForMinuteIncreasement = 1f;
 
     public int CurrDay { get; private set; }
 
@@ -36,6 +36,18 @@ public class DayTimeTimer : MonoBehaviour
         }
 
         Initiation();
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.OnGameOver += ResetDay;
+        GameManager.Instance.OnGameOver += DisactivateTimer;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameOver -= ResetDay;
+        GameManager.Instance.OnGameOver -= DisactivateTimer;
     }
 
     private void Update()
@@ -106,5 +118,16 @@ public class DayTimeTimer : MonoBehaviour
     public void ActivateTimer()
     {
         isTimerActive = true;
+    }
+
+    public void DisactivateTimer()
+    {
+        isTimerActive = false;
+    }
+
+    public void ResetDay()
+    {
+        CurrDay = 1;
+        OnDayChanged?.Invoke(CurrDay);
     }
 }

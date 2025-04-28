@@ -16,11 +16,13 @@ public class CookingTimer : MonoBehaviour
     private void Start()
     {
         bell.OnServed += StopTimer;
+        GameManager.Instance.OnGameOver += StopTimer;
     }
 
     private void OnDisable()
     {
         bell.OnServed -= StopTimer;
+        GameManager.Instance.OnGameOver -= StopTimer;
     }
 
     private void FixedUpdate()

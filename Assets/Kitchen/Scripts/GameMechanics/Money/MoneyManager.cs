@@ -25,6 +25,16 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        GameManager.Instance.OnGameOver += ResetMoney;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameOver -= ResetMoney;
+    }
+
     public void AddMoney(int amount)
     {
         TotalMoney += amount;
@@ -49,5 +59,12 @@ public class MoneyManager : MonoBehaviour
     {
         OriginalMoney = TotalMoney;
         EarnedMoney = 0;
+    }
+
+    public void ResetMoney()
+    {
+        OriginalMoney = 0;
+        EarnedMoney = 0;
+        TotalMoney = 0;
     }
 }

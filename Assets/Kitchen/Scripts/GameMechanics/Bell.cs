@@ -20,6 +20,12 @@ public class Bell : MonoBehaviour, IInteractable
         // If there's any ingredient on the prep table
         if (prepTable.ingredientSOList.Count > 0)
         {
+            // If a recipe is not generated, ignore
+            if (!recipeManager.CurrRecipe)
+            {
+                return;
+            }
+
             // Check if the ingredient counts are the same
             if (recipeManager.CurrRecipe.ingredientSOList.Count == prepTable.ingredientSOList.Count)
             {
