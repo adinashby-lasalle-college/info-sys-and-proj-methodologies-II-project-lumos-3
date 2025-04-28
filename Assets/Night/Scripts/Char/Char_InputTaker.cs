@@ -7,9 +7,11 @@ using UnityEngine.InputSystem;
 
 public class Char_InputTaker : MonoBehaviour
 {
+    AudioPlayer SEPlayer;
     void Awake()
     {
         playerAction = new NightEventInput();
+        SEPlayer= GetComponent<AudioPlayer>();
     }
     #region SetUp
 
@@ -229,6 +231,7 @@ public class Char_InputTaker : MonoBehaviour
         if (char_PickUpItem.IfPickableItemOverLapping() && char_PickUpItem.IfItemInHand() == false) 
         {
             Debug.Log("Pick");
+            SEPlayer.PlaySound(0);
             PickableItem pickableItem = char_PickUpItem.DragTarget().GetComponentInParent<PickableItem>();
             pickableItem.DragThisItem();
         }

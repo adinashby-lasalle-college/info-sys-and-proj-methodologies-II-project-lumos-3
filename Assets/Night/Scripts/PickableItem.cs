@@ -6,12 +6,14 @@ public class PickableItem : MonoBehaviour, I_PickableObj
 {
     Rigidbody2D rb;
     public bool IsThisObjectPicking;
-    [SerializeField] Transform playerDragSpot;   
+    [SerializeField] Transform playerDragSpot;
+    AudioPlayer SEPlayer;
 
     private void Start()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
         playerDragSpot = GameObject.Find("DragPos").GetComponent<Transform>();
+        SEPlayer = GetComponent<AudioPlayer>();
     }
 
     //Object Move With Player After PickUp
@@ -54,6 +56,7 @@ public class PickableItem : MonoBehaviour, I_PickableObj
         {
 
         }
+        SEPlayer.PlaySound(0);
         IsThisObjectPicking = false;
     }
 

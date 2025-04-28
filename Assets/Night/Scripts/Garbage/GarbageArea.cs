@@ -11,6 +11,7 @@ public class GarbageArea : MonoBehaviour
         //Deliver Garbage and -1 in UI
         Debug.Log("Deliver Garbage");
         taskManager.DeliverGarbage();
-        
+        AudioPlayer player = gameObject.GetComponent<AudioPlayer>();
+        player.PlaySound(0);
     }
 }
