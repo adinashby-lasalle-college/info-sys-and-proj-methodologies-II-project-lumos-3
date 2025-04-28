@@ -89,6 +89,7 @@
     <Compile Include="Assets\Night\Scripts\Garbage\NpcGenerator.cs" />
     <Compile Include="Assets\Kitchen\Input\KitchenInputActions.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\IngredientSO.cs" />
+    <Compile Include="Assets\Night\Scripts\NewsPaperGenerator.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimer\CookingTimerUIManager.cs" />
     <Compile Include="Assets\DataPersisence\Data\GameData.cs" />
     <Compile Include="Assets\DataPersisence\DataPersisenceManager.cs" />
