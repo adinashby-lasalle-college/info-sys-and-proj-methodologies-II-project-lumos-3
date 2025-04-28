@@ -86,6 +86,7 @@
     <Compile Include="Assets\Kitchen\Scripts\PriceCalculator\LowPriceHandler.cs" />
     <Compile Include="Assets\DataPersisence\FileDataHandler.cs" />
     <Compile Include="Assets\Kitchen\Scripts\Ingredient\Ingredient.cs" />
+    <Compile Include="Assets\Night\Scripts\Garbage\NpcGenerator.cs" />
     <Compile Include="Assets\Kitchen\Input\KitchenInputActions.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\IngredientSO.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimer\CookingTimerUIManager.cs" />

@@ -14,4 +14,10 @@ public class GarbageArea : MonoBehaviour
         AudioPlayer player = gameObject.GetComponent<AudioPlayer>();
         player.PlaySound(0);
     }
+
+    public void DeliverNpc()
+    {
+        AudioPlayer player = gameObject.GetComponent<AudioPlayer>();
+        player.PlaySound(0);
+    }
 }

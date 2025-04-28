@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCDetector : MonoBehaviour
 {
     Movement_NPC NPC;
     bool isInNPCDetection;
+    [SerializeField] Slider UISlider;
 
     private void Start()
     {
@@ -50,6 +52,7 @@ public class NPCDetector : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer < 0f) timer = 0f;
         }
+        UISlider.value = timer / detectTime;
     }
 
     public float detectTime = 4f;
