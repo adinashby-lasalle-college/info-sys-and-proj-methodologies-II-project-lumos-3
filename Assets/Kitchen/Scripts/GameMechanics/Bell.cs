@@ -33,7 +33,7 @@ public class Bell : MonoBehaviour, IInteractable
                 {
                     if (recipeManager.CurrRecipe.ingredientSOList[i] != prepTable.ingredientSOList[i])
                     {
-                        GameManager.Instance.GameOver();
+                        GameManager.Instance.GameOver(GameOverType.HAMBURGER);
                     }
                 }
 
@@ -48,7 +48,7 @@ public class Bell : MonoBehaviour, IInteractable
             else
             {
                 // If the recipe served is wrong, game over
-                GameManager.Instance.GameOver();
+                GameManager.Instance.GameOver(GameOverType.HAMBURGER);
             }
         }
 
