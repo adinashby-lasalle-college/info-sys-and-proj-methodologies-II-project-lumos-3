@@ -45,6 +45,7 @@ public class NPCDetector : MonoBehaviour
             {
                 NPC.DisturbNPC();
                 detected = true; // prevent multiple calls
+                UISlider_Detect.gameObject.SetActive(false);
             }
             UISlider_Detect.value = timer / detectTime;
         }
@@ -52,6 +53,7 @@ public class NPCDetector : MonoBehaviour
         {
             timer -= Time.deltaTime;
             if (timer < 0f) timer = 0f;
+            UISlider_Detect.value = timer / detectTime;
         }
 
         if (detected)
