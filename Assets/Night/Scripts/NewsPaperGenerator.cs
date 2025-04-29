@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class NewsPaperGenerator : MonoBehaviour
 {
-    [SerializeField] Sprite NewsPaper_Missing;
-    [SerializeField] Sprite NewsPaper_WakeUpFromTrashCan;
-    [SerializeField] Sprite NewsPaper_WerewolfCaught;
-    [SerializeField] Sprite NewsPaper_N_RestaurantPromotion;
-    [SerializeField] Sprite NewsPaper_N_WerewolfintheCity;
+    [SerializeField] GameObject NewsPaper_Missing;
+    [SerializeField] GameObject NewsPaper_WakeUpFromTrashCan;
+    [SerializeField] GameObject NewsPaper_WerewolfCaught;
+    [SerializeField] GameObject NewsPaper_N_RestaurantPromotion;
 
     int currentNews;
 
@@ -27,22 +26,26 @@ public class NewsPaperGenerator : MonoBehaviour
         switch (currentNews)
         {
             default:
+                NewsPaper_N_RestaurantPromotion.SetActive(true);
                 break;
 
                 case 0:
+                NewsPaper_N_RestaurantPromotion.SetActive(true);
                 break;
 
                 case 1:
+                    NewsPaper_WakeUpFromTrashCan.SetActive(true);
                 break;
 
                 case 2:
+                    NewsPaper_WerewolfCaught.SetActive(true);
                 break;
 
                 case 3:
+                    NewsPaper_Missing.SetActive(true);
                 break;
 
-                case 4:
-                break;
+
         }
     }
 

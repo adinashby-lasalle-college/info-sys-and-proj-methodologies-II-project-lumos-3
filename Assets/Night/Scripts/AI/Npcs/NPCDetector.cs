@@ -7,7 +7,8 @@ public class NPCDetector : MonoBehaviour
 {
     Movement_NPC NPC;
     bool isInNPCDetection;
-    [SerializeField] Slider UISlider;
+    [SerializeField] Slider UISlider_Detect;
+    [SerializeField] Slider UISlider_Run;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class NPCDetector : MonoBehaviour
             if (timer < detectTime)
             {
                 timer += Time.deltaTime;
+                UISlider_Detect.value = timer / detectTime;
             }
 
             if (timer >= detectTime && !detected)
@@ -52,12 +54,34 @@ public class NPCDetector : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer < 0f) timer = 0f;
         }
-        UISlider.value = timer / detectTime;
+
+        if (detected)
+        {
+            if (RunningTimer < RunningTime)
+            {
+                RunningTimer += Time.deltaTime;
+                UISlider_Run.value = RunningTimer / RunningTime;
+            }
+
+            if (RunningTimer >= RunningTime)
+            {
+                GameObject Manager = GameObject.FindGameObjectWithTag("GameManager");
+                if (Manager != null) 
+                {
+                    //Game Over
+                    Manager.GetComponent<NewsPaperGenerator>().SwitchNews(2);
+                    Manager.GetComponent<NewsPaperGenerator>().CallOutNew();
+                }
+            }
+        }
     }
 
     public float detectTime = 4f;
     public float timer = 0f;
     private bool detected = false;
 
+
+    public float RunningTime = 10f;
+    public float RunningTimer = 0f;
 
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Garbage
   - Human
+  - GameManager
   layers:
   - Default
   - TransparentFX

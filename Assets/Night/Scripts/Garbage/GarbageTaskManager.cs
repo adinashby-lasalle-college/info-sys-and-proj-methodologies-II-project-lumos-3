@@ -47,6 +47,14 @@ public class GarbageTaskManager : MonoBehaviour
     {
         garbageNumber--;
         UpdateGarbageNumUI();
+        if (garbageNumber <= 0)
+        {
+            GameObject Manager = GameObject.FindGameObjectWithTag("GameManager");
+            if (Manager != null)
+            {
+                Manager.GetComponent<NewsPaperGenerator>().CallOutNew();
+            }
+        }
     }
 
     

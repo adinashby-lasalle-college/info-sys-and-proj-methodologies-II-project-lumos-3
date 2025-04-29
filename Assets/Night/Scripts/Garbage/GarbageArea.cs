@@ -19,5 +19,12 @@ public class GarbageArea : MonoBehaviour
     {
         AudioPlayer player = gameObject.GetComponent<AudioPlayer>();
         player.PlaySound(0);
+
+        GameObject Manager = GameObject.FindGameObjectWithTag("GameManager");
+        if (Manager != null)
+        {
+            //Game Over
+            Manager.GetComponent<NewsPaperGenerator>().SwitchNews(1);
+        }
     }
 }
