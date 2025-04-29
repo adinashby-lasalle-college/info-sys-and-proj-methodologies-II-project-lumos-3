@@ -40,14 +40,13 @@ public class NPCDetector : MonoBehaviour
             if (timer < detectTime)
             {
                 timer += Time.deltaTime;
-                UISlider_Detect.value = timer / detectTime;
             }
-
             if (timer >= detectTime && !detected)
             {
                 NPC.DisturbNPC();
                 detected = true; // prevent multiple calls
             }
+            UISlider_Detect.value = timer / detectTime;
         }
         else
         {

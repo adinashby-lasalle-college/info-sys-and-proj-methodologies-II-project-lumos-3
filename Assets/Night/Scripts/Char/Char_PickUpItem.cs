@@ -26,7 +26,10 @@ public class Char_PickUpItem : MonoBehaviour
         {
             isPickableItemOverLapping = true;
             PickUpTarget = collision.gameObject;
-            ui_PickUpButton.ShowPickUpUI();
+            if(ItemInHand == false)
+            {
+                ui_PickUpButton.ShowPickUpUI();
+            }
         }
     }
 
@@ -36,7 +39,10 @@ public class Char_PickUpItem : MonoBehaviour
         {
             isPickableItemOverLapping = false;
             PickUpTarget = null;
-            ui_PickUpButton.HidePickUpUI();
+            if (ItemInHand == false)
+            {
+                ui_PickUpButton.HidePickUpUI();
+            }
         }
     }
 
@@ -51,6 +57,7 @@ public class Char_PickUpItem : MonoBehaviour
         isItemInHand = true;
         ItemInHand = PickUpTarget.GetComponentInParent<Rigidbody2D>().gameObject;
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ItemInHand.GetComponent<Collider2D>(), true);
+        ui_PickUpButton.HidePickUpUI();
         return PickUpTarget;
     }
 

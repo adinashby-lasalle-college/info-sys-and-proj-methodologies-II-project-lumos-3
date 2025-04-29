@@ -19,7 +19,7 @@ public class PickableGarbage : PickableItem
                 }
                 if (gameObject.tag == "Human")
                 {
-                    other.GetComponent<GarbageArea>().DeliverGarbage();
+                    other.GetComponent<GarbageArea>().DeliverNpc();
                     Destroy(this.gameObject);
                 }
             }
