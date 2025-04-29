@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public GameOverType GameOverType { get; private set; }
     public event Action OnGameOver;
 
     private void Awake()
@@ -13,11 +14,11 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
 
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -36,9 +37,18 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void GameOver()
+    public void GameOver(GameOverType type)
     {
+        GameOverType = type;
+
         Interactor.Instance.BlockInteract();
         OnGameOver?.Invoke();
     }
+}
+
+public enum GameOverType
+{
+    HAMBURGER,
+    RENT,
+    CAUGHT
 }

@@ -29,5 +29,6 @@ public class DailySumUpUIManager : MonoBehaviour
     {
         UpdateCashAmountText();
         GetComponent<Animator>().SetTrigger("PopUp");
+        Interactor.Instance.BlockInteract();
     }
 }
