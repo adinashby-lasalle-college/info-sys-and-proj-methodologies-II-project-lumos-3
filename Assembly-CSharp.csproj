@@ -94,6 +94,7 @@
     <Compile Include="Assets\Night\Scripts\NewsPaperGenerator.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimer\CookingTimerUIManager.cs" />
     <Compile Include="Assets\DataPersisence\Data\GameData.cs" />
+    <Compile Include="Assets\Night\Scripts\GameOverAudio.cs" />
     <Compile Include="Assets\DataPersisence\DataPersisenceManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\RecipeSO.cs" />
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\Interactor.cs" />

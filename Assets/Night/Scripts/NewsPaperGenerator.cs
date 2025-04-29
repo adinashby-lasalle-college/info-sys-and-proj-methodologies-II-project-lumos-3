@@ -8,6 +8,7 @@ public class NewsPaperGenerator : MonoBehaviour
     [SerializeField] GameObject NewsPaper_WakeUpFromTrashCan;
     [SerializeField] GameObject NewsPaper_WerewolfCaught;
     [SerializeField] GameObject NewsPaper_N_RestaurantPromotion;
+    [SerializeField] AudioSource audioSource;
 
     int currentNews;
 
@@ -23,6 +24,7 @@ public class NewsPaperGenerator : MonoBehaviour
 
     public void CallOutNew()
     {
+        audioSource.Play();
         switch (currentNews)
         {
             default:
