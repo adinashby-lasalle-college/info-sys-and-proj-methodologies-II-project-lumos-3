@@ -15,6 +15,7 @@ public class Movement_NPC : MonoBehaviour
     bool isWalking = true;
     private Vector3 targetScale;
 
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();

@@ -18,11 +18,17 @@ public class UI_PickUpButton : FollowUpUI
 
     public void ShowPickUpUI()
     {
-        PickUpButtonUI.SetActive(true);
+        if (PickUpButtonUI != null)
+        {
+            PickUpButtonUI.SetActive(true);
+        }
     }
 
     public void HidePickUpUI()
     {
-        PickUpButtonUI.SetActive(false);
+        if(PickUpButtonUI != null)
+        {
+            PickUpButtonUI.SetActive(false);
+        }
     }
 }
