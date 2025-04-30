@@ -79,6 +79,12 @@ public class Char_InputTaker : MonoBehaviour
 
         playerAction.InGame.ChangeDir_Right.canceled -= OnChangeDir_Right_Release;
         playerAction.InGame.ChangeDir_Right.Disable();
+
+        playerAction.InGame.Throw.canceled -= ThrowItem;
+        playerAction.InGame.Throw.Disable();
+
+        playerAction.InGame.PickUp.canceled -= TryPickUp;
+        playerAction.InGame.PickUp.Disable();
     }
 
     Char_PickUpItem char_PickUpItem;

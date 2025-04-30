@@ -7,7 +7,7 @@ public class NpcGenerator : MonoBehaviour
     public GameObject NPC;
     public Transform spawnPointA;
     public Transform spawnPointB;
-    private void Start()
+    private void OnEnable()
     {
         Spawn();
     }

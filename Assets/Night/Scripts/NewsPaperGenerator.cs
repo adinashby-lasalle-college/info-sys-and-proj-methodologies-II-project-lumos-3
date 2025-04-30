@@ -12,7 +12,7 @@ public class NewsPaperGenerator : MonoBehaviour
 
     int currentNews;
 
-    private void Start()
+    private void OnEnable()
     {
         currentNews = 0;
     }

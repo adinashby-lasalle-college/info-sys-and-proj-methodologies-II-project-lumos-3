@@ -10,7 +10,7 @@ public class GarbageTaskManager : MonoBehaviour
     GarbageFactory garbageFactory;
     [SerializeField] Transform spawnPoint;
 
-    private void Start()
+    private void OnEnable()
     {
         garbages= new List<GameObject>();
         garbageFactory = GetComponent<GarbageFactory>();
