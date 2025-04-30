@@ -5900,6 +5900,7 @@ GameObject:
   - component: {fileID: 1439183541}
   - component: {fileID: 1439183543}
   - component: {fileID: 1439183542}
+  - component: {fileID: 1439183544}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -5914,17 +5915,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439183540}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.07424105, w: 0.9972403}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1922784965}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.515}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1024, y: 512}
+  m_AnchoredPosition: {x: 71, y: -34}
+  m_SizeDelta: {x: 798.7, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1439183542
 MonoBehaviour:
@@ -5964,6 +5965,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439183540}
   m_CullTransparentMesh: 1
+--- !u!111 &1439183544
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439183540}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 42d3bebb0769d4449bb6217081afde28, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1752188254
 GameObject:
   m_ObjectHideFlags: 0
