@@ -2,11 +2,18 @@ using UnityEngine;
 
 public class DataResetter : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         DayTimeTimer.Instance.ResetTimer();
         DayTimeTimer.Instance.ActivateTimer();
 
         MoneyManager.Instance.RefreshMoneyInfo();
+    }
+
+    public void ResetGameData()
+    {
+        MoneyManager.Instance.ResetMoney();
+        DayTimeTimer.Instance.ResetDay();
+        DayTimeTimer.Instance.ResetTimer();
     }
 }
