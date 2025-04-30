@@ -19,6 +19,8 @@ public class PriceManager : MonoBehaviour
 
     private int price; // Price based on cooking time
 
+    public event Action<int, int> OnPriceCalculated;
+
     private void Start()
     {
         highPriceHandler = GetComponent<HighPriceHandler>();
@@ -33,6 +35,8 @@ public class PriceManager : MonoBehaviour
     {
         highPriceHandler.HandleRequest(cookTime);
         int totalPrice = price + recipeManager.CurrRecipe.additionalPrice;
+
+        OnPriceCalculated?.Invoke(recipeManager.CurrRecipe.additionalPrice, price);
 
         return totalPrice;
     }

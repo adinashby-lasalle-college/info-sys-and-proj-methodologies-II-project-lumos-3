@@ -83,6 +83,11 @@ public class KitchenSFXManager : MonoBehaviour, IEffectManager
         PlaySFX(FindClip("DayEnd"));
     }
 
+    public void PlayBellSound()
+    {
+        PlaySFX(FindClip("Bell"));
+    }
+
     public void PlayThrowSound()
     {
         PlaySFX(FindClip("Throw"));

@@ -17,6 +17,8 @@ public class Bell : MonoBehaviour, IInteractable
 
     public void Serve()
     {
+        KitchenSFXManager.Instance.PlayBellSound();
+
         // If there's any ingredient on the prep table
         if (prepTable.ingredientSOList.Count > 0)
         {
