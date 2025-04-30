@@ -8,7 +8,7 @@ public class DayTimeTimer : MonoBehaviour
     private static int startHour = 9;
     private static int endHour = 10; // PM
     private float timer;
-    private float timeForMinuteIncreasement = 1.5f;
+    private float timeForMinuteIncreasement = 1.2f;
 
     public int CurrDay { get; private set; }
 
@@ -84,7 +84,10 @@ public class DayTimeTimer : MonoBehaviour
 
                     if (currHour == endHour && amPm == "PM")
                     {
-                        KitchenSFXManager.Instance.PlayDayEndSound();
+                        if (KitchenSFXManager.Instance)
+                        {
+                            KitchenSFXManager.Instance.PlayDayEndSound();
+                        }                       
 
                         OnDayEnd?.Invoke();
                         OnDayChanged?.Invoke(++CurrDay);
