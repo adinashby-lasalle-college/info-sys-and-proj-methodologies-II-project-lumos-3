@@ -8,7 +8,7 @@ public class DayTimeTimer : MonoBehaviour
     private static int startHour = 9;
     private static int endHour = 10; // PM
     private float timer;
-    private float timeForMinuteIncreasement = 2f;
+    private float timeForMinuteIncreasement = 1.5f;
 
     public int CurrDay { get; private set; }
 
