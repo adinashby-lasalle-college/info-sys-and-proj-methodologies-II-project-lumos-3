@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickableGarbage : PickableItem
@@ -7,6 +8,7 @@ public class PickableGarbage : PickableItem
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Animation animation = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animation>();
         if(!IsThisObjectPicking)
         {
             //Garbage area
@@ -16,11 +18,13 @@ public class PickableGarbage : PickableItem
                 {
                     other.GetComponent<GarbageArea>().DeliverGarbage();
                     Destroy(this.gameObject);
+                    animation.Play();
                 }
                 if (gameObject.tag == "Human")
                 {
                     other.GetComponent<GarbageArea>().DeliverNpc();
                     Destroy(this.gameObject);
+                    animation.Play();
                 }
             }
 
@@ -32,6 +36,7 @@ public class PickableGarbage : PickableItem
                     other.GetComponent<TruckArea>().DeliverNpc();
 
                     Destroy(this.gameObject);
+                    animation.Play();
                 }
             }
 
@@ -42,6 +47,7 @@ public class PickableGarbage : PickableItem
                 if (rb != null && rb.velocity.magnitude > 1f)
                 {
                     other.GetComponent<NPChitbox>().Stun();
+                    animation.Play();
                 }
             }
         }

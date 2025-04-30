@@ -95,6 +95,7 @@
     <Compile Include="Assets\Kitchen\Scripts\GameMechanics\CookingTimer\CookingTimerUIManager.cs" />
     <Compile Include="Assets\DataPersisence\Data\GameData.cs" />
     <Compile Include="Assets\Night\Scripts\GameOverAudio.cs" />
+    <Compile Include="Assets\Night\Scripts\Audio\ButtonClickSoundEff.cs" />
     <Compile Include="Assets\DataPersisence\DataPersisenceManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\UI\PriceUIManager.cs" />
     <Compile Include="Assets\Kitchen\Scripts\ScriptableObjects\RecipeSO.cs" />
