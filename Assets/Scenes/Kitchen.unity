@@ -5689,8 +5689,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1027057380}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1029150564}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -14797,7 +14797,15 @@ PrefabInstance:
     - target: {fileID: 3999081644386298998, guid: 77e4f19a53e13fc4ea9abd879a21abb5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1027057380}
+      objectReference: {fileID: 1029150564}
+    - target: {fileID: 3999081644386298998, guid: 77e4f19a53e13fc4ea9abd879a21abb5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999081644386298998, guid: 77e4f19a53e13fc4ea9abd879a21abb5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4188040855387078225, guid: 77e4f19a53e13fc4ea9abd879a21abb5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 7.5
