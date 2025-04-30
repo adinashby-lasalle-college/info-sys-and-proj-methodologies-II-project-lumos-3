@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141f449ed14168243af3f195c4b70302, type: 3}
+  m_Name: YonhiBurgerSO
+  m_EditorClassIdentifier: 
+  ingredientSOList:
+  - {fileID: 11400000, guid: 5d3cf1d755f4cc640a14530cbbca5ce1, type: 2}
+  - {fileID: 11400000, guid: 11496089167c8d644b6563b0f0d5be30, type: 2}
+  - {fileID: 11400000, guid: 9c11a3805508d5348af056d8ff99d9f6, type: 2}
+  - {fileID: 11400000, guid: 06ad090a3b0ccd344be36a7c5bc5c59c, type: 2}
+  - {fileID: 11400000, guid: 6bc2e4ecb11b1ce448e540b70256e674, type: 2}
+  - {fileID: 11400000, guid: 042017c4a9710244b9463218ddda22d1, type: 2}
+  - {fileID: 11400000, guid: 83ae27a9143170a42bb385313e12b494, type: 2}
+  - {fileID: 11400000, guid: 26fe9bebeeb364b4c8263031d9f2796b, type: 2}
+  recipeName: Yonhi Burger
+  additionalPrice: 100
